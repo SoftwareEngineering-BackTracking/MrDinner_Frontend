@@ -105,3 +105,41 @@ var LoginModalController = {
 $(document).ready(function() {
     LoginModalController.initialize();
 });
+
+"use strict";
+
+var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io" // 주소
+const loginId = document.getElementById('ID');
+const loginPw = document.getElementById('Password');
+const loginBtn = document.getElementsByClassName('btn btn-dark btn-block');
+
+function login(){
+    fetch(url,{
+        method : "POST",
+           body : JSON.stringify({
+                user_account : loginId,
+                password : loginPw
+            })
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+}
+
+function color() {
+    if((loginId.value.length>0 && loginId.value.indexOf("@")!==-1) 
+        && loginPw.value.length>=5){
+        loginBtn.style.backgroundColor = "#0095F6";
+        loginBtn.disabled = false;
+    }else{
+        loginBtn.style.backgroundColor = "#C0DFFD";
+        loginBtn.disabled = true;
+    }
+}
+
+function moveToMain(){
+    location.replace("main.html");
+}
+
+loginId.addEventListener('keyup', color);
+loginPw.addEventListener('keyup', color);
+loginBtn.addEventListener('click',moveToMain);
