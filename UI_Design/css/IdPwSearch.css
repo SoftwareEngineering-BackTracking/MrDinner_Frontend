@@ -6,6 +6,34 @@ body {
   font-size: 14px;
 }
 
+.body {
+  background-color: #000;
+}
+
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+.header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
 .v170_95 {
   width: 100%;
   height: 1033px;
@@ -649,28 +677,4 @@ body {
   top: 291px;
   left: 55px;
   border: 1px solid rgba(180, 179, 179, 1);
-}
-
-header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-}
-
-.header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
 }
