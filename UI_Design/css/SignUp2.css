@@ -197,18 +197,11 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
-}
-
-.v224_82 {
-  width: 48px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 159px;
-  left: 83px;
+  border-color: transparent;
+  color: white;
   font-family: Inter;
   font-weight: Semi Bold;
   font-size: 11px;
-  opacity: 1;
   text-align: center;
 }
 
@@ -286,18 +279,11 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
-}
-
-.v224_89 {
-  width: 47px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 159px;
-  left: 81px;
+  border-color: transparent;
+  color: white;
   font-family: Inter;
   font-weight: Semi Bold;
   font-size: 11px;
-  opacity: 1;
   text-align: center;
 }
 
@@ -328,6 +314,12 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   overflow: hidden;
+  border-color: transparent;
+  color: white;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 20px;
+  text-align: center;
 }
 
 .v224_182 {
@@ -463,3 +455,13 @@ body {
   left: 45px;
   overflow: hidden;
 }
+
+button:focus {
+  outline:0;
+}
+
+button:hover {
+  background: rgba(252, 126, 0, 1); ; 
+  cursor: pointer;
+}
+

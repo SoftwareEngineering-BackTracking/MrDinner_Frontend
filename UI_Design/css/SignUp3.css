@@ -376,6 +376,12 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   overflow: hidden;
+  border-color: transparent;
+  color: white;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 20px;
+  text-align: center;
 }
 
 .v224_203 {
@@ -510,4 +516,13 @@ body {
   top: 0px;
   left: 45px;
   overflow: hidden;
+}
+
+button:focus {
+  outline:0;
+}
+
+button:hover {
+  background: rgba(252, 126, 0, 1); ; 
+  cursor: pointer;
 }
