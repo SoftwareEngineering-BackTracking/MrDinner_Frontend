@@ -102,44 +102,39 @@ var LoginModalController = {
     }
 };
 
-$(document).ready(function() {
-    LoginModalController.initialize();
-});
+var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
 
-"use strict";
+function modalOn() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'flex';
+}
 
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io" // 주소
-const loginId = document.getElementById('ID');
-const loginPw = document.getElementById('Password');
-const loginBtn = document.getElementsByClassName('btn btn-dark btn-block');
+function modalOff() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'none';
+}
+
+function go_main() {
+    location.href= "main.html";
+}
 
 function login(){
-    fetch(url,{
-        method : "POST",
-           body : JSON.stringify({
-                user_account : loginId,
-                password : loginPw
-            })
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-}
-
-function color() {
-    if((loginId.value.length>0 && loginId.value.indexOf("@")!==-1) 
-        && loginPw.value.length>=5){
-        loginBtn.style.backgroundColor = "#0095F6";
-        loginBtn.disabled = false;
-    }else{
-        loginBtn.style.backgroundColor = "#C0DFFD";
-        loginBtn.disabled = true;
-    }
-}
-
-function moveToMain(){
-    location.replace("main.html");
-}
-
-loginId.addEventListener('keyup', color);
-loginPw.addEventListener('keyup', color);
-loginBtn.addEventListener('click',moveToMain);
+    fetch(url+"/api/user", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn();
+        if (response.status == 200) {
+            console.log("response:", response.json());
+            setTimeout(function() {
+                modalOff()}, 3000);
+            setTimeout(function() {
+                go_main()}, 3000);
+        }}).catch((error) => console.log("error", error))
+};
