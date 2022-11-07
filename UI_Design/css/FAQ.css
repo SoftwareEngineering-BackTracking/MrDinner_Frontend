@@ -107,14 +107,19 @@
        opacity: 1;
        text-align: center;
    }
+   
+   .button_set {
+    position: absolute;
+    left: 15%;
+   }
 
    .v107_60 {
        width: 100%;
-       height: 5px;
+       height: 2px;
        background: rgba(0, 0, 0, 1);
        opacity: 1;
        position: absolute;
-       top: 127px;
+       top: 250px;
        left: 0px;
        overflow: hidden;
    }
@@ -132,6 +137,12 @@
        border-bottom-left-radius: 10px;
        border-bottom-right-radius: 10px;
        overflow: hidden;
+       border-color: transparent;
+       color: black;
+       font-family: Inter;
+       font-weight: semi bold;
+       font-size: 25px;
+       text-align: center;
    }
 
    .v155_76 {
@@ -147,6 +158,12 @@
        border-bottom-left-radius: 10px;
        border-bottom-right-radius: 10px;
        overflow: hidden;
+       border-color: transparent;
+       color: black;
+       font-family: Inter;
+       font-weight: semi bold;
+       font-size: 25px;
+       text-align: center;
    }
 
    .v155_77 {
@@ -162,6 +179,12 @@
        border-bottom-left-radius: 10px;
        border-bottom-right-radius: 10px;
        overflow: hidden;
+       border-color: transparent;
+       color: black;
+       font-family: Inter;
+       font-weight: semi bold;
+       font-size: 25px;
+       text-align: center;
    }
 
    .v155_78 {
@@ -177,6 +200,12 @@
        border-bottom-left-radius: 10px;
        border-bottom-right-radius: 10px;
        overflow: hidden;
+       border-color: transparent;
+       color: black;
+       font-family: Inter;
+       font-weight: semi bold;
+       font-size: 25px;
+       text-align: center;
    }
 
    .v155_79 {
@@ -192,6 +221,12 @@
        border-bottom-left-radius: 10px;
        border-bottom-right-radius: 10px;
        overflow: hidden;
+       border-color: transparent;
+       color: black;
+       font-family: Inter;
+       font-weight: semi bold;
+       font-size: 25px;
+       text-align: center;
    }
 
    .v155_82 {
@@ -259,6 +294,17 @@
        text-align: left;
    }
 
+   .v155_73 {
+        width: 601px;
+        color: rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 120px;
+        left: 89px;
+        font-family: Prata;
+        opacity: 1;
+        text-align: left;
+   }
+
    .v155_80 {
        width: 601px;
        color: rgba(0, 0, 0, 1);
@@ -280,7 +326,7 @@
    }
 
    .v155_89 {
-       width: 189px;
+       width: 250px;
        color: rgba(0, 0, 0, 1);
        position: absolute;
        top: 560px;
@@ -387,3 +433,12 @@
        opacity: 1;
        text-align: left;
    }
+
+   button:focus {
+    outline:0;
+  }
+  
+  button:hover {
+    background: rgb(212, 212, 212); ; 
+    cursor: pointer;
+  }
