@@ -82,7 +82,7 @@ body {
 }
 
 .v186_97 {
-  width: 63px;
+  width: 70px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -132,7 +132,7 @@ body {
 }
 
 .v186_102 {
-  width: 78px;
+  width: 85px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -182,7 +182,7 @@ body {
 }
 
 .v186_106 {
-  width: 93px;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -232,7 +232,7 @@ body {
 }
 
 .v186_110 {
-  width: 63px;
+  width: 70px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -274,48 +274,6 @@ body {
 
 .name {
   color: #fff;
-}
-
-.v186_124 {
-  width: 91px;
-  height: 35px;
-  background: url("../images/v186_124.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 617px;
-  left: 969px;
-  overflow: hidden;
-}
-
-.v186_122 {
-  width: 91px;
-  height: 29px;
-  background: rgba(252, 126, 0, 1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-}
-
-.v186_123 {
-  width: 60px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 7px;
-  left: 16px;
-  font-family: Roboto;
-  font-weight: SemiBold;
-  font-size: 12px;
-  opacity: 1;
-  text-align: center;
 }
 
 .v186_157 {
