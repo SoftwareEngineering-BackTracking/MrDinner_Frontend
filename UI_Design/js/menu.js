@@ -16,15 +16,13 @@ function fetchAllDinner() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      console.log(JSON.stringify(resData.dinnerList[1].detail));
-
       for (var i = 0; i < 4; i++) {
-        document.getElementById("dinner" + toString(i)).innerHTML =
+        document.getElementById("dinner" + String(i)).innerHTML =
           JSON.stringify(resData.dinnerList[i].dinner);
-        document.getElementById("detail" + toString(i)).innerHTML =
+        document.getElementById("detail" + String(i)).innerHTML =
           JSON.stringify(resData.dinnerList[i].detail);
-        document.getElementById("price" + toString(i)).innerHTML =
-          JSON.stringify(resData.dinnerList[i].price);
+        document.getElementById("price" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerList[i].price) + "원";
       }
     })
     .catch((error) => console.log("error", error));
