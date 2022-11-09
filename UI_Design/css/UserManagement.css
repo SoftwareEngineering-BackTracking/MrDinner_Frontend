@@ -20,10 +20,8 @@ body {
 .v13_4 {
   width: 100%;
   height: 482px;
-  background: url("../images/v13_4.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
   opacity: 0.5;
   position: absolute;
   top: 132px;
@@ -129,10 +127,8 @@ body {
 .v13_13 {
   width: 100%;
   height: 772px;
-  background: url("../images/v13_13.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
   margin: 80px;
   opacity: 1;
   position: absolute;
@@ -146,8 +142,16 @@ body {
   height: 41px;
   background: rgba(74, 34, 28, 0.8500000238418579);
   opacity: 0.949999988079071;
-  position: absolute;
-  margin-top: 41px;
+  position: relative;
+  top: 175px;
+  left: 40%;
+  transform: translate(-93%, 0);
+  color: white;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
 }
 
 .v22_36 {
@@ -173,24 +177,12 @@ body {
   height: 340px;
   background: rgba(255, 255, 255, 1);
   margin: 0 auto;
+  transform: translate(5%, 0);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
-}
-
-.v13_23 {
-  width: 116px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 9px;
-  left: 170px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 20px;
-  opacity: 1;
-  text-align: center;
 }
 
 .v13_24 {
@@ -211,11 +203,17 @@ body {
   height: 37px;
   background: rgba(134, 134, 134, 1);
   opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
+  top: -30px;
+  left: -40px;
   border: 2px solid rgba(53, 53, 53, 1);
   overflow: hidden;
+  border-color: black;
+  color: white;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 11px;
+  text-align: center;
 }
 
 .v13_26 {
@@ -223,11 +221,17 @@ body {
   height: 37px;
   background: rgba(134, 134, 134, 1);
   opacity: 1;
-  position: absolute;
-  top: 35px;
-  left: 0px;
+  position: relative;
+  top: -66px;
+  left: -76px;
   border: 2px solid rgba(53, 53, 53, 1);
   overflow: hidden;
+  border-color:  black;
+  color: white;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 11px;
+  text-align: center;
 }
 
 .v13_27 {
@@ -235,11 +239,17 @@ body {
   height: 37px;
   background: rgba(134, 134, 134, 1);
   opacity: 1;
-  position: absolute;
-  top: 70px;
-  left: 0px;
+  position: relative;
+  top: -102px;
+  left: -112px;
   border: 2px solid rgba(53, 53, 53, 1);
   overflow: hidden;
+  border-color: black;
+  color: white;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 11px;
+  text-align: center;
 }
 
 .v13_28 {
@@ -316,20 +326,11 @@ body {
   height: 41px;
   background: rgba(74, 34, 28, 0.8500000238418579);
   opacity: 0.949999988079071;
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 0px;
-  left: 160px;
-}
-
-.v13_18 {
-  width: 87px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 9px;
-  left: 67px;
+  position: relative;
+  top: 0%;
+  left: 40%;
+  transform: translate(-93%, 0%);
+  color: white;
   font-family: Inter;
   font-weight: Bold;
   font-size: 20px;
@@ -362,4 +363,13 @@ header.masthead {
   background-position: center center;
   background-size: cover;
   opacity: 0.6;
+}
+
+button:focus {
+  outline:0;
+}
+
+button:hover {
+  background: rgb(104, 104, 104); ; 
+  cursor: pointer;
 }
