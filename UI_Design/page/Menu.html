@@ -14,8 +14,13 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/navbar.css" rel="stylesheet" />
-        <link href="../css/menu.css" rel="stylesheet" />
+        <link href="../css/menu.css" rel="stylesheet" />   
+        <script src="../js/menu.js"></script>
+        <script type="module">
+            window.onload = fetchAllDinner();
+        </script>        
     </head>
+
     <body id="page-top">
         <!-- Navigation-->
         <iframe src="navbar.html" onload="
@@ -43,10 +48,10 @@
             <div class = 'content-box'>
                 <div class = 'left-box'>
                     <div class = 'name'>
-                        <span class = 'menu-name'>Deluxe</span>
+                        <span class = 'menu-name' id="dinner0">Deluxe</span>
                         <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
                     </div>
-                    <span class = 'hash-tag'>#2인 #스테이크 #와인 #맛있엉</span>
+                    <span class = 'hash-tag' id="detail0">#2인 #스테이크 #와인 #맛있엉</span>
                 </div>
 
                 <div class = 'right-box'>
@@ -54,7 +59,7 @@
                         <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
                         <div class="time">30min</div>
                    </div>
-                    <span class = 'menu-price'>30000원</span>
+                    <span class = 'menu-price' id="price0">30000원</span>
                 </div>
                 
             </div>
@@ -67,10 +72,10 @@
             <div class = 'content-box'>
                 <div class = 'left-box'>
                     <div class = 'name'>
-                        <span class = 'menu-name'>Deluxe</span>
+                        <span class = 'menu-name' id="dinner1">Deluxe</span>
                         <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
                     </div>
-                    <span class = 'hash-tag'>#2인 #스테이크 #와인 #맛있엉</span>
+                    <span class = 'hash-tag' id="detail1">#2인 #스테이크 #와인 #맛있엉</span>
                 </div>
 
                 <div class = 'right-box'>
@@ -78,7 +83,7 @@
                         <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
                         <div class="time">30min</div>
                    </div>
-                    <span class = 'menu-price'>30000원</span>
+                    <span class = 'menu-price' id="price1">30000원</span>
                 </div>
                 
             </div>
@@ -91,10 +96,10 @@
             <div class = 'content-box'>
                 <div class = 'left-box'>
                     <div class = 'name'>
-                        <span class = 'menu-name'>Deluxe</span>
+                        <span class = 'menu-name' id="dinner2">Deluxe</span>
                         <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
                     </div>
-                    <span class = 'hash-tag'>#2인 #스테이크 #와인 #맛있엉</span>
+                    <span class = 'hash-tag' id="detail2">#2인 #스테이크 #와인 #맛있엉</span>
                 </div>
 
                 <div class = 'right-box'>
@@ -102,7 +107,7 @@
                         <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
                         <div class="time">30min</div>
                    </div>
-                    <span class = 'menu-price'>30000원</span>
+                    <span class = 'menu-price' id="price2">30000원</span>
                 </div>
                 
             </div>
@@ -115,10 +120,10 @@
             <div class = 'content-box'>
                 <div class = 'left-box'>
                     <div class = 'name'>
-                        <span class = 'menu-name'>Deluxe</span>
+                        <span class = 'menu-name' id="dinner3">Deluxe</span>
                         <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
                     </div>
-                    <span class = 'hash-tag'>#2인 #스테이크 #와인 #맛있엉</span>
+                    <span class = 'hash-tag' id="detail3">#2인 #스테이크 #와인 #맛있엉</span>
                 </div>
 
                 <div class = 'right-box'>
@@ -126,7 +131,7 @@
                         <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
                         <div class="time">30min</div>
                    </div>
-                    <span class = 'menu-price'>30000원</span>
+                    <span class = 'menu-price' id="price3">30000원</span>
                 </div>
                 
             </div>
@@ -137,12 +142,7 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="../js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
