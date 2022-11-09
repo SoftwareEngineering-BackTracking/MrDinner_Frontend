@@ -102,6 +102,39 @@ var LoginModalController = {
     }
 };
 
-$(document).ready(function() {
-    LoginModalController.initialize();
-});
+var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+
+function modalOn() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'flex';
+}
+
+function modalOff() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'none';
+}
+
+function go_main() {
+    location.href= "main.html";
+}
+
+function login(){
+    fetch(url+"/api/user", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn();
+        if (response.status == 200) {
+            console.log("response:", response.json());
+            setTimeout(function() {
+                modalOff()}, 3000);
+            setTimeout(function() {
+                go_main()}, 3000);
+        }}).catch((error) => console.log("error", error))
+};
