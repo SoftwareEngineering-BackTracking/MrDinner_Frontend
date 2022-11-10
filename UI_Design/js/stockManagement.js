@@ -15,6 +15,8 @@ function fetchAllStyle() {
 
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
+
+      console.log(resData.styleList[0]);
     })
     .catch((error) => console.log("error", error));
 }
@@ -34,6 +36,8 @@ function fetchAllStyleIngredient() {
 
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
+
+      console.log(resData.styleIngredientList[1]);
     })
     .catch((error) => console.log("error", error));
 }
