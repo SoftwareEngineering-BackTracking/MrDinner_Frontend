@@ -15,8 +15,24 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/UserManagement.css" />
-    <script src="../js/stockManagement.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script src="../js/userManagement.js"></script>
+    <script type="module">
+        function addLoadEvents(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    onload();
+                    func();
+                }
+            }
+        }
 
+        addLoadEvents(fetchUser());
+        addLoadEvents(fetchAllDinner());
+    </script>
 </head>
 
 <body>
@@ -60,21 +76,18 @@
         <div class="v16_31">고객정보</div>
         <div class="v13_15">
             <div class="v13_17">
-                <table>
-                    <tr>
-                        <th>이름</th>
-                        <th>아이디</th>
-                        <th>닉네임</th>
-                        <th>전화번호</th>
-                        <th>e-mail</th>
-                    </tr>
-                    <tr>
-                        <td>null</td>
-                        <td>null</td>
-                        <td>null</td>
-                        <td>null</td>
-                        <td>null</td>
-                    </tr>
+                <table id="dynamicTable">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>아이디</th>
+                            <th>닉네임</th>
+                            <th>전화번호</th>
+                            <th>e-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dynamicTbody">	
+                    </tbody>
                 </table>
             </div>
         </div>

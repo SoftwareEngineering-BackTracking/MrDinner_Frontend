@@ -13,8 +13,24 @@ function fetchUser() {
     .then((response) => {
       console.log(response);
 
+      var tc = new Array();
+      var html = '';
+
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
+
+      for(var i in resData.userList){
+          html += '<tr>';
+          html += '<td>'+resData.userList[i].name+'</td>';
+          html += '<td>'+resData.userList[i].id+'</td>';
+          html += '<td>'+resData.userList[i].nickname+'</td>';
+          html += '<td>'+resData.userList[i].phoneNumber+'</td>';
+          html += '<td>'+resData.userList[i].email+'</td>';
+          html += '</tr>';
+        }
+              
+        $("#dynamicTbody").empty();
+        $("#dynamicTbody").append(html);
     })
     .catch((error) => console.log("error", error));
 }
