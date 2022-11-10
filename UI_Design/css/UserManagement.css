@@ -144,7 +144,7 @@ body {
   opacity: 0.949999988079071;
   position: relative;
   top: 175px;
-  left: 40%;
+  left: 37%;
   transform: translate(-93%, 0);
   color: white;
   font-family: Inter;
@@ -152,6 +152,7 @@ body {
   font-size: 20px;
   opacity: 1;
   text-align: center;
+  line-height: 41px;
 }
 
 .v22_36 {
@@ -226,7 +227,7 @@ body {
   left: -76px;
   border: 2px solid rgba(53, 53, 53, 1);
   overflow: hidden;
-  border-color:  black;
+  border-color: black;
   color: white;
   font-family: Inter;
   font-weight: Semi Bold;
@@ -327,8 +328,8 @@ body {
   background: rgba(74, 34, 28, 0.8500000238418579);
   opacity: 0.949999988079071;
   position: relative;
-  top: 0%;
-  left: 40%;
+  top: -436px;
+  left: 37%;
   transform: translate(-93%, 0%);
   color: white;
   font-family: Inter;
@@ -336,6 +337,8 @@ body {
   font-size: 20px;
   opacity: 1;
   text-align: center;
+  line-height: 41px;
+  z-index: 1;
 }
 
 header.masthead {
@@ -366,10 +369,10 @@ header.masthead {
 }
 
 button:focus {
-  outline:0;
+  outline: 0;
 }
 
 button:hover {
-  background: rgb(104, 104, 104); ; 
+  background: rgb(104, 104, 104);
   cursor: pointer;
 }
