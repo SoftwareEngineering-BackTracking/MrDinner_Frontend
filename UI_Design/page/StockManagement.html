@@ -15,6 +15,22 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/Stockmanagement.css" />
     <script src="../js/stockManagement.js"></script>
+    <script type="module">
+        function addLoadEvents(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    onload();
+                    func();
+                }
+            }
+        }
+
+        addLoadEvents(fetchAllStyle());
+        addLoadEvents(fetchAllStyleIngredient());
+    </script>
 </head>
 
 <body>
