@@ -29,8 +29,8 @@ function fetchUser() {
           html += '</tr>';
         }
               
-        $("#dynamicTbody").empty();
-        $("#dynamicTbody").append(html);
+        $("#userTbody").empty();
+        $("#userTbody").append(html);
     })
     .catch((error) => console.log("error", error));
 }
