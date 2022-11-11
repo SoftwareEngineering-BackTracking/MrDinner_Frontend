@@ -636,3 +636,43 @@ header.masthead {
   background-size: cover;
   opacity: 0.6;
 }
+
+.prevBtn {
+  width: 36px;
+  height: 37px;
+  opacity: 1;
+  position: relative;
+  margin-top: 70%;
+  margin-left: 50%;
+  overflow: hidden;
+  background: transparent;
+  border-color: transparent;
+  color: rgba(53, 53, 53, 1);
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+.nextBtn {
+  width: 36px;
+  height: 37px;
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border-color: transparent;
+  color: rgba(53, 53, 53, 1);
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}

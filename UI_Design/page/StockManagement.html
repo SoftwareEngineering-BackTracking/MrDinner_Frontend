@@ -16,20 +16,7 @@
     <link rel="stylesheet" href="../css/Stockmanagement.css" />
     <script src="../js/stockManagement.js"></script>
     <script type="module">
-        function addLoadEvents(func) {
-            var oldonload = window.onload;
-            if (typeof window.onload != 'function') {
-                window.onload = func;
-            } else {
-                window.onload = function () {
-                    onload();
-                    func();
-                }
-            }
-        }
-
-        addLoadEvents(fetchAllStyle());
-        addLoadEvents(fetchAllStyleIngredient());
+        window.onload = fetchDinnerIngredient();
     </script>
 </head>
 
@@ -112,5 +99,7 @@
             <div class="v279_47"></div><span class="v279_48">남은 수량 : n</span>
         </div>
     </div>
+    <button class="prevBtn" id="prevBtn" onclick="lookPrev()">prev</button>
+    <button class="nextBtn" id="nextBtn" onclick="lookNext()">next</button>
     <div class="v105_86"></div>
 </body>

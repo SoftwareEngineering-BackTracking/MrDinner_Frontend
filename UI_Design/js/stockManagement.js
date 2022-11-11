@@ -1,7 +1,8 @@
 var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
+var i = 0;
 
-function fetchAllStyle() {
-  fetch(url + "/api/style", {
+function fetchDinnerIngredient() {
+  fetch(url + "/api/dinneringredinet", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -16,22 +17,46 @@ function fetchAllStyle() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      console.log(resData.styleList[0]);
+      console.log(resData.dinnerIngredientList[1]);
+    })
+    .catch((error) => console.log("error", error));
+}
 
-      for (var i = 0; i < 4; i++) {
+function lookPrev() {
+  fetch(url + "/api/dinneringredinet", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+
+      var tempRes = JSON.stringify(response);
+      var resData = JSON.parse(tempRes);
+
+      console.log(resData.dinnerIngredientList[1]);
+
+      for (; i > i - 4; i--) {
         document.getElementById("dinner" + String(i)).innerHTML =
-          JSON.stringify(resData.dinnerList[i].dinner);
+          JSON.stringify(resData.dinnerIngredientList[i].dinnerIngredient);
         document.getElementById("detail" + String(i)).innerHTML =
-          JSON.stringify(resData.dinnerList[i].detail);
-        document.getElementById("price" + String(i)).innerHTML =
-          JSON.stringify(resData.dinnerList[i].price) + "원";
+          JSON.stringify(resData.dinnerIngredientList[i].dinner);
+        document.getElementById("detail" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerIngredientList[i].demandDate);
+        document.getElementById("price" + String(i)).innerHTML = JSON.stringify(
+          resData.dinnerIngredientList[i].quantity
+        );
       }
     })
     .catch((error) => console.log("error", error));
 }
 
-function fetchAllStyleIngredient() {
-  fetch(url + "/api/styleingredinet", {
+function lookNext() {
+  fetch(url + "/api/dinneringredinet", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -42,11 +67,24 @@ function fetchAllStyleIngredient() {
     })
     .then((response) => {
       console.log(response);
+      1;
 
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      console.log(resData.styleIngredientList[1]);
+      console.log(resData.dinnerIngredientList[1]);
+
+      for (; i < i + 4; i++) {
+        document.getElementById("dinner" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerIngredientList[i].dinnerIngredient);
+        document.getElementById("detail" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerIngredientList[i].dinner);
+        document.getElementById("detail" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerIngredientList[i].demandDate);
+        document.getElementById("price" + String(i)).innerHTML = JSON.stringify(
+          resData.dinnerIngredientList[i].quantity
+        );
+      }
     })
     .catch((error) => console.log("error", error));
 }
