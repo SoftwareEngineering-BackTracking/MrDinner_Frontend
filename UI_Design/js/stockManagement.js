@@ -17,6 +17,15 @@ function fetchAllStyle() {
       var resData = JSON.parse(tempRes);
 
       console.log(resData.styleList[0]);
+
+      for (var i = 0; i < 4; i++) {
+        document.getElementById("dinner" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerList[i].dinner);
+        document.getElementById("detail" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerList[i].detail);
+        document.getElementById("price" + String(i)).innerHTML =
+          JSON.stringify(resData.dinnerList[i].price) + "원";
+      }
     })
     .catch((error) => console.log("error", error));
 }

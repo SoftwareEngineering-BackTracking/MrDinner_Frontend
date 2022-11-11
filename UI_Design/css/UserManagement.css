@@ -183,7 +183,7 @@ body {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .v13_24 {
@@ -319,7 +319,8 @@ body {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
+  table-layout: fixed;
 }
 
 .v16_31 {
@@ -379,7 +380,7 @@ button:hover {
 
 table {
   position: relative;
-  top: 100px;
+  top: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -389,4 +390,8 @@ td,
 th {
   border-collapse: collapse;
   border: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
