@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mr.Daebak Dinner Service</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/UserManagement.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script src="../js/userManagement.js"></script>
+    <script type="module">
+        function addLoadEvents(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    onload();
+                    func();
+                }
+            }
+        }
+
+        addLoadEvents(fetchUser());
+        addLoadEvents(fetchDemand());
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
+            <!-- 로고 이미지 들어갈 곳-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">MENU</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#SignUp">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead"></header>
+    <div class="earning">
+        <div class="v22_35">매출관리</div>
+        <div class="v22_36">
+            <div class="v22_37">
+                <table id="dynamicTable">
+                    <thead>
+                        <tr>
+                            <th>날짜</th>
+                            <th>매출</th>
+                        </tr>
+                    </thead>
+                    <tbody id="earnTbody">	
+                    </tbody>
+                </table>
+            </div>
+            <button class="v13_25">일별</button>
+            <button class="v13_26">주별</button>
+            <button class="v13_27">월별</button>
+        </div>
+    </div>
+    <div class="User">
+        <div class="v16_31">고객정보</div>
+        <div class="v13_15">
+            <div class="v13_17">
+                <table id="dynamicTable">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>아이디</th>
+                            <th>닉네임</th>
+                            <th>전화번호</th>
+                            <th>e-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTbody">	
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
