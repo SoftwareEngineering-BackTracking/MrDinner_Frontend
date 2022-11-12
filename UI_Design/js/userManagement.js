@@ -35,8 +35,8 @@ function fetchUser() {
     .catch((error) => console.log("error", error));
 }
 
-function fetchAllDinner() {
-  fetch(url + "/api/dinner", {
+function fetchDemand() {
+  fetch(url + "/api/demand", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -48,8 +48,21 @@ function fetchAllDinner() {
     .then((response) => {
       console.log(response);
 
+      var tc = new Array();
+      var html = '';
+
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
+
+      for(var i in resData.demandList){
+          html += '<tr>';
+          html += '<td>'+resData.demandList[i].modifiedDate+'</td>';
+          html += '<td>'+resData.demandList[i].price+'</td>';
+          html += '</tr>';
+        }
+              
+        $("#earnTbody").empty();
+        $("#earnTbody").append(html);
 
     })
     .catch((error) => console.log("error", error));
