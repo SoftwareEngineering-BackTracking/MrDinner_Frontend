@@ -53,7 +53,7 @@ function lookPrev() {
 
       console.log(resData.dinnerIngredientList[1]);
 
-      for (; i > i-4; --i) {
+      for (i -= 4; i < i+4; i++) {
         document.getElementById("dinnerIngredient" + String(j)).innerHTML =
           JSON.stringify(resData.dinnerIngredientList[i].dinnerIngredient);
         document.getElementById("dinner" + String(j)).innerHTML =
@@ -88,7 +88,7 @@ function lookNext() {
 
       console.log(resData.dinnerIngredientList[1]);
 
-      for (; i < i+4; ++i) {
+      for (; i < i+4; i++) {
         document.getElementById("dinnerIngredient" + String(j)).innerHTML =
           JSON.stringify(resData.dinnerIngredientList[i].dinnerIngredient);
         document.getElementById("dinner" + String(j)).innerHTML =
