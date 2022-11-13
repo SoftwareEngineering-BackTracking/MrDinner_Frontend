@@ -1,167 +1,18 @@
-.masthead {
-  height: 120%;
-  width: 100vw;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-  position: absolute;
-  z-index: 2;
-}
-.masthead .masthead-subheading {
-  padding-top: 16rem;
-  font-size: 2.5rem;
-  font-style: italic;
-  line-height: 1.5rem;
-  margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+* {
+  box-sizing: border-box;
 }
 
-.sign-container {
-  position: relative;
-  margin-top: 80.4px;
-  height: 70vh;
-  z-index: 4;
-  
-}
-.signup-box {
-  position: absolute; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 200px;
-  width: 50%;
-  height: 780px;
-  background-color: #fff;
-  border-radius: 5px;
-  
+body {
+  font-size: 14px;
 }
 
-.signup-title {
-  height: 14vh;
-  text-align: center;
-  background-color: rgba(252,126,0,1);
-  color: #fff;
-  font-size: 30px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.signup-subtitle {
-  margin-left: 30px;
-  margin-top: 10px;
-  color: gray;
-}
-
-
-.name-title{
-  font-size: 20px;
-  margin-top: 30px;
-  margin-left: 50px;
-}
-
-
-#name {
-  height: 30px;
-  border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
-  font-size: 18px;
-  border-radius: 2px;
-}
-.duplicate-name{
-  position: relative;
-  height: 30px;
-  width: 100px;
-  border: 1px solid #fff;
-  background-color:  rgba(252,126,0,1);
-  color: #fff;
-  border-radius: 5px;
-  top:50%;
-  box-shadow: 0.5px 0.5px gray;
-  font-size: 15px;
-  
-}
-.duplicate-name:active{
-  margin-left: 2px;
-  margin-top: 5px;
-  box-shadow: none;
-}
-
-#email {
-  height: 30px;
-  border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
-  font-size: 18px;
-  border-radius: 2px;
-}
-.auth-email{
-  position: relative;
-  height: 30px;
-  width: 100px;
-  border: 1px solid #fff;
-  background-color:  rgba(252,126,0,1);
-  color: #fff;
-  border-radius: 5px;
-  top:50%;
-  box-shadow: 0.5px 0.5px gray;
-  font-size: 15px;
-}
-.auth-email:active{
-  margin-left: 2px;
-  margin-top: 5px;
-  box-shadow: none;
-}
-#phone-number {
-  height: 30px;
-  border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
-  font-size: 18px;
-  border-radius: 2px;
-}
-
-#address {
-  height: 30px;
-  border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
-  font-size: 18px;
-  border-radius: 2px;
-}
-
-.next-box{
-  margin-top: 100px;
-  text-align: center;
-}
-
-.next-button1 {
-  width: 150px;
-  height: 40px;
-  border-radius: 3px;
-  border: 1px solid #fff;
-  background-color: rgba(252,126,0,1);
-  color: #fff;
-  font-size: 20px;
-  box-shadow: 1px 1px gray;
-}
-
-.next-button1:active {
-  margin-left: 2px;
-  margin-top: 2px;
-  box-shadow: none;
-}
-/*
 .v186_24 {
   width: 100%;
-  height: 1260px;
+  height: 1000px;
   background: rgba(255, 255, 255, 1);
   opacity: 1;
   position: relative;
-  top: 0px;
+  top: 300px;
   left: 0px;
   overflow: hidden;
 }
@@ -185,7 +36,7 @@
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 259px;
-  left: 281px;
+  left: 40px;
   font-family: Prata;
   font-weight: Regular;
   font-size: 54px;
@@ -231,7 +82,7 @@
 }
 
 .v186_97 {
-  width: 63px;
+  width: 70px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -281,7 +132,7 @@
 }
 
 .v186_102 {
-  width: 78px;
+  width: 85px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -331,7 +182,7 @@
 }
 
 .v186_106 {
-  width: 93px;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -381,7 +232,7 @@
 }
 
 .v186_110 {
-  width: 63px;
+  width: 70px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -394,7 +245,7 @@
 }
 
 .v186_111 {
-  width: 376px;
+  width: 400px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 462px;
@@ -405,7 +256,7 @@
 }
 
 .v186_120 {
-  width: 304px;
+  width: 350px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 516px;
@@ -423,48 +274,6 @@
 
 .name {
   color: #fff;
-}
-
-.v186_124 {
-  width: 91px;
-  height: 35px;
-  background: url("../images/v186_124.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 617px;
-  left: 969px;
-  overflow: hidden;
-}
-
-.v186_122 {
-  width: 91px;
-  height: 29px;
-  background: rgba(252, 126, 0, 1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-}
-
-.v186_123 {
-  width: 60px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 7px;
-  left: 16px;
-  font-family: Roboto;
-  font-weight: SemiBold;
-  font-size: 12px;
-  opacity: 1;
-  text-align: center;
 }
 
 .v186_157 {
@@ -657,4 +466,30 @@ button:hover {
   background: rgba(252, 126, 0, 1); ; 
   cursor: pointer;
 }
-*/
+
+header.masthead {
+  padding-top: 20rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.85;
+}
+
+.header.masthead {
+  padding-top: 20rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.85;
+}
