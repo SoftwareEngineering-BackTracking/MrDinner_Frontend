@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/orderManagement.css" />
     <script src="http://code.jquery.com/jquery-latest.js"></script> 
-    <script src="../js/userManagement.js"></script>
+    <script src="../js/orderManagement.js"></script>
     <script type="module">
         function addLoadEvents(func) {
             var oldonload = window.onload;
@@ -31,6 +31,9 @@
         }
         addLoadEvents(fetchUser());
         addLoadEvents(fetchDemand());
+        addLoadEvents(fetchCartItem());
+        addLoadEvents(fetchCartDetail());
+        addLoadEvents(fetchAddress());
     </script>
 </head>
 
@@ -50,11 +53,11 @@
                         <a class="nav-link" href="main.html">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.html">MENU</a>
+                        <a class="nav-link" href="StockManagement.html">Stock</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="UserManagement.html">User & Profit</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#SignUp">Sign Up</a>
+                        <a class="nav-link" href="orderManagement.html">Order</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +69,6 @@
     <div class= outercontainer0>
         <div class="innercontainer0">
             <div class="area1">
-                <div class="orderimage"></div>
                 <div class="dinnercontainer">
                     <span class="dinnername" id="dinner0">디너1</span>
                     <span class="add">추가사항<br></span>
@@ -76,17 +78,18 @@
             <hr class="line1" width="300px" color="#9C9A9A"></hr>
             <div class="area2">
                 <span class="userinfo" id="user0">주문인 정보</span>
-                <div class="userimage"></div>
                 <div class="clockimg"></div>
                 <span class="ordertime" id="time0">주문시각 : null</span>
-                <span class="nameinfo" id="nameinfo0">이름<br></span>
-                <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
-                <span class="addressinfo" id="addressinfo0">주소</span>
+                <div class="textbox">
+                    <span class="nameinfo" id="nameinfo0">이름<br></span>
+                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                    <span class="addressinfo" id="addressinfo0">주소</span>
+                </div>
             </div>
             <hr class="line2" width="300px" color="#9C9A9A"></hr>
             <div class="area3">
                 <span class="userreq">고객요청</span>   
-                <span class="userreqspec">아이가 먹을거에요</span>      
+                <span class="userreqspec">조심히 와주세요</span>      
             </div>
         </div>
         <div class="ordernumber0" id="order0">주문번호 n</div>
@@ -96,7 +99,6 @@
     <div class= outercontainer1>
         <div class="innercontainer1">
             <div class="area1">
-                <div class="orderimage"></div>
                 <div class="dinnercontainer">
                     <span class="dinnername" id="dinner1">디너1</span>
                     <span class="add">추가사항<br></span>
@@ -106,17 +108,18 @@
             <hr class="line1" width="300px" color="#9C9A9A"></hr>
             <div class="area2">
                 <span class="userinfo" id="user1">주문인 정보</span>
-                <div class="userimage"></div>
                 <div class="clockimg"></div>
                 <span class="ordertime" id="time1">주문시각 : null</span>
-                <span class="nameinfo" id="nameinfo1">이름<br></span>
-                <span class="phoneinfo" id="phoneinfo1">Tel.<br></span>
-                <span class="addressinfo" id="addressinfo1">주소</span>
+                <div class="textbox">
+                    <span class="nameinfo" id="nameinfo0">이름<br></span>
+                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                    <span class="addressinfo" id="addressinfo0">주소</span>
+                </div>
             </div>
             <hr class="line2" width="300px" color="#9C9A9A"></hr>
             <div class="area3">
                 <span class="userreq">고객요청</span>   
-                <span class="userreqspec">아이가 먹을거에요</span>      
+                <span class="userreqspec">빠르게 와주세요</span>      
             </div>
         </div>
         <div class="ordernumber1" id="order1">주문번호 n</div>
@@ -126,7 +129,6 @@
     <div class= outercontainer2>
         <div class="innercontainer2">
             <div class="area1">
-                <div class="orderimage"></div>
                 <div class="dinnercontainer">
                     <span class="dinnername" id="dinner2">디너1</span>
                     <span class="add">추가사항<br></span>
@@ -136,21 +138,23 @@
             <hr class="line1" width="300px" color="#9C9A9A"></hr>
             <div class="area2">
                 <span class="userinfo" id="user2">주문인 정보</span>
-                <div class="userimage"></div>
                 <div class="clockimg"></div>
                 <span class="ordertime" id="time2">주문시각 : null</span>
-                <span class="nameinfo" id="nameinfo2">이름<br></span>
-                <span class="phoneinfo" id="phoneinfo2">Tel.<br></span>
-                <span class="addressinfo" id="addressinfo2">주소</span>
+                <div class="textbox">
+                    <span class="nameinfo" id="nameinfo0">이름<br></span>
+                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                    <span class="addressinfo" id="addressinfo0">주소</span>
+                </div>
             </div>
             <hr class="line2" width="300px" color="#9C9A9A"></hr>
             <div class="area3">
                 <span class="userreq">고객요청</span>   
-                <span class="userreqspec">아이가 먹을거에요</span>      
+                <span class="userreqspec">샐러드는 빼주세요</span>      
             </div>
         </div>
         <div class="ordernumber2" id="order2">주문번호 n</div>
     </div>
     <div class="orderstatus2" id="status0">주문대기중</div>
-
+    <button class="prevBtn" id="prev" onclick="prevLook()">prev</button>
+    <button class="nextBtn" id="next" onclick="nextLook()">next</button>
 </body>

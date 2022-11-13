@@ -197,21 +197,20 @@ header.masthead {
 
 .dinnername {
   width: 200px;
-  margin-left: 30%;
-  transform: translate(0,100%);
+  transform: translate(15%,100%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: Bold;
   font-size: 21px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
 }
 
 .add {
   width: 200px;
-  margin-left: 34%;
-  transform: translate(0,170%);
+  margin-left: 4%;
+  transform: translate(-25%,190%);
   color: rgba(0, 0, 0, 1);
   font-family: semi bold;
   font-weight: 400;
@@ -223,14 +222,14 @@ header.masthead {
 
 .specadd {
   width: 200px;
-  margin-left: 34%;
-  transform: translate(0, 200%);
+  margin-left: 4%;
+  transform: translate(15%, 270%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: 400;
   font-size: 12.5px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
 }
 
@@ -249,40 +248,38 @@ header.masthead {
 
 .nameinfo {
   width: 200px;
-  margin-left: 26%;
-  transform: translate(0,670%);
+  transform: translate(15%,670%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
 }
 
 .phoneinfo {
   width: 200px;
-  margin-left: 26%;
-  transform: translate(0,710%);
+  transform: translate(15%,710%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
 }
 
 .addressinfo {
-  width: 200px;
-  margin-left: 26%;
-  transform: translate(0,670%);
+  width: 300px;
+  top: 30px;
+  transform: translate(10%,670%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
   display: inline-block;
 }
 
@@ -382,4 +379,43 @@ header.masthead {
   opacity: 0.8;
   text-align: center;
   line-height: 60px;
+}
+
+.prevBtn {
+  width: 36px;
+  height: 37px;
+  opacity: 1;
+  margin-top: 8%;
+  margin-left: 48%;
+  overflow: hidden;
+  background: transparent;
+  border-color: transparent;
+  color: rgba(53, 53, 53, 1);
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+.nextBtn {
+  width: 36px;
+  height: 37px;
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border-color: transparent;
+  color: rgba(53, 53, 53, 1);
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
