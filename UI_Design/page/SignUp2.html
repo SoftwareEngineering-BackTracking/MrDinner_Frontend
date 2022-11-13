@@ -9,6 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Mr.Daebak Dinner Service</title>
+
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <link href="../css/navbar.css" rel="stylesheet" />
     <link
@@ -23,75 +24,80 @@
       href="https://fonts.googleapis.com/css?family=Inter&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/SignUp2.css" />
+    <link rel="stylesheet" href="../css/SignUp2.css">   
+    <link href="../css/navbar.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top"
-          ><img src="../assets/img/logos/nav_logo2.png" alt="..."
-        /></a>
-        <!-- 로고 이미지 들어갈 곳-->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="main.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">MENU</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#SignUp">Sign Up</a>
-            </li>
-          </ul>
+    <iframe src="navbar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+    </iframe> <!-- navbar.html 추가-->
+    <div class="masthead"></div>
+    <div class = 'sign-container'>
+      <div class = 'signup-box'>
+        <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
+        <div class = 'auth-title'><p> STEP 2. 사용할 아이디/비밀번호를 입력하세요</p></div>
+        <div class = 'id-box'>
+          <p class = 'id-title'>1. 아이디 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'id'>
+            <button class = 'duplicate-id' style="cursor:pointer"onclick = "checkId()">중복 확인</button>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>2. 비밀번호 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'password'>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>3. 비밀번호 재입력</p>
+          <div class = 'id-subbox'>
+            <input class = 're-password'>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>4. 닉네임 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'nickname'>
+          </div>
+        </div>
+
+        <div class = 'check-container'>
+          <input class = 'checkbox' type='checkbox'name='department' value='고객'/> 고객
+          <input class = 'checkbox' type='checkbox' name='department' value='직원' /> 직원
+        </div>
+        <div class = 'next-box'>
+          <button class = 'next-button2' style="cursor:pointer" onclick="signup()"> 다음으로 </button> <!--onclick="location.href='SignUp3.html'"-->
         </div>
       </div>
-    </nav>
-
-    <header class="masthead"></header>
-      <div class="v224_25"></div>
-      <span class="v224_26">Welcome to Mr.Daebak Dinner Service </span
-      ><span class="v224_56">STEP 2. 인증하기</span
-      ><span class="v224_59"
-        >본인의 휴대폰 혹은 이메일로 회원가입을 위한 인증을 진행해주세요.</span
-      >
-      <div class="name"></div>
-      <div class="name"></div>
-  
-      <div class="v224_76">
-        <div class="v224_77"></div>
-        <div class="v224_78"></div>
-        <span class="v224_79"
-          >본인의 휴대폰 번호를 이용해서 개인 인증을 진행합니다. 정확한
-          전화번호를 입력해주시기 바랍니다.</span
-        ><span class="v224_80">휴대폰 인증</span>
-        <button class="v224_81">인증하기</button>
+    </div>
+    <div id = "waiting-modal" class = "modal-overlay">
+      <div class = "modal-window">
+        <div class = 'icon-border'>
+          <img class="icon" src="../assets/img/logos/icons8-개구리.gif" alt="c++">
+        </div>
+        <div class = "content">
+          <div class = "waiting-text1" style="font-size:40px;">사용 가능한</div>
+          <div class = "waiting-text2">아이디입니다!</div>
+          <button class = "waiting-button" onclick="modalOff()">확인</button>
+        </div>
       </div>
-      <div class="v224_83">
-        <div class="v224_84"></div>
-        <div class="v224_85"></div>
-        <span class="v224_86"
-          >본인의 이메일을 이용해서 개인 인증을 진행합니다. 정확한 이메일을
-          입력해주시기 바랍니다.</span
-        ><span class="v224_87">이메일 인증</span>
-        <button class="v224_88">인증하기</button>
+    </div>
+    <div id = "waiting-modal2" class = "modal-overlay2">
+      <div class = "modal-window2">
+        <div class = 'icon-border2'>
+          <img class="icon" src="../assets/img/logos/icons8-개구리.gif" alt="c++">
+        </div>
+        <div class = "content2">
+          <div class = "waiting-text21" style="color: red; font-size:40px;">이미 존재하는</div>
+          <div class = "waiting-text22">아이디입니다!</div>
+          <button class = "waiting-button2" onclick="modalOff2()">확인</button>
+        </div>
       </div>
-      <div class="v224_180">
-        <button class="v224_181" onclick="location.href='http://127.0.0.1:5500/MrDinner_Frontend/UI_Design/page/SignUp3.html'">다음으로</button>
     </div>
   </body>
 </html>
+<script src="../js/signup2.js"></script>

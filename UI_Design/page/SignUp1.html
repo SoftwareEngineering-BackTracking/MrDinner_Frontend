@@ -24,79 +24,52 @@
       href="https://fonts.googleapis.com/css?family=Inter&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/SignUp1.css" />
+    <link rel="stylesheet" href="../css/SignUp1.css">   
+    <link href="../css/navbar.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top"
-          ><img src="../assets/img/logos/nav_logo2.png" alt="..."
-        /></a>
-        <!-- 로고 이미지 들어갈 곳-->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="main.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">MENU</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#SignUp">Sign Up</a>
-            </li>
-          </ul>
+    <iframe src="navbar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+    </iframe> <!-- navbar.html 추가-->
+    <div class="masthead"></div>
+    <div class = 'sign-container'>
+      <div class = 'signup-box'>
+        <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
+        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.
+        <div class = 'name-box'>
+          <p class = 'name-title'>1. 이름 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'name'>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>2. 이메일 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'email'>
+            <button class = 'auth-email' style="cursor:pointer">인증하기</button>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>3. 전화번호 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'phone-number'>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>4. 주소 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'address'>
+          </div>
+        </div>
+        <div class = 'next-box'>
+          <button class = 'next-button1' style="cursor:pointer" onclick="location.href='SignUp2.html'"> 다음으로 </button> <!--onclick="location.href='SignUp2.html'"-->
         </div>
       </div>
-    </nav>
-
-    <header class="masthead"></header>
-      <span class="v186_94">Welcome to Mr.Daebak Dinner Service </span>
-      <div class="v186_98">
-        <div class="v186_95"></div>
-        <input id="name" type="text" name="" class="v186_96" />
-        <span class="v186_97">이름 입력</span>
-      </div>
-      <div class="v186_99">
-        <div class="v186_100"></div>
-        <input id="Email" type="text" name="" class="v186_101" />
-        <span class="v186_102">이메일 입력</span>
-      </div>
-      <div class="v186_103">
-        <div class="v186_104"></div>
-        <input id="Phone" type="number" name="" class="v186_105" />
-        <span class="v186_106">전화번호 입력</span>
-      </div>
-      <div class="v186_107">
-        <div class="v186_108"></div>
-        <input id="ID" type="text" name="" class="v186_109" />
-        <span class="v186_110">주소 입력</span>
-      </div>
-      <span class="v186_111">STEP 1. 필수 개인정보 입력</span
-      ><span class="v186_120"
-        >서비스 이용에 필요한 필수 개인정보를 입력해주세요.</span
-      >
-      <div class="name"></div>
-      <div class="name"></div>
-      <div class="v186_157">
-        <button type="button" class="v186_158" onclick="location.href='http://127.0.0.1:5500/MrDinner_Frontend/UI_Design/page/SignUp2.html'">다음으로</button>
-      </div>
-      <span class="v186_130"
-        >※ 반드시 정확한 정보를 입력해주시기 바랍니다.</span
-      >
-
+    </div>
+    
   </body>
 </html>
+<script src="../js/signup.js"></script>
