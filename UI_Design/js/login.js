@@ -1,3 +1,5 @@
+document.write('<script src="../js/cookie.js"></script>');
+
 var LoginModalController = {
     tabsElementName: ".logmod__tabs li",
     tabElementName: ".logmod__tab",
@@ -118,6 +120,7 @@ function go_main() {
     location.href= "main.html";
 }
 
+/*
 function login(){
     fetch(url+"/api/user", {
         method: "POST",
@@ -131,10 +134,65 @@ function login(){
     }).then((response) => {
         modalOn();
         if (response.status == 200) {
-            console.log("response:", response.json());
+//            console.log("response:", response.json());
+            let json = response.json();
+            console.log(json.value);
             setTimeout(function() {
                 modalOff()}, 3000);
-            setTimeout(function() {
-                go_main()}, 3000);
+            //setTimeout(function() {
+          //      go_main()}, 3000);
         }}).catch((error) => console.log("error", error))
 };
+*/
+
+/*
+function login(){
+    fetch(url+"/api/auth/login", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn(); // 일단 대기창 띄워놓기
+        // 정상 status = 200번 대
+        if (response.ok) {
+            
+        }
+    }).then((data) => { // 세션 아이디 받아오기
+        
+})
+};
+*/
+
+const login = async () => {
+    const postResponse = await fetch(url+"/api/auth/login", {
+        method: "GET",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8',
+        'id': document.getElementById('ID').value,
+        'password': document.getElementById('Password').value
+        }})
+    //const post = await postResponse.json()
+    .then((response) => {
+        
+        modalOn(); // 일단 대기창 띄워놓기
+        if (response.ok){
+            console.log("response:", response.json());
+            setCookie(document.getElementById('ID').value, document.getElementById('ID').value, 20); // 쿠키 저장
+            setTimeout(function() {
+                modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
+            go_main();
+            return console.log('쿠키 저장 완료(로그인 성공)')
+        }}).catch((error) => {
+            console.log('로그인 실패');
+        })
+    
+}
+
+function go_signup(){
+    location.href= "SignUp1.html";
+}
