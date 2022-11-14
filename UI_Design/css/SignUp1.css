@@ -43,7 +43,7 @@
 .signup-title {
   height: 14vh;
   text-align: center;
-  background-color: rgba(194, 193, 193, 1);
+  background-color: rgba(252,126,0,1);
   color: #fff;
   font-size: 30px;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -63,9 +63,9 @@
 }
 
 
-.name {
+#name {
   height: 30px;
-  border: 3px solid rgba(194, 193, 193, 1);
+  border: 3px solid rgba(252,126,0,1);
   width: 500px;
   margin-left: 50px;
   font-size: 18px;
@@ -76,7 +76,7 @@
   height: 30px;
   width: 100px;
   border: 1px solid #fff;
-  background-color:  rgba(194, 193, 193, 1);
+  background-color:  rgba(252,126,0,1);
   color: #fff;
   border-radius: 5px;
   top:50%;
@@ -90,27 +90,43 @@
   box-shadow: none;
 }
 
-.email {
+#email {
   height: 30px;
-  border: 3px solid rgba(194, 193, 193, 1);
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+.auth-email{
+  position: relative;
+  height: 30px;
+  width: 100px;
+  border: 1px solid #fff;
+  background-color:  rgba(252,126,0,1);
+  color: #fff;
+  border-radius: 5px;
+  top:50%;
+  box-shadow: 0.5px 0.5px gray;
+  font-size: 15px;
+}
+.auth-email:active{
+  margin-left: 2px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+#phone-number {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
   width: 500px;
   margin-left: 50px;
   font-size: 18px;
   border-radius: 2px;
 }
 
-.phone-number {
+#address {
   height: 30px;
-  border: 3px solid rgba(194, 193, 193, 1);
-  width: 500px;
-  margin-left: 50px;
-  font-size: 18px;
-  border-radius: 2px;
-}
-
-.address {
-  height: 30px;
-  border: 3px solid rgba(194, 193, 193, 1);
+  border: 3px solid rgba(252,126,0,1);
   width: 500px;
   margin-left: 50px;
   font-size: 18px;
@@ -122,18 +138,18 @@
   text-align: center;
 }
 
-.next-button {
+.next-button1 {
   width: 150px;
   height: 40px;
   border-radius: 3px;
   border: 1px solid #fff;
-  background-color: rgba(194, 193, 193, 1);
+  background-color: rgba(252,126,0,1);
   color: #fff;
   font-size: 20px;
   box-shadow: 1px 1px gray;
 }
 
-.next-button:active {
+.next-button1:active {
   margin-left: 2px;
   margin-top: 2px;
   box-shadow: none;
@@ -141,11 +157,11 @@
 /*
 .v186_24 {
   width: 100%;
-  height: 1000px;
+  height: 1260px;
   background: rgba(255, 255, 255, 1);
   opacity: 1;
   position: relative;
-  top: 300px;
+  top: 0px;
   left: 0px;
   overflow: hidden;
 }
@@ -169,7 +185,7 @@
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 259px;
-  left: 40px;
+  left: 281px;
   font-family: Prata;
   font-weight: Regular;
   font-size: 54px;
@@ -215,7 +231,7 @@
 }
 
 .v186_97 {
-  width: 70px;
+  width: 63px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -265,7 +281,7 @@
 }
 
 .v186_102 {
-  width: 85px;
+  width: 78px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -315,7 +331,7 @@
 }
 
 .v186_106 {
-  width: 100px;
+  width: 93px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -365,7 +381,7 @@
 }
 
 .v186_110 {
-  width: 70px;
+  width: 63px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 11px;
@@ -378,7 +394,7 @@
 }
 
 .v186_111 {
-  width: 400px;
+  width: 376px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 462px;
@@ -389,7 +405,7 @@
 }
 
 .v186_120 {
-  width: 350px;
+  width: 304px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 516px;
@@ -407,6 +423,48 @@
 
 .name {
   color: #fff;
+}
+
+.v186_124 {
+  width: 91px;
+  height: 35px;
+  background: url("../images/v186_124.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 617px;
+  left: 969px;
+  overflow: hidden;
+}
+
+.v186_122 {
+  width: 91px;
+  height: 29px;
+  background: rgba(252, 126, 0, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+
+.v186_123 {
+  width: 60px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 7px;
+  left: 16px;
+  font-family: Roboto;
+  font-weight: SemiBold;
+  font-size: 12px;
+  opacity: 1;
+  text-align: center;
 }
 
 .v186_157 {

@@ -3,73 +3,24 @@
   width: 100vw;
   text-align: center;
   color: #fff;
-}
-
-.name {
-  color: #fff;
-}
-
-.v224_72 {
-  width: 277px;
-  height: 53px;
-  background: url("../images/v224_72.png");
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
   background-repeat: no-repeat;
+  background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 1997px;
-  left: 580px;
-  overflow: hidden;
+  z-index: 2;
+}
+.masthead .masthead-subheading {
+  padding-top: 16rem;
+  font-size: 2.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.v224_73 {
-  width: 277px;
-  height: 53px;
-  background: rgba(252, 126, 0, 1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  overflow: hidden;
-}
-
-.v224_74 {
-  width: 151px;
-  color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 14px;
-  left: 62px;
-  font-family: Roboto;
-  font-weight: SemiBold;
-  font-size: 24px;
-  opacity: 1;
-  text-align: center;
-}
-
-.v224_76 {
-  width: 204px;
-  height: 219px;
-  background: url("../images/v224_76.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 639px;
-  left: 342px;
-  overflow: hidden;
-}
-
-.v224_77 {
-  width: 204px;
-  height: 219px;
-  background: rgba(217, 217, 217, 1);
-  opacity: 1;
+.sign-container {
   position: relative;
   margin-top: 80.4px;
   height: 70vh;
@@ -83,7 +34,7 @@
   transform: translate(-50%, -50%);
   margin-top: 200px;
   width: 50%;
-  height: 650px;
+  height: 780px;
   background-color: #fff;
   border-radius: 5px;
   
@@ -92,10 +43,73 @@
 .signup-title {
   height: 14vh;
   text-align: center;
-  background-color: rgba(194, 193, 193, 1);
+  background-color: rgba(252,126,0,1);
   color: #fff;
   font-size: 30px;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.id-title{
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+
+.id {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+.duplicate-id{
+  position: relative;
+  height: 30px;
+  width: 100px;
+  border: 1px solid #fff;
+  background-color:  rgba(252,126,0,1);
+  color: #fff;
+  border-radius: 5px;
+  top:50%;
+  box-shadow: 0.5px 0.5px gray;
+  font-size: 15px;
+  
+}
+.duplicate-id:active{
+  margin-left: 2px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+
+
+
+.password {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.re-password {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.nickname{
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
 }
 
 .auth-title {
@@ -110,88 +124,182 @@
   justify-content: center;
 }
 
-.phone-auth-box {
-  width: 220px;
-  height: 180px;
-  margin-right: 80px;
-  border: 5px solid rgba(194, 193, 193, 1);
-  border-radius: 5px;
-  background-color: rgba(244, 244, 244, 1);
+.check-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
-
-.phone-auth-title {
-  text-align: center;
-  font-size: 20px;
+.IsCust{
+  color: gray;
+  font-size: 18px;
+  
 }
-
-.phone-auth {
-  margin-top: 20px;
-  width: 80px;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-  border: 1px solid #fff;
-  background-color: rgba(194, 193, 193, 1);
-  color: #fff;
-  font-size: 15px;
+.checkbox{
+  margin-left: 20px;
+  background-color: aqua;
 }
-
-.phone-auth:active {
-  margin-left: 2px;
-  margin-top: 22px;
-  box-shadow: none;
-}
-
-.email-auth-box {
-  width: 220px;
-  height: 180px;
-  margin-left: 30px;
-  padding: 2px;
-  border: 5px solid rgba(194, 193, 193, 1);
-  border-radius: 5px;
-  background-color: rgba(244, 244, 244, 1);
-}
-
-.email-auth-title {
-  text-align: center;
-  font-size: 20px;
-}
-
-.email-auth {
-  margin-top: 20px;
-  width: 80px;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-  border: 1px solid #fff;
-  background-color: rgba(194, 193, 193, 1);
-  color: #fff;
-  font-size: 15px;
-}
-
-.email-auth:active {
-  margin-left: 2px;
-  margin-top: 22px;
-  box-shadow: none;
-}
-
 .next-box{
-  margin-top: 100px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.next-button {
+.next-button2 {
   width: 150px;
   height: 40px;
   border-radius: 3px;
   border: 1px solid #fff;
-  background-color: rgba(194, 193, 193, 1);
+  background-color: rgba(252,126,0,1);
   color: #fff;
   font-size: 20px;
   box-shadow: 1px 1px gray;
 }
 
-.next-button:active {
+.next-button2:active {
   margin-left: 2px;
   margin-top: 2px;
   box-shadow: none;
 }
 
+#waiting-modal.modal-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 5000;
+}
+#waiting-modal .modal-window {
+	background: rgba( 255, 255, 255, 1 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 13.5px );
+	-webkit-backdrop-filter: blur( 13.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+#waiting-modal .icon-border {
+	text-align: center;
+	margin-top: 40px;
+	
+}
+#waiting-modal .title h2 {
+	display: inline;
+}
+
+#waiting-modal .content {
+	margin-top: 50px;
+	text-align: center;
+	padding: 0px 10px;
+	color: black;
+}
+
+.content .waiting-text1 {
+	font-size: 70px;
+}
+
+.content .waiting-text2 {
+	font-size: 30px;
+}
+.waiting-button{
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 1px 1px gray;
+  margin-top: 15px;
+}
+
+.waiting-button:active {
+  margin-left: 2px;
+  margin-top: 17px;
+  box-shadow: none;
+}
+
+#waiting-modal2.modal-overlay2 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 5000;
+}
+#waiting-modal2 .modal-window2 {
+	background: rgba( 255, 255, 255, 1 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 13.5px );
+	-webkit-backdrop-filter: blur( 13.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+#waiting-modal2 .icon-border2 {
+	text-align: center;
+	margin-top: 40px;
+	
+}
+#waiting-modal2 .title h2 {
+	display: inline;
+}
+
+#waiting-modal2 .content2 {
+	margin-top: 50px;
+	text-align: center;
+	padding: 0px 10px;
+	color: black;
+}
+
+.content2 .waiting-text21 {
+	font-size: 70px;
+}
+
+.content2 .waiting-text22 {
+	font-size: 30px;
+}
+.waiting-button2{
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 1px 1px gray;
+  margin-top: 15px;
+}
+
+.waiting-button2:active {
+  margin-left: 2px;
+  margin-top: 17px;
+  box-shadow: none;
+}

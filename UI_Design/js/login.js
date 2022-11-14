@@ -170,15 +170,12 @@ function login(){
 
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
-        method: "POST",
+        method: "GET",
         headers: {
-        'Content-Type':'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            id: document.getElementById('ID').value,
-            password: document.getElementById('Password').value
-        })
-    })
+        'Content-Type':'application/json;charset=utf-8',
+        'id': document.getElementById('ID').value,
+        'password': document.getElementById('Password').value
+        }})
     //const post = await postResponse.json()
     .then((response) => {
         
@@ -194,4 +191,8 @@ const login = async () => {
             console.log('로그인 실패');
         })
     
+}
+
+function go_signup(){
+    location.href= "SignUp1.html";
 }
