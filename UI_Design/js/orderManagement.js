@@ -45,10 +45,16 @@ function fetchDemand() {
       var resData = JSON.parse(tempRes);
 
       for (var i in response.demandList) {
+        const dateData = JSON.stringify(resData.demandList[i].createdDate).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
+
         document.getElementById("order" + String(i)).innerHTML =
           "주문번호 " + JSON.stringify(resData.demandList[i].demandno);
         document.getElementById("status" + String(i)).innerHTML =
           JSON.stringify(resData.demandList[i].status);
+        document.getElementById("addressinfo" + String(i)).innerHTML =
+          "주소 : " + JSON.stringify(resData.demandList[i].address); 
+        document.getElementById("time" + String(i)).innerHTML =
+          "주문시각 " + dateData;
       }
 
     })
@@ -104,7 +110,7 @@ function fetchCartDetail() {
     .catch((error) => console.log("error", error));
 }
 
-function fetchAddress() {
+/*function fetchAddress() {
   fetch(url + "/api/address", {
     method: "GET",
     headers: {
@@ -126,7 +132,7 @@ function fetchAddress() {
       }
     })
     .catch((error) => console.log("error", error));
-}
+}*/
 
 function prevLook() {
 
