@@ -35,42 +35,41 @@
     <div class = 'sign-container'>
       <div class = 'signup-box'>
         <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
-        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.</div>
+        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.
         <div class = 'name-box'>
           <p class = 'name-title'>1. 이름 입력</p>
           <div class = 'name-subbox'>
-            <input class = 'name'>
-            <button class = 'duplicate-name' style="cursor:pointer">중복 확인</button>
+            <input id = 'name'>
           </div>
         </div>
 
         <div class = 'name-box'>
           <p class = 'name-title'>2. 이메일 입력</p>
           <div class = 'name-subbox'>
-            <input class = 'email'>
+            <input id = 'email'>
+            <button class = 'auth-email' style="cursor:pointer">인증하기</button>
           </div>
         </div>
 
         <div class = 'name-box'>
           <p class = 'name-title'>3. 전화번호 입력</p>
           <div class = 'name-subbox'>
-            <input class = 'phone-number'>
+            <input id = 'phone-number'>
           </div>
         </div>
 
         <div class = 'name-box'>
           <p class = 'name-title'>4. 주소 입력</p>
           <div class = 'name-subbox'>
-            <input class = 'address'>
+            <input id = 'address'>
           </div>
         </div>
         <div class = 'next-box'>
-          <button class = 'next-button' style="cursor:pointer" onclick="location.href='SignUp2.html'"> 다음으로 </button>
+          <button class = 'next-button1' style="cursor:pointer" onclick="location.href='SignUp2.html'"> 다음으로 </button> <!--onclick="location.href='SignUp2.html'"-->
         </div>
       </div>
-      <span class="v186_130"
-        >※ 반드시 정확한 정보를 입력해주시기 바랍니다.</span
-      >
     </div>
+    
   </body>
 </html>
+<script src="../js/signup.js"></script>
