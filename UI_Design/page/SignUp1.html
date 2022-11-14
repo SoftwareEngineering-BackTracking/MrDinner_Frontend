@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mr.Daebak Dinner Service</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/SignUp1.css">   
+    <link href="../css/navbar.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <iframe src="navbar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+    </iframe> <!-- navbar.html 추가-->
+    <div class="masthead"></div>
+    <div class = 'sign-container'>
+      <div class = 'signup-box'>
+        <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
+        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.
+        <div class = 'name-box'>
+          <p class = 'name-title'>1. 이름 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'name'>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>2. 이메일 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'email'>
+            <button class = 'auth-email' style="cursor:pointer">인증하기</button>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>3. 전화번호 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'phone-number'>
+          </div>
+        </div>
+
+        <div class = 'name-box'>
+          <p class = 'name-title'>4. 주소 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'address'>
+          </div>
+        </div>
+        <div class = 'next-box'>
+          <button class = 'next-button1' style="cursor:pointer" onclick="location.href='SignUp2.html'"> 다음으로 </button> <!--onclick="location.href='SignUp2.html'"-->
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
+<script src="../js/signup.js"></script>
