@@ -66,6 +66,7 @@ function lookPrev() {
           "남은 수량 : " + JSON.stringify(resData.dinnerIngredientList[i].quantity);
         j++;
       }
+      console.log(i);
     })
     .catch((error) => console.log("error", error));
 }
@@ -101,6 +102,7 @@ function lookNext() {
           "남은 수량 : " + JSON.stringify(resData.dinnerIngredientList[i].quantity);
         j++;
       }
+      console.log(i);
     })
     .catch((error) => console.log("error", error));
 }
