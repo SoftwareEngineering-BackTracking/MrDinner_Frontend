@@ -18,12 +18,11 @@ function fetchUser() {
 
       for (var i in response.userList) {
         document.getElementById("nameinfo" + String(i)).innerHTML =
-          "이름 : " + JSON.stringify(resData.userList[i].name); '<br>'
+          "이름 : " + JSON.stringify(resData.userList[i].name);
+        ("<br>");
         document.getElementById("phoneinfo" + String(i)).innerHTML =
-          "Tel. : " + JSON.stringify(resData.userList[i].phoneNumber) + '<br>';
+          "Tel. : " + JSON.stringify(resData.userList[i].phoneNumber) + "<br>";
       }
-
-
     })
     .catch((error) => console.log("error", error));
 }
@@ -45,12 +44,17 @@ function fetchDemand() {
       var resData = JSON.parse(tempRes);
 
       for (var i in response.demandList) {
+        const dateData = JSON.stringify(
+          resData.cartDetails[i].createdDate
+        ).match();
+
         document.getElementById("order" + String(i)).innerHTML =
           "주문번호 " + JSON.stringify(resData.demandList[i].demandno);
         document.getElementById("status" + String(i)).innerHTML =
           JSON.stringify(resData.demandList[i].status);
+        document.getElementById("time" + String(i)).innerHTML =
+          "주문시각 : " + JSON.stringify(resData.demandList[i].createdDate);
       }
-
     })
     .catch((error) => console.log("error", error));
 }
@@ -71,9 +75,12 @@ function fetchCartItem() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      for(var i in response.cartItems) {
+      for (var i in response.cartItems) {
         document.getElementById("dinner" + String(i)).innerHTML =
-        JSON.stringify(resData.cartItems[i].dinner) + "(" + JSON.stringify(resData.cartItems[i].style) + ")";
+          JSON.stringify(resData.cartItems[i].dinner) +
+          "(" +
+          JSON.stringify(resData.cartItems[i].style) +
+          ")";
       }
     })
     .catch((error) => console.log("error", error));
@@ -95,11 +102,12 @@ function fetchCartDetail() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      for(var i in response.cartDetails) {
+      for (var i in response.cartDetails) {
         document.getElementById("add" + String(i)).innerHTML =
-        "* " + JSON.stringify(resData.cartDetails[i].name) + JSON.stringify(resData.cartDetails[i].status);
+          "* " +
+          JSON.stringify(resData.cartDetails[i].name) +
+          JSON.stringify(resData.cartDetails[i].status);
       }
-
     })
     .catch((error) => console.log("error", error));
 }
@@ -120,20 +128,14 @@ function fetchAddress() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      for(var i in response.addressList) {
+      for (var i in response.addressList) {
         document.getElementById("addressinfo" + String(i)).innerHTML =
-        "주소 : " + JSON.stringify(resData.addressList[i].detail);
+          "주소 : " + JSON.stringify(resData.addressList[i].detail);
       }
     })
     .catch((error) => console.log("error", error));
 }
 
-function prevLook() {
+function prevLook() {}
 
-
-}
-
-function nextLook() {
-
-
-}
+function nextLook() {}
