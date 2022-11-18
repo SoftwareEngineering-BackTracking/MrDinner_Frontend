@@ -442,3 +442,43 @@
     background: rgb(212, 212, 212); ; 
     cursor: pointer;
   }
+
+  .headline {
+    position: relative;
+    top: 500px;
+  }
+
+  .bottomline {
+    position: relative;
+    top: 595px
+  }
+
+  .line1 {
+    position: relative;
+    top: 618px
+  }
+
+  .line2 {
+    position: relative;
+    top: 668px
+  }
+
+  .line3 {
+    position: relative;
+    top: 718px
+  }
+
+  .line4 {
+    position: relative;
+    top: 768px
+  }
+
+  .line5 {
+    position: relative;
+    top: 818px
+  }
+
+  .line6 {
+    position: relative;
+    top: 868px
+  }
