@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/orderManagement.css" />
-    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../js/orderManagement.js"></script>
     <script type="module">
         function addLoadEvents(func) {
@@ -66,95 +66,109 @@
 
     <header class="masthead"></header>
     <div class="redbox">주문관리</div>
-    <div class= outercontainer0>
-        <div class="innercontainer0">
-            <div class="area1">
-                <div class="dinnercontainer">
-                    <span class="dinnername" id="dinner0">디너1</span>
-                    <span class="add">추가사항<br></span>
-                    <span class="specadd" id="add0">커피추가</span>
+    <div class="allcontainer">
+        <div class="container0">
+            <div class=outercontainer0>
+                <div class="innercontainer0">
+                    <div class="area1">
+                        <div class="dinnercontainer">
+                            <span class="dinnername" id="dinner0">디너1</span>
+                            <span class="add">추가사항<br></span>
+                            <span class="specadd" id="add0">커피추가</span>
+                        </div>
+                    </div>
+                    <hr class="line1" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area2">
+                        <span class="userinfo" id="user0">주문인 정보</span>
+                        <div class="clockimg"></div>
+                        <span class="ordertime" id="time0">주문시각 : null</span>
+                        <div class="textbox">
+                            <span class="nameinfo" id="nameinfo0">이름<br></span>
+                            <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                            <span class="addressinfo" id="addressinfo0">주소</span>
+                        </div>
+                    </div>
+                    <hr class="line2" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area3">
+                        <span class="userreq">고객요청</span>
+                        <span class="userreqspec">조심히 와주세요</span>
+                    </div>
                 </div>
+                <div class="ordernumber0" id="order0">주문번호 n</div>
             </div>
-            <hr class="line1" width="300px" color="#9C9A9A"></hr>
-            <div class="area2">
-                <span class="userinfo" id="user0">주문인 정보</span>
-                <div class="clockimg"></div>
-                <span class="ordertime" id="time0">주문시각 : null</span>
-                <div class="textbox">
-                    <span class="nameinfo" id="nameinfo0">이름<br></span>
-                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
-                    <span class="addressinfo" id="addressinfo0">주소</span>
-                </div>
-            </div>
-            <hr class="line2" width="300px" color="#9C9A9A"></hr>
-            <div class="area3">
-                <span class="userreq">고객요청</span>   
-                <span class="userreqspec">조심히 와주세요</span>      
-            </div>
+            <div class="orderstatus0" id="status0">주문대기중</div>
         </div>
-        <div class="ordernumber0" id="order0">주문번호 n</div>
-    </div>
-    <div class="orderstatus0" id="status0">주문대기중</div>
 
-    <div class= outercontainer1>
-        <div class="innercontainer1">
-            <div class="area1">
-                <div class="dinnercontainer">
-                    <span class="dinnername" id="dinner1">디너1</span>
-                    <span class="add">추가사항<br></span>
-                    <span class="specadd" id="add1">커피추가</span>
+        <div class="container1">
+            <div class=outercontainer1>
+                <div class="innercontainer1">
+                    <div class="area1">
+                        <div class="dinnercontainer">
+                            <span class="dinnername" id="dinner1">디너1</span>
+                            <span class="add">추가사항<br></span>
+                            <span class="specadd" id="add1">커피추가</span>
+                        </div>
+                    </div>
+                    <hr class="line1" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area2">
+                        <span class="userinfo" id="user1">주문인 정보</span>
+                        <div class="clockimg"></div>
+                        <span class="ordertime" id="time1">주문시각 : null</span>
+                        <div class="textbox">
+                            <span class="nameinfo" id="nameinfo0">이름<br></span>
+                            <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                            <span class="addressinfo" id="addressinfo0">주소</span>
+                        </div>
+                    </div>
+                    <hr class="line2" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area3">
+                        <span class="userreq">고객요청</span>
+                        <span class="userreqspec">빠르게 와주세요</span>
+                    </div>
                 </div>
+                <div class="ordernumber1" id="order1">주문번호 n</div>
             </div>
-            <hr class="line1" width="300px" color="#9C9A9A"></hr>
-            <div class="area2">
-                <span class="userinfo" id="user1">주문인 정보</span>
-                <div class="clockimg"></div>
-                <span class="ordertime" id="time1">주문시각 : null</span>
-                <div class="textbox">
-                    <span class="nameinfo" id="nameinfo0">이름<br></span>
-                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
-                    <span class="addressinfo" id="addressinfo0">주소</span>
-                </div>
-            </div>
-            <hr class="line2" width="300px" color="#9C9A9A"></hr>
-            <div class="area3">
-                <span class="userreq">고객요청</span>   
-                <span class="userreqspec">빠르게 와주세요</span>      
-            </div>
+            <div class="orderstatus1" id="status0">주문대기중</div>
         </div>
-        <div class="ordernumber1" id="order1">주문번호 n</div>
-    </div>
-    <div class="orderstatus1" id="status0">주문대기중</div>
 
-    <div class= outercontainer2>
-        <div class="innercontainer2">
-            <div class="area1">
-                <div class="dinnercontainer">
-                    <span class="dinnername" id="dinner2">디너1</span>
-                    <span class="add">추가사항<br></span>
-                    <span class="specadd" id="add2">커피추가</span>
+        <div class="container2">
+            <div class=outercontainer2>
+                <div class="innercontainer2">
+                    <div class="area1">
+                        <div class="dinnercontainer">
+                            <span class="dinnername" id="dinner2">디너1</span>
+                            <span class="add">추가사항<br></span>
+                            <span class="specadd" id="add2">커피추가</span>
+                        </div>
+                    </div>
+                    <hr class="line1" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area2">
+                        <span class="userinfo" id="user2">주문인 정보</span>
+                        <div class="clockimg"></div>
+                        <span class="ordertime" id="time2">주문시각 : null</span>
+                        <div class="textbox">
+                            <span class="nameinfo" id="nameinfo0">이름<br></span>
+                            <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
+                            <span class="addressinfo" id="addressinfo0">주소</span>
+                        </div>
+                    </div>
+                    <hr class="line2" width="300px" color="#9C9A9A">
+                    </hr>
+                    <div class="area3">
+                        <span class="userreq">고객요청</span>
+                        <span class="userreqspec">샐러드는 빼주세요</span>
+                    </div>
                 </div>
+                <div class="ordernumber2" id="order2">주문번호 n</div>
             </div>
-            <hr class="line1" width="300px" color="#9C9A9A"></hr>
-            <div class="area2">
-                <span class="userinfo" id="user2">주문인 정보</span>
-                <div class="clockimg"></div>
-                <span class="ordertime" id="time2">주문시각 : null</span>
-                <div class="textbox">
-                    <span class="nameinfo" id="nameinfo0">이름<br></span>
-                    <span class="phoneinfo" id="phoneinfo0">Tel.<br></span>
-                    <span class="addressinfo" id="addressinfo0">주소</span>
-                </div>
-            </div>
-            <hr class="line2" width="300px" color="#9C9A9A"></hr>
-            <div class="area3">
-                <span class="userreq">고객요청</span>   
-                <span class="userreqspec">샐러드는 빼주세요</span>      
-            </div>
+            <div class="orderstatus2" id="status0">주문대기중</div>
         </div>
-        <div class="ordernumber2" id="order2">주문번호 n</div>
     </div>
-    <div class="orderstatus2" id="status0">주문대기중</div>
     <button class="prevBtn" id="prev" onclick="prevLook()">prev</button>
     <button class="nextBtn" id="next" onclick="nextLook()">next</button>
 </body>
