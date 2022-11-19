@@ -166,7 +166,7 @@ body {
   overflow: hidden;
 }
 .v30_27 {
-  width: 75%;
+  width: 1000px;
   height: 191px;
   background: rgba(180, 179, 179, 1);
   opacity: 1;
@@ -186,7 +186,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 23px;
-  left: 181px;
+  left: 60px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -251,12 +251,12 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 31px;
-  left: 199px;
+  left: 107px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 18px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 .name {
   color: #fff;
@@ -268,7 +268,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 129px;
-  left: 894px;
+  left: 784px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -280,7 +280,7 @@ body {
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 135px;
-  left: 919px;
+  left: 814px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 13px;
@@ -301,7 +301,7 @@ body {
   overflow: hidden;
 }
 .v30_49 {
-  width: 75%;
+  width: 1000px;
   height: 191px;
   background: rgba(181, 180, 180, 1);
   opacity: 1;
@@ -321,7 +321,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 23px;
-  left: 181px;
+  left: 63px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -386,12 +386,12 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 33px;
-  left: 198px;
+  left: 107px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 18px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 .name {
   color: #fff;
@@ -403,7 +403,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 129px;
-  left: 892px;
+  left: 784px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -415,7 +415,7 @@ body {
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 135px;
-  left: 921px;
+  left: 814px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 13px;
@@ -436,7 +436,7 @@ body {
   overflow: hidden;
 }
 .v279_32 {
-  width: 75%;
+  width: 1000px;
   height: 191px;
   background: rgba(181, 180, 180, 1);
   opacity: 1;
@@ -456,7 +456,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 23px;
-  left: 181px;
+  left: 63px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -522,12 +522,12 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 33px;
-  left: 198px;
+  left: 107px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 18px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 .name {
   color: #fff;
@@ -539,7 +539,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 129px;
-  left: 892px;
+  left: 784px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -551,7 +551,7 @@ body {
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 135px;
-  left: 921px;
+  left: 814px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 13px;
@@ -572,7 +572,7 @@ body {
   overflow: hidden;
 }
 .v279_41 {
-  width: 75%;
+  width: 1000px;
   height: 191px;
   background: rgba(181, 180, 180, 1);
   opacity: 1;
@@ -592,7 +592,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 23px;
-  left: 181px;
+  left: 63px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -657,12 +657,12 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 33px;
-  left: 198px;
+  left: 107px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 18px;
   opacity: 1;
-  text-align: center;
+  text-align: left;
 }
 .name {
   color: #fff;
@@ -674,7 +674,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 129px;
-  left: 892px;
+  left: 784px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -686,7 +686,7 @@ body {
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 135px;
-  left: 921px;
+  left: 814px;
   font-family: Inter;
   font-weight: Bold;
   font-size: 13px;
