@@ -29,7 +29,7 @@ function go_main() {
     location.href= "main.html";
 }
 
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 var CheckId = true
 
 const checkId = async () => {
@@ -56,7 +56,6 @@ const checkId = async () => {
             console.log('중복 인증 실패');
             console.log("response:", error);
         })
-    
 }
 function getCheckboxValue()  {
     // 선택된 목록 가져오기
@@ -86,6 +85,7 @@ const signup = async () => {
             id: document.getElementsByClassName('id')[0],
             password: document.getElementsByClassName('password')[0],
             name: getCookie('name'),
+            birth: getCookie('birth'),
             phoneNumber: getCookie('phone'),
             email: getCookie('email'),
             nickname: document.getElementsByClassName('password')[0],
