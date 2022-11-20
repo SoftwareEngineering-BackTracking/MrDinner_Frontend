@@ -47,14 +47,15 @@
         <div class = 'id-box'>
           <p class = 'id-title'>2. 비밀번호 입력</p>
           <div class = 'id-subbox'>
-            <input class = 'password'>
+            <input class = 'password' onchange="check_pw()">
           </div>
         </div>
 
         <div class = 'id-box'>
           <p class = 'id-title'>3. 비밀번호 재입력</p>
           <div class = 'id-subbox'>
-            <input class = 're-password'>
+            <input class = 're-password' onchange="check_pw()">
+            <p id = 'check' style="margin-left: 10%; color: red;"></p>
           </div>
         </div>
 
@@ -70,7 +71,7 @@
           <input class = 'checkbox' type='checkbox' name='department' value='직원' /> 직원
         </div>
         <div class = 'next-box'>
-          <button class = 'next-button2' style="cursor:pointer" onclick="signup()"> 다음으로 </button> <!--onclick="location.href='SignUp3.html'"-->
+          <button class = 'next-button2' style="cursor:pointer" onclick="signup()"> 회원가입 </button> <!--onclick="location.href='SignUp3.html'"-->
         </div>
       </div>
     </div>
@@ -101,3 +102,34 @@
   </body>
 </html>
 <script src="../js/signup2.js"></script>
+<script>
+  function check_pw(){
+      var pw = document.getElementsByClassName('password')[0].value;
+      var SC = ["!","@","#","$","%"];
+      var check_SC = 0;
+
+      if(pw.length < 6 || pw.length>16){
+          window.alert('비밀번호는 6글자 이상, 16글자 이하만 이용 가능합니다.');
+          document.getElementsByClassName('password')[0].value='';
+      }
+      for(var i=0;i<SC.length;i++){
+          if(pw.indexOf(SC[i]) != -1){
+              check_SC = 1;
+          }
+      }
+      if(check_SC == 0){
+          window.alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
+          document.getElementsByClassName('password')[0].value='';
+      }
+      if(document.getElementsByClassName('password')[0].value !='' && document.getElementsByClassName('re-password')[0].value!=''){
+          if(document.getElementsByClassName('password')[0].value==document.getElementsByClassName('re-password')[0].value){
+              document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+              document.getElementById('check').style.color='blue';
+          }
+          else{
+              document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+              document.getElementById('check').style.color='red';
+          }
+      }
+  }
+</script>
