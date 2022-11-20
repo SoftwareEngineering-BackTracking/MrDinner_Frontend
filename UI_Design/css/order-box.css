@@ -1,0 +1,86 @@
+.cart-box {
+    margin-top: 2rem    ;
+    display: flex;
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.cart-checkbox-box{
+    width: 5%;
+    text-align: center;
+    align-self: center;
+}
+
+.cart-checkbox-box .checkbox{
+    accent-color: orange;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+
+    transform : scale(1.5);
+    
+}
+
+.cart-img-box{
+    width: 30%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-img{
+    width: 70%;
+    height: 70%;
+    border: 1px solid gray;
+    background: url("../assets/img/menu/steak.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.cart-info-box{
+    width: 30%;
+    margin-left: 5%;
+}
+
+.cart-info-box .dinner-title {
+    margin-top: 27px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-info-box .style {
+    margin-top: 20px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 80%;
+}
+
+.cart-right-box{
+    margin-left: 5%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    margin-right: 5%;
+}
+
+
+.cart-price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+.hash-tag{
+    padding-top: 1rem;
+    color: gray;
+    font-size: 12px;
+}
