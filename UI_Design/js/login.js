@@ -109,11 +109,11 @@ $(document).ready(function() {
 "use strict";
 
 var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io" // 주소
-const loginId = document.getElementById('ID');
-const loginPw = document.getElementById('Password');
 const loginBtn = document.getElementsByClassName('btn btn-dark btn-block');
 
 function login(){
+    const loginId = document.getElementById('ID');
+    const loginPw = document.getElementById('Password');
     fetch(url,{
         method : "POST",
            body : JSON.stringify({
@@ -122,7 +122,6 @@ function login(){
             })
     })
     .then(res => res.json())
-    .then(res => console.log(res))
 }
 
 function color() {
