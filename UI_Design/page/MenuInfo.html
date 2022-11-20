@@ -1,0 +1,118 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mr.Daebak Dinner Service</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/navbar.css" rel="stylesheet" />
+        <link href="../css/MenuInfo.css" rel="stylesheet" />
+    </head>
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <iframe src="navbar.html" onload="
+        this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+        </iframe> <!-- navbar.html 추가-->
+        <div class = 'main-container'>
+            <div class = 'dinner-container'>
+                <div class = 'dinner-image-box'>
+                    <div class = 'dinner-image'></div>
+                    <div class = 'dinner-sub-box'>
+                        <div class = 'dinner-sub-image'></div>
+                        <div class = 'dinner-sub-image'></div>
+                        <div class = 'dinner-sub-image'></div>
+                    </div>
+                </div>
+                <div class = 'dinner-order-box'>
+                    <div class = 'dinner-order-link'>
+                        <a id = 'mainmenu-link'>Menu</a>
+                        <i id = 'next-icon'> > </i>
+                        <a id = 'menu-link'>valantine dinner</a>
+                    </div>
+                    <div class = 'dinner-name'>Valentine Dinner</div>
+                    <div class = 'hash-tag'>#해시태그</div>
+                    <div class = 'select-style-box'>
+                        <div class = 'style-box-top'>
+                            <p style="margin-right: 270px; font-size: 15px; font-weight: bold;" >스타일 선택</p>
+                            <a><i class = 'fa-solid fa-magnifying-glass'></i></a>
+                        </div>
+                        <select id = 'style-select' name = 'style-select'>
+                            <option value = '발렌타인디너'>발렌타인</option>
+                            <option value = '디럭스디너'>디럭스</option>
+                        </select>
+                    </div>
+                    <div class = 'time-cash-box'>
+                        <div class = 'time-box'>
+                            <p style="margin-block-end: 0.5rem;">예상 소요 시간</p>
+                            <div class = 'time-icon-box'>
+                                <i class="fa-regular fa-clock" style="margin-right: 10px;"></i>
+                                <p style="margin-block-start:0rem; margin-block-end:0rem;">35min</p>
+                            </div>
+                        </div>
+                        <div class = 'cash-box'>
+                            <div class = 'cash-amount'>$ 35,000</div>
+                        </div>
+                    </div>
+                    <div class = 'add-cart-box'>
+                        <i class = 'fa-solid fa-cart-arrow-down' style="margin: 10px; color: orange;">장바구니 아이콘</i>
+                        <p>장바구니에 추가</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class = 'about-container'>
+            <div class='section-title'>
+                <h2>
+                    <span class = 'active'>제품 설명</span>
+                    <span class = 'deactive'>Review</span>
+                </h2>
+            </div>
+            <div class = 'container'>
+                <div class = 'info-container'><div>제품설명</div></div>
+                <div class = 'review-container'><div>제품설명</div></div>
+            </div>
+
+        
+        </div>
+    </body>
+    <script>
+        /* Slide */
+        const tabs = {
+            info: document.querySelector('.section-title .active'),
+            review: document.querySelector('.section-title .deactive'),
+        }
+        const infoContainer = document.querySelector('.info-container');
+        const reviewContainer = document.querySelector('.review-container');
+        tabs.info.addEventListener('click', (e) => {
+            tabs.info.classList.add('active');
+            tabs.review.classList.remove('active');
+
+            infoContainer.classList.add('slide-right');
+            reviewContainer.classList.add('slide-right');
+
+            infoContainer.classList.remove('slide-left');
+            reviewContainer.classList.remove('slide-left');
+        });
+        tabs.review.addEventListener('click', (e) => {
+            tabs.info.classList.remove('active');
+            tabs.review.classList.add('active');
+
+            reviewContainer.classList.remove('slide-right');
+            infoContainer.classList.remove('slide-right');
+
+            reviewContainer.classList.add('slide-left');
+            infoContainer.classList.add('slide-left');
+        });
+    </script>
+    <script src="../js/menuInfo.js"></script>
+</html>
