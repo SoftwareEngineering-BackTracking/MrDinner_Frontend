@@ -1,0 +1,224 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mr.Daebak Dinner Service</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/navbar.css" rel="stylesheet" />
+        <link href="../css/MenuInfo.css" rel="stylesheet" />
+    </head>
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <iframe src="navbar.html" onload="
+        this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+        </iframe> <!-- navbar.html 추가-->
+        <div class = 'main-container'>
+            <div class = 'dinner-container'>
+                <div class = 'dinner-image-box'>
+                    <div class = 'dinner-image'></div>
+                    <div class = 'dinner-sub-box'>
+                        <div class = 'dinner-sub-image' onclick="window.open(this.src)"></div>
+                        <div class = 'dinner-sub-image'></div>
+                        <div class = 'dinner-sub-image'></div>
+                    </div>
+                </div>
+                <div class = 'dinner-order-box'>
+                    <div class = 'dinner-order-link'>
+                        <a id = 'mainmenu-link' href = 'Menu.html'>Menu</a>
+                        <i id = 'next-icon'> > </i>
+                        <a id = 'menu-link' href = 'valentineDinner.html'>Valentine dinner</a>
+                    </div>
+                    <div class = 'dinner-name'>Valentine Dinner</div>
+                    <div class = 'hash-tag'>#발렌타인 #하트모양 # 큐피드 #와인 #스테이크</div>
+                    <div class = 'select-style-box'>
+                        <div class = 'style-box-top'>
+                            <p style="margin-right: 270px; font-size: 15px; font-weight: bold;" >스타일 선택</p>
+                            <a href="#style-info" style="text-decoration: none;"><i class = 'fa-solid fa-magnifying-glass'></i></a>
+                        </div>
+                        <select id = 'style-select' name = 'style-select'>
+                            <option value = '심플'>Simple</option>
+                            <option value = '그랜드'>Grand</option>
+                            <option value = '디럭스'>Deluxe</option>
+                        </select>
+                    </div>
+                    <div class = 'time-cash-box'>
+                        <div class = 'time-box'>
+                            <p style="margin-block-end: 0.5rem;">예상 소요 시간</p>
+                            <div class = 'time-icon-box'>
+                                <i class="fa-regular fa-clock" style="margin-right: 10px;"></i>
+                                <p style="margin-block-start:0rem; margin-block-end:0rem;">35min</p>
+                            </div>
+                        </div>
+                        <div class = 'cash-box'>
+                            <div class = 'cash-amount'>$ 35,000</div>
+                        </div>
+                    </div>
+                    <div class = 'add-cart-box' onclick="location.href = 'cart.html'">
+                        <i class = 'fa-solid fa-cart-arrow-down' style="margin: 10px; color: orange;">장바구니 아이콘</i>
+                        <p>장바구니에 추가</p>
+                    </div>
+                    <div class = 'ad-box' onclick="location.href = 'https:\/\/admission.uos.ac.kr\/admission\/main.do#'"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class = 'about-container'>
+            <div class='section-title'>
+                <h2>
+                    <span class = 'active'>제품 설명</span>
+                    <span class = 'deactive'>Review</span>
+                </h2>
+            </div>
+            <div class = 'container1'>
+                <div class = 'info-container'>
+                    <div class = 'info-image1'></div>
+                    <div class = 'info-image2'>
+                        <p style="padding-top: 30rem; font-size: 55px;">Mr.Daebak Dinner Service</p>
+                        <p style="font-size: 35px; font-style: italic;">Experience our different service!</p>
+                    </div>
+                    <div class = 'info-image3'></div>
+                    <div style="display: flex; align-items: center; text-align: left; flex-direction: column;">
+                        <p style="font-size: 35px; color: black; font-weight: bold; align-self: flex-start; padding-left: 1rem;">Valentine Dinner</p>
+                        <p style="font-size: 20px; color: gray; align-self: flex-start;padding-left: 1rem;">하트 모양과 큐피드가 장식된 접시에 냅킨과 함께 와인과 스테이크가 제공됩니다.</p>
+                    </div>
+                    <p id = 'style-info'style="font-size: 35px; font-weight:bold; color: black; align-self: flex-start; padding-left: 1rem;">style</p>
+                    
+                    <div style="display: flex; align-items: center;">
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1rem;">▶ Simple:</p>
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1rem;">상자 접시와 냅킨이 플라스틱 쟁반에 제공됩니다. 와인은 플라스틱 잔에 제공됩니다.</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1rem; margin-block-start: 0em;">▶ Grand:</p>
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1.3rem;margin-block-start: 0em;">도자기 접시와 컵, 흰색 면 냅킨이 나무 쟁반에 제공됩니다.</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1rem;margin-block-start: 0em;">▶ Deluxe:</p>
+                        <p style="font-size: 20px; color: gray; align-self: flex-start; padding-left: 1rem;margin-block-start: 0em;">꽃들이 있는 작은 꽃병, 도자기 접시와 린넨 냅킨이 은 쟁반에 함께 제공됩니다.</p>
+                    </div>
+                </div>
+                <div class = 'review-container'>
+                    <div class = 'review-box'>
+                        <div class = 'cust-image-box'>
+                            <div class = 'cust-image-circle'><i class="fa-solid fa-user" style="color: orange; width: 50%; height: 50%;"></i></div>
+                        </div>
+                        <div class = 'cust-review-box'>
+                            <div class = 'top'>
+                                <p>나인규</p>
+                            </div>
+                            <div class = 'review-content'>
+                                <p>정말 최고였습니다.</p>
+                            </div>
+                            <div class = 'review-info'>
+                                <div class = 'review-dinner'>Valentine Dinner</div>
+                                <div class = 'review-hash-tag'>#지금까지 #이런 #맛은 #없었다.</div>
+                            </div>
+                            <div class = 'review-botton' style="color: gold;">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <div class = 'review-box'>
+                        <div class = 'cust-image-box'>
+                            <div class = 'cust-image-circle'><i class="fa-solid fa-user" style="color: orange; width: 50%; height: 50%;"></i></div>
+                        </div>
+                        <div class = 'cust-review-box'>
+                            <div class = 'top'>
+                                <p>김민서</p>
+                            </div>
+                            <div class = 'review-content'>
+                                <p>너무 맛있어요. 배달도 빠르고, 음식도 고급스러워요!!</p>
+                            </div>
+                            <div class = 'review-info'>
+                                <div class = 'review-dinner'>Valentine Dinner</div>
+                                <div class = 'review-hash-tag'>#발렌타인 #강추</div>
+                            </div>
+                            <div class = 'review-botton' style="color: gold;">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <div class = 'review-box'>
+                        <div class = 'cust-image-box'>
+                            <div class = 'cust-image-circle'><i class="fa-solid fa-user" style="color: orange; width: 50%; height: 50%;"></i></div>
+                        </div>
+                        <div class = 'cust-review-box'>
+                            <div class = 'top'>
+                                <p>임재석</p>
+                            </div>
+                            <div class = 'review-content'>
+                                <p>Sooooooooooooooooo Wonderfullllllllllllllllllllllll!</p>
+                            </div>
+                            <div class = 'review-info'>
+                                <div class = 'review-dinner'>Valentine Dinner</div>
+                                <div class = 'review-hash-tag'>#super #tasty</div>
+                            </div>
+                            <div class = 'review-botton' style="color: gold;">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+    </body>
+    <script>
+        /* Slide */
+        const tabs = {
+            info: document.querySelector('.section-title .active'),
+            review: document.querySelector('.section-title .deactive'),
+        }
+        const infoContainer = document.querySelector('.info-container');
+        const reviewContainer = document.querySelector('.review-container');
+        tabs.info.addEventListener('click', (e) => {
+            tabs.info.classList.add('active');
+            tabs.review.classList.remove('active');
+
+            infoContainer.classList.add('slide-right');
+            reviewContainer.classList.add('slide-right');
+
+            infoContainer.classList.remove('slide-left');
+            reviewContainer.classList.remove('slide-left');
+        });
+        tabs.review.addEventListener('click', (e) => {
+            tabs.info.classList.remove('active');
+            tabs.review.classList.add('active');
+
+            reviewContainer.classList.remove('slide-right');
+            infoContainer.classList.remove('slide-right');
+
+            reviewContainer.classList.add('slide-left');
+            infoContainer.classList.add('slide-left');
+        });
+    </script>
+    <script src="../js/menuInfo.js"></script>
+</html>

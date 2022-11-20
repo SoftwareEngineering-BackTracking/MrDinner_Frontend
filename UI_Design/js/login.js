@@ -104,7 +104,7 @@ var LoginModalController = {
     }
 };
 
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 
 function modalOn() {
     const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
@@ -189,6 +189,7 @@ const login = async () => {
             return console.log('쿠키 저장 완료(로그인 성공)')
         }}).catch((error) => {
             console.log('로그인 실패');
+            console.log(error);
         })
     
 }

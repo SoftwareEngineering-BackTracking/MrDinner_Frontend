@@ -34,7 +34,7 @@
   transform: translate(-50%, -50%);
   margin-top: 200px;
   width: 50%;
-  height: 780px;
+  padding-bottom: 3%;
   background-color: #fff;
   border-radius: 5px;
   
@@ -52,22 +52,22 @@
 .id-title{
   font-size: 20px;
   margin-top: 30px;
-  margin-left: 50px;
+  margin-left: 10%;
 }
 
 
 .id {
   height: 30px;
   border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
+  width: 60%;
+  margin-left: 10%;
   font-size: 18px;
   border-radius: 2px;
 }
 .duplicate-id{
   position: relative;
   height: 30px;
-  width: 100px;
+  width: 12%;
   border: 1px solid #fff;
   background-color:  rgba(252,126,0,1);
   color: #fff;
@@ -88,8 +88,8 @@
 .password {
   height: 30px;
   border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
+  width: 60%;
+  margin-left: 10%;
   font-size: 18px;
   border-radius: 2px;
 }
@@ -97,8 +97,8 @@
 .re-password {
   height: 30px;
   border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
+  width: 60%;
+  margin-left: 10%;
   font-size: 18px;
   border-radius: 2px;
 }
@@ -106,8 +106,8 @@
 .nickname{
   height: 30px;
   border: 3px solid rgba(252,126,0,1);
-  width: 500px;
-  margin-left: 50px;
+  width: 60%;
+  margin-left: 10%;
   font-size: 18px;
   border-radius: 2px;
 }
@@ -302,4 +302,12 @@
   margin-left: 2px;
   margin-top: 17px;
   box-shadow: none;
+}
+
+.password{
+	-webkit-text-security: disc; 
+}
+
+.re-password{
+	-webkit-text-security: disc; 
 }

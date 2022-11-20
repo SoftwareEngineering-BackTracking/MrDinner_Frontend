@@ -27,3 +27,15 @@ function fetchAllDinner() {
     })
     .catch((error) => console.log("error", error));
 }
+
+function createAddress(){
+  fetch(url + "/api/address", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: {
+      'detail': document.getElementsByClassName('address-setting')[0].value;
+    }
+  })
+}

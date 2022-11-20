@@ -22,6 +22,7 @@
     </head>
 
     <body id="page-top">
+        <audio controls id = 'audio-controller'>녹음된 소리를 재생할 audio 엘리먼트</audio>
         <!-- Navigation-->
         <iframe src="navbar.html" onload="
         this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
@@ -31,8 +32,10 @@
                 <div class = 'font1'>"Where do you want it delivered?"</div>
                 <div class = 'font2'>"Please enter your address"</div>
                 <div class = 'address-box'>
-                    <input class = 'address-setting'>
-                    </input>
+                    <input class = 'address-setting' >
+                    <button class = 'voice-order'>
+                        <i id = 'voice-icon' class="fa-solid fa-microphone"></i>
+                    </button>
                     <a class = 'address-search' href="main.html"><i id = 'search-icon'class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
@@ -41,101 +44,107 @@
 
         <div class="v49_53"></div>
         <span class="v49_54">Menu</span>
-        <a class="menu-box1" href = "main.html">
-            <div class = 'img-box'>
-                <div class = 'menu-img'></div>
-            </div>
-            <div class = 'content-box'>
-                <div class = 'left-box'>
-                    <div class = 'name'>
-                        <span class = 'menu-name' id="dinner0">Deluxe</span>
-                        <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+        <div class = menu-container>
+            <div class = menu-container1>
+                <a class="menu-box1" href = "valentineDinner.html">
+                    <div class = 'img-box'>
+                        <div class = 'menu-img'></div>
                     </div>
-                    <span class = 'hash-tag' id="detail0">#2인 #스테이크 #와인 #맛있엉</span>
-                </div>
+                    <div class = 'content-box'>
+                        <div class = 'left-box'>
+                            <div class = 'name'>
+                                <span class = 'menu-name' id="dinner0">Deluxe</span>
+                                <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                            </div>
+                            <span class = 'hash-tag' id="detail0">#2인 #스테이크 #와인 #맛있엉</span>
+                        </div>
 
-                <div class = 'right-box'>
-                    <div class = 'time-box'>
-                        <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
-                        <div class="time">30min</div>
-                   </div>
-                    <span class = 'menu-price' id="price0">30000원</span>
-                </div>
-                
-            </div>
-        </a>
-
-        <a class="menu-box2" href = "main.html">
-            <div class = 'img-box'>
-                <div class = 'menu-img'></div>
-            </div>
-            <div class = 'content-box'>
-                <div class = 'left-box'>
-                    <div class = 'name'>
-                        <span class = 'menu-name' id="dinner1">Deluxe</span>
-                        <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                        <div class = 'right-box'>
+                            <div class = 'time-box'>
+                                <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="time">30min</div>
+                        </div>
+                            <span class = 'menu-price' id="price0">30000원</span>
+                        </div>
+                        
                     </div>
-                    <span class = 'hash-tag' id="detail1">#2인 #스테이크 #와인 #맛있엉</span>
-                </div>
+                </a>
 
-                <div class = 'right-box'>
-                    <div class = 'time-box'>
-                        <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
-                        <div class="time">30min</div>
-                   </div>
-                    <span class = 'menu-price' id="price1">30000원</span>
-                </div>
-                
-            </div>
-        </a>
-
-        <a class="menu-box3" href = "main.html">
-            <div class = 'img-box'>
-                <div class = 'menu-img'></div>
-            </div>
-            <div class = 'content-box'>
-                <div class = 'left-box'>
-                    <div class = 'name'>
-                        <span class = 'menu-name' id="dinner2">Deluxe</span>
-                        <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                <a class="menu-box2" href = "main.html">
+                    <div class = 'img-box'>
+                        <div class = 'menu-img'></div>
                     </div>
-                    <span class = 'hash-tag' id="detail2">#2인 #스테이크 #와인 #맛있엉</span>
-                </div>
+                    <div class = 'content-box'>
+                        <div class = 'left-box'>
+                            <div class = 'name'>
+                                <span class = 'menu-name' id="dinner1">Deluxe</span>
+                                <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                            </div>
+                            <span class = 'hash-tag' id="detail1">#2인 #스테이크 #와인 #맛있엉</span>
+                        </div>
 
-                <div class = 'right-box'>
-                    <div class = 'time-box'>
-                        <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
-                        <div class="time">30min</div>
-                   </div>
-                    <span class = 'menu-price' id="price2">30000원</span>
-                </div>
-                
-            </div>
-        </a>
-
-        <a class="menu-box4" href = "main.html">
-            <div class = 'img-box'>
-                <div class = 'menu-img'></div>
-            </div>
-            <div class = 'content-box'>
-                <div class = 'left-box'>
-                    <div class = 'name'>
-                        <span class = 'menu-name' id="dinner3">Deluxe</span>
-                        <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                        <div class = 'right-box'>
+                            <div class = 'time-box'>
+                                <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="time">30min</div>
+                        </div>
+                            <span class = 'menu-price' id="price1">30000원</span>
+                        </div>
+                        
                     </div>
-                    <span class = 'hash-tag' id="detail3">#2인 #스테이크 #와인 #맛있엉</span>
-                </div>
-
-                <div class = 'right-box'>
-                    <div class = 'time-box'>
-                        <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
-                        <div class="time">30min</div>
-                   </div>
-                    <span class = 'menu-price' id="price3">30000원</span>
-                </div>
-                
+                </a>
             </div>
-        </a>
+
+            <div class = 'menu-container2'>
+                <a class="menu-box3" href = "main.html">
+                    <div class = 'img-box'>
+                        <div class = 'menu-img'></div>
+                    </div>
+                    <div class = 'content-box'>
+                        <div class = 'left-box'>
+                            <div class = 'name'>
+                                <span class = 'menu-name' id="dinner2">Deluxe</span>
+                                <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                            </div>
+                            <span class = 'hash-tag' id="detail2">#2인 #스테이크 #와인 #맛있엉</span>
+                        </div>
+
+                        <div class = 'right-box'>
+                            <div class = 'time-box'>
+                                <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="time">30min</div>
+                        </div>
+                            <span class = 'menu-price' id="price2">30000원</span>
+                        </div>
+                        
+                    </div>
+                </a>
+
+                <a class="menu-box4" href = "main.html">
+                    <div class = 'img-box'>
+                        <div class = 'menu-img'></div>
+                    </div>
+                    <div class = 'content-box'>
+                        <div class = 'left-box'>
+                            <div class = 'name'>
+                                <span class = 'menu-name' id="dinner3">Deluxe</span>
+                                <div class = 'people-icon1'><i class="fa-solid fa-person fa-lg" ></i><i class="fa-solid fa-person fa-lg"></i></div>
+                            </div>
+                            <span class = 'hash-tag' id="detail3">#2인 #스테이크 #와인 #맛있엉</span>
+                        </div>
+
+                        <div class = 'right-box'>
+                            <div class = 'time-box'>
+                                <div class="clock-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="time">30min</div>
+                        </div>
+                            <span class = 'menu-price' id="price3">30000원</span>
+                        </div>
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
 
         <div class = 'padding-bottom'></div>
         
@@ -145,4 +154,66 @@
         <script src="../js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
-</html>     
+
+    <script>
+
+        // 엘리먼트 취득
+        const $audioEl = document.querySelector("audio");
+        const $btn = document.querySelector("button");
+        const audioComntroller = document.getElementById('audio-controller');
+
+        // 녹음중 상태 변수
+        let isRecording = false;
+    
+        // MediaRecorder 변수 생성
+        let mediaRecorder = null;
+    
+        // 녹음 데이터 저장 배열
+        const audioArray = [];
+    
+        $btn.onclick = async function (event) {
+            if(!isRecording){
+                audioComntroller.style.display = 'flex';
+    
+                // 마이크 mediaStream 생성: Promise를 반환하므로 async/await 사용
+                const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true});
+    
+                // MediaRecorder 생성
+                mediaRecorder = new MediaRecorder(mediaStream);
+    
+                // 이벤트핸들러: 녹음 데이터 취득 처리
+                mediaRecorder.ondataavailable = (event)=>{
+                    audioArray.push(event.data); // 오디오 데이터가 취득될 때마다 배열에 담아둔다.
+                }
+    
+                // 이벤트핸들러: 녹음 종료 처리 & 재생하기
+                mediaRecorder.onstop = (event)=>{
+                    
+                    // 녹음이 종료되면, 배열에 담긴 오디오 데이터(Blob)들을 합친다: 코덱도 설정해준다.
+                    const blob = new Blob(audioArray, {"type": "audio/ogg codecs=opus"});
+                    audioArray.splice(0); // 기존 오디오 데이터들은 모두 비워 초기화한다.
+                    
+                    // Blob 데이터에 접근할 수 있는 주소를 생성한다.
+                    const blobURL = window.URL.createObjectURL(blob);
+    
+                    // audio엘리먼트로 재생한다.
+                    $audioEl.src = blobURL;
+                    $audioEl.play();
+    
+                }
+    
+                // 녹음 시작
+                mediaRecorder.start();
+                isRecording = true;
+    
+            }else{
+                // 녹음 종료
+                mediaRecorder.stop();
+                isRecording = false;
+            }
+        }
+    
+    
+    </script>
+    
+</html>    
