@@ -1,0 +1,41 @@
+<html>
+    <div class = 'cart-box'>
+        <div class = 'cart-checkbox-box'>
+            <input class = 'checkbox' type='checkbox'name='cart' value='contain'/> 
+        </div>
+        <div class = 'cart-img-box'>
+            <div class = 'cart-img'></div>
+        </div>
+        <div class = 'cart-info-box'>
+            <div class = 'title'>제목</div>
+            <div class = 'style'>STYLE</div>
+            <div class = 'hash-tag'>#해시태그</div>
+        </div>
+        <div class = 'cart-right-box'>
+            <button class = 'cart-delete'>삭제하기</button>
+            <div class = 'cart-price'>30000원</div>
+        </div>
+    </div>
+</html>
+
+<script>
+    var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+    window.onload = function() {
+    fetch(url+"/api/cartitem", {
+        method: "GET",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        }}).then((response) => {
+            return response.json()
+        }).then((response) => {
+            console.log(response.cartItems.length)
+            for (var i = 0; i < response.cartItems.length; i++){
+                const dinner = response.cartItems[i].dinner;
+                const cartNo = response.cartItems[i].cartNo;
+                const price = response.cartItems[i].price;
+                const style = response.cartItems[i].style;
+                document.querySelector('.cart').innerHTML = 333
+            }
+        })
+}
+</script>
