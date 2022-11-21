@@ -1,4 +1,5 @@
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+var i = 0;
 
 function fetchUser() {
   fetch(url + "/api/user", {
@@ -21,7 +22,7 @@ function fetchUser() {
       tempRes.replace(/"/g, "");
       var resData = JSON.parse(tempRes);
 
-      for (var i in response.userList) {
+      for (i in response.userList) {
         document.getElementById("nameinfo" + String(i)).innerHTML =
           "이름 : " + resData.userList[i].name + "<br>";
         document.getElementById("phoneinfo" + String(i)).innerHTML =
@@ -53,7 +54,7 @@ function fetchDemand() {
 
       var resData = JSON.parse(tempRes);
 
-      for (var i in response.demandList) {
+      for (i in response.demandList) {
         const dateData = JSON.stringify(
           resData.demandList[i].createdDate
         ).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
@@ -89,7 +90,7 @@ function fetchCartItem() {
 
       var resData = JSON.parse(tempRes);
 
-      for (var i in response.cartItems) {
+      for (i in response.cartItems) {
         document.getElementById("dinner" + String(i)).innerHTML =
           resData.cartItems[i].dinner + "(" + resData.cartItems[i].style + ")";
       }
@@ -119,7 +120,7 @@ function fetchCartDetail() {
 
       var resData = JSON.parse(tempRes);
 
-      for (var i in response.cartDetails) {
+      for (i in response.cartDetails) {
         document.getElementById("add" + String(i)).innerHTML =
           "* " + resData.cartDetails[i].name + resData.cartDetails[i].status;
       }
@@ -149,7 +150,7 @@ function fetchAddress() {
 
       var resData = JSON.parse(tempRes);
 
-      for (var i in response.addressList) {
+      for (i in response.addressList) {
         document.getElementById("addressinfo" + String(i)).innerHTML =
           "주소 : " + resData.addressList[i].detail;
       }
@@ -157,6 +158,20 @@ function fetchAddress() {
     .catch((error) => console.log("error", error));
 }
 
-function prevLook() {}
+function prevLook() {
+  i -= 3;
+  fetchUser();
+  fetchDemand();
+  fetchCartItem();
+  fetchCartDetail();
+  fetchAddress();
+}
 
-function nextLook() {}
+function nextLook() {
+  i += 3;
+  fetchUser();
+  fetchDemand();
+  fetchCartItem();
+  fetchCartDetail();
+  fetchAddress();
+}

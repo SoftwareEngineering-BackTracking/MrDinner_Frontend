@@ -274,6 +274,7 @@ body {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   overflow: hidden;
+  border-color: transparent;
 }
 .v30_71 {
   width: 90px;
@@ -402,6 +403,7 @@ body {
   background: rgba(81, 44, 39, 1);
   opacity: 1;
   position: absolute;
+  border-color: transparent;
   top: 129px;
   left: 784px;
   border-top-left-radius: 30px;
@@ -538,6 +540,7 @@ body {
   background: rgba(81, 44, 39, 1);
   opacity: 1;
   position: absolute;
+  border-color: transparent;
   top: 129px;
   left: 784px;
   border-top-left-radius: 30px;
@@ -673,6 +676,7 @@ body {
   background: rgba(81, 44, 39, 1);
   opacity: 1;
   position: absolute;
+  border-color: transparent;
   top: 129px;
   left: 784px;
   border-top-left-radius: 30px;
