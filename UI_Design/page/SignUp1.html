@@ -35,7 +35,7 @@
     <div class = 'sign-container'>
       <div class = 'signup-box'>
         <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
-        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.
+        <div class = 'signup-subtitle'>STEP 1. 서비스 이용에 필요한 개인 정보를 모두 입력해주세요.</div>
         <div class = 'name-box'>
           <p class = 'name-title'>1. 이름 입력</p>
           <div class = 'name-subbox'>
@@ -47,7 +47,7 @@
           <p class = 'name-title'>2. 이메일 입력</p>
           <div class = 'name-subbox'>
             <input id = 'email'>
-            <button class = 'auth-email' style="cursor:pointer">인증하기</button>
+            <button class = 'auth-email' style="cursor:pointer" onclick="onInputEmail()">인증하기</button>
           </div>
         </div>
 
@@ -64,12 +64,31 @@
             <input id = 'address'>
           </div>
         </div>
+        <div class = 'name-box'>
+          <p class = 'name-title'>5. 생년월일 입력</p>
+          <div class = 'name-subbox'>
+            <input id = 'birth' value="1999-01-01">
+          </div>
+        </div>
         <div class = 'next-box'>
           <button class = 'next-button1' style="cursor:pointer" onclick="location.href='SignUp2.html'"> 다음으로 </button> <!--onclick="location.href='SignUp2.html'"-->
         </div>
       </div>
+      </div>
     </div>
     
   </body>
+  <div class = 'input-email-box'>
+    <div class = 'modal-top'>
+      <p>이메일 인증</p>
+      <i id = 'close-modal' style="position: fixed; left: 90%;" onclick="document.getElementsByClassName('input-email-box')[0].style.display = 'none'">x</i>
+    </div>
+    <div class = 'modal-content'>
+      <p style="padding-top: 1rem; margin-bottom: 3rem;">이메일을 입력해주세요.</p>
+      <input id = 'email-auth-code'>
+      <button id = 'resend'>재전송</button>
+    </div>
+    <button id = 'verify-email'>인증하기</button>
+  </div>
 </html>
 <script src="../js/signup.js"></script>

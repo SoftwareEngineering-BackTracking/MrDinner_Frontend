@@ -105,7 +105,10 @@ var LoginModalController = {
 };
 
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+<<<<<<< HEAD
 //var url = "http://127.0.0.1:8080"
+=======
+>>>>>>> aa18ca9d6d60e9c09217e34c5f85c1f3f801b44f
 
 function modalOn() {
     const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
@@ -194,10 +197,18 @@ const login = async () => {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             go_main();
             return console.log('쿠키 저장 완료(로그인 성공)')
+<<<<<<< HEAD
         }})
         // .catch((error) => {
         //     console.log('로그인 실패');
         // })
+=======
+        }}).catch((error) => {
+            console.log('로그인 실패');
+            console.log(error);
+        })
+    
+>>>>>>> aa18ca9d6d60e9c09217e34c5f85c1f3f801b44f
 }
 
 function go_signup(){

@@ -1,0 +1,72 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mr.Daebak Dinner Service</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/navbar.css" rel="stylesheet" />
+        <link href="../css/orderPay.css" rel="stylesheet" />
+        <link href="../css/order-box.css" rel="stylesheet" />       
+    </head>
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <iframe src="navbar.html" onload="
+        this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+        </iframe> <!-- navbar.html 추가-->
+    </body>
+
+    <header class = 'cart-head'>
+        <div class = 'link-box'>
+            <div class = 'shipping-box'>
+                <p class = 'normal-shipping' style="font-weight: bold; font-size: 20px;">일반 배송</p>
+                <i class = 'line'>|</i>
+                <p class = 'reservation-shipping' style="font-weight: bold; font-size: 20px;">예약 배송</p>
+            </div>
+            <div class = 'progress-route-box'>
+                <a style="font-weight: bold; color: rgb(174, 172, 172); font-size: 20px;">장바구니</a>
+                <p>></p>
+                <a style="font-weight: bold; font-size: 20px;">주문/결제</a>
+                <p>></p>
+                <a style="font-weight: bold; color: rgb(174, 172, 172); font-size: 20px;">완료</a>
+            </div>
+        </div>
+        <div class = 'border'></div>
+    </header>
+
+    <div class = 'customer-info-container'>
+        <div class = 'customer-info-box'>
+            <div class = 'customer-info-top'>
+                <div class = 'customer-title'>주문자 정보</div>
+                <a class = 'customer-info-update'>주문자 정보 변경</a>
+            </div>
+            <div class = 'customer-info'>
+                <div class = 'name'>김민서</div>
+                <div class = 'phone-number'>010-xxxx-xxxx</div>
+                <div class = 'address'>서울특별시 동대문구 전농동 서울시립대학교</div>
+            </div>
+        </div>
+    </div>
+    
+    <hr style="width: 70%; margin-top: 50px;">
+    <div class = 'order-container'>
+        <div class = 'title'>주문 정보</div>
+        <iframe src="order-box.html" onload="
+            this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+            </iframe>
+
+        <hr style="width: 70%; margin-top: 50px;">
+        <div class = 'title'>결제</div>
+        <input id = 'order-request' value = '배송 요청사항을 입력하세요(최대 20자)'>
+        
+    </div>
+</html>

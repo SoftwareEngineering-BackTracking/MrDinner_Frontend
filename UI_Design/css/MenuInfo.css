@@ -1,0 +1,340 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+}
+#mainmenu-link{
+    text-decoration: none;
+    color: black;
+}
+
+#menu-link{
+    text-decoration: none;
+    color: black;
+}
+.dinner-container {
+    margin-top: 150px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 66%;
+    height: 660px;
+    box-shadow: 0px 0px 3px black;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.dinner-image-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 40px;
+    margin-top: 20px;
+    height: 80%;
+}
+.dinner-image {
+    background-image: url('../assets/img/menu/steak.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 400px;
+    height: 350px;
+}
+.dinner-sub-box{
+    display: flex;
+    justify-content: center;
+}
+.dinner-sub-image{
+    background-image: url('../assets/img/menu/steak.png');
+    width: 100px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+.dinner-order-box{
+    width: 400px;
+}
+
+.dinner-order-link {
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.dinner-name{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.hash-tag{
+    font-size: 17px;
+    font-weight: bold;
+    color: gray;
+}
+
+.select-style-box{
+    border: 1px solid gray;
+    padding-top: 2px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.style-box-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    margin-bottom: 5px;
+}
+#style-select {
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.time-cash-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.time-box{
+    text-align: left;
+    font-weight: bold;
+}
+
+.time-icon-box{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 20px;
+    margin-right: 200px;
+}
+
+.request-box{
+    border: 1px solid gray;
+    text-align: center;
+}
+#request-input {
+    margin-top: 10px;
+    width: 95%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cash-box{
+    text-align: right;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.add-cart-box{
+    border: 2px solid orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.add-cart-box:active{
+    border: 2px solid gold;
+}
+
+.ad-box{
+    background: url('../assets/img/ad/ad-uos.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 50px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.ad-box:active{
+    opacity: 0.7;
+}
+.about-container{
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 2500px;
+    vertical-align: middle;
+}
+
+.section-title h2 {
+    display: flex;
+    border-bottom: 1px solid orange;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 27px;
+    justify-content:space-around;
+    margin-block-end: 0rem;
+    margin-block-start: 0rem;
+}
+
+.section-title span {
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top:10px;
+    color: gray;
+    cursor: pointer;
+    width: 50%;
+}
+
+.section-title .active {
+    color: orange;
+    padding-top:10px;
+    background-color: antiquewhite;
+}
+
+.slide-left {
+    animation: slide-left 0.5s forwards ease-out;
+}
+
+@keyframes slide-left {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.slide-right {
+    animation: slide-right 0.5s forwards ease-out;
+}
+
+@keyframes slide-right {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+.about-container .container1 {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container1 > div {
+    position: relative;
+    min-width: 100%;
+}
+
+.info-container{
+    display: flex;
+
+    flex-direction: column;
+    padding: 2%;
+}
+
+
+.info-container .info-image1{
+    background: url('../assets/img/logos/nav_logo2.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    width: 200px;
+    height: 150px;
+}
+
+.info-container .info-image2{
+    background: url('../assets/img/main/front-image.jpg');
+    background-repeat: no-repeat;
+    margin-bottom: 2%;
+    background-size: cover;
+    width: 96%;
+    height: 1200px;
+    color: white;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+
+.info-container .info-image3{
+    background: url('../assets/img/menu/steak.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10%;
+    width: 600px;
+    height: 450px;
+    align-self: center;
+    border-radius: 1%;
+    margin-bottom: 10%;
+}
+
+.review-container{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+.review-box{
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    height: 300px;
+    width: 80%;
+    align-items: center;
+    border: 1px solid orange;
+    margin-right: 7%;
+}
+
+.cust-image-box{
+    margin-left:10%;
+}
+.cust-image-circle{
+    border: 2px solid orange;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cust-review-box{
+    height: 204px;
+    text-align: left;
+    margin-left: 6%;
+    margin-right: 10%;
+    
+}
+
+.cust-review-box .top{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cust-review-box .review-content{
+    padding-bottom: 2%;
+}
+
+.cust-review-box .review-dinner{
+    color: gray;
+    padding-bottom: 1rem;
+}
+
+.cust-review-box .review-hash-tag {
+    color: gray;
+}

@@ -1,0 +1,65 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mr.Daebak Dinner Service</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/navbar.css" rel="stylesheet" />
+        <link href="../css/cart.css" rel="stylesheet" />
+        <link href="../css/cart-box.css" rel="stylesheet" />
+    </head>
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <iframe src="navbar.html" onload="
+        this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+        </iframe> <!-- navbar.html 추가-->
+
+        <header class = 'cart-head'>
+            <div class = 'link-box'>
+                <div class = 'shipping-box'>
+                    <p class = 'normal-shipping' style="font-weight: bold; font-size: 20px;">일반 배송</p>
+                    <i class = 'line'>|</i>
+                    <p class = 'reservation-shipping' style="font-weight: bold; font-size: 20px;">예약 배송</p>
+                </div>
+                <div class = 'progress-route-box'>
+                    <a style="font-weight: bold; font-size: 20px;">장바구니</a>
+                    <p>></p>
+                    <a style="font-weight: bold; color: rgb(174, 172, 172); font-size: 20px;">주문/결제</a>
+                    <p>></p>
+                    <a style="font-weight: bold; color: rgb(174, 172, 172); font-size: 20px;">완료</a>
+                </div>
+            </div>
+            <div class = 'border'></div>
+        </header>
+        <div class = 'cart-container'>
+            <iframe src="cart-box.html" onload="
+            this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+            </iframe>
+            <div class = 'order-box'>
+                <button class = 'order' onclick="location.href = 'orderPay.html'">주문하기</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function selectAll(selectAll)  {
+    const checkboxes = document.getElementsByName('cart-each-btn');
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = selectAll.checked;
+        })
+    }
+
+    const minseo = 1;
+</script>
+<script src="../js/cart.js"></script>
