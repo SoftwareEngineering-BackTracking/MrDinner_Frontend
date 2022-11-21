@@ -1,8 +1,8 @@
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 var i = 0;
 
-function fetchDinnerIngredient() {
-  fetch(url + "/api/dinneringredient", {
+const fetchDinnerIngredient = async() => {
+  const postResponse = await fetch(url+"/api/dinneringredient", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -15,7 +15,6 @@ function fetchDinnerIngredient() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
-      tempRes.replaceAll("\\\"","");
       var resData = JSON.parse(tempRes);
 
       for (; i < 4; i++) {
@@ -35,7 +34,7 @@ function fetchDinnerIngredient() {
 }
 
 function lookPrev() {
-  fetch(url + "/api/dinneringredinet", {
+  fetch(url + "/api/dinneringredient", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",

@@ -1,15 +1,14 @@
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
-function fetchUser() {
-  fetch(url + "/api/user", {
-    cors: {
-      origin: "*",
+const fetchUser = async() => {
+  const postResponse = await fetch(url+"/api/user", {
+      mode: 'cors',
       method: "GET",
-      preflightContinue: false,
-      optionSuccessStatus: 204,
-    },
       headers: {
       "Content-Type": "application/json;charset=utf-8",
+      'Access-Control-Allow-Origin':'*',
+      'Connection': 'keep-alive',
+      'Accept': '*/*',
     },
   })
     .then((response) => {

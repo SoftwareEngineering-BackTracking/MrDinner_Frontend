@@ -199,6 +199,11 @@
                     // audio엘리먼트로 재생한다.
                     $audioEl.src = blobURL;
                     $audioEl.play();
+
+                    const sound = new File([audioUrl], "soundBlob", {
+                        lastModified: new Date().getTime(),
+                        type: "audio",
+                    });
     
                 }
     

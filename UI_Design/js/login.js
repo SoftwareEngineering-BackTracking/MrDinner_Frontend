@@ -186,6 +186,15 @@ const login = async () => {
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             go_main();
+            /*function go_main_improve() {
+                for(var i in response.userList) {
+                    if((response.userList[i].id == document.getElementById('ID').value) && (response.userList[i].department == "고객")) {
+                        location.href= "main.html";
+                    } else {
+                        location.href = "empmain.html"
+                    }
+                }
+            }*/
             return console.log('쿠키 저장 완료(로그인 성공)')
         }}).catch((error) => {
             console.log('로그인 실패');
