@@ -1,3 +1,5 @@
+document.write('<script src="../js/cookie.js"></script>');
+
 var LoginModalController = {
     tabsElementName: ".logmod__tabs li",
     tabElementName: ".logmod__tab",
@@ -102,43 +104,102 @@ var LoginModalController = {
     }
 };
 
-$(document).ready(function() {
-    LoginModalController.initialize();
-});
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://127.0.0.1:8080"
 
-"use strict";
+function modalOn() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'flex';
+}
 
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io" // 주소
-const loginBtn = document.getElementsByClassName('btn btn-dark btn-block');
+function modalOff() {
+    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
+    waiting_modal.style.display = 'none';
+}
 
+function go_main() {
+    location.href= "main.html";
+}
+
+/*
 function login(){
-    const loginId = document.getElementById('ID');
-    const loginPw = document.getElementById('Password');
-    fetch(url,{
-        method : "POST",
-           body : JSON.stringify({
-                user_account : loginId,
-                password : loginPw
-            })
+
+    fetch(url+"/api/user", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn();
+        if (response.status == 200) {
+//            console.log("response:", response.json());
+            let json = response.json();
+            console.log(json.value);
+            setTimeout(function() {
+                modalOff()}, 3000);
+            //setTimeout(function() {
+          //      go_main()}, 3000);
+        }}).catch((error) => console.log("error", error))
+};
+*/
+
+/*
+function login(){
+    fetch(url+"/api/auth/login", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn(); // 일단 대기창 띄워놓기
+        // 정상 status = 200번 대
+        if (response.ok) {
+            
+        }
+    }).then((data) => { // 세션 아이디 받아오기
+        
+})
+};
+*/
+
+const login = async () => {
+    const postResponse = await fetch(url+"/api/auth/login", {
+        mode: 'cors',
+        method: "GET",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin':'*',
+        'Connection': 'keep-alive',
+        'Accept': '*/*',
+        'id': document.getElementById('ID').value,
+        'password': document.getElementById('Password').value
+        }
     })
-    .then(res => res.json())
+    //const post = await postResponse.json()
+    .then((response) => {
+        
+        modalOn(); // 일단 대기창 띄워놓기
+        if (response.ok){
+            console.log("response:", response.json());
+            setCookie(document.getElementById('ID').value, document.getElementById('ID').value, 20); // 쿠키 저장
+            setTimeout(function() {
+                modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
+            go_main();
+            return console.log('쿠키 저장 완료(로그인 성공)')
+        }})
+        // .catch((error) => {
+        //     console.log('로그인 실패');
+        // })
 }
 
-function color() {
-    if((loginId.value.length>0 && loginId.value.indexOf("@")!==-1) 
-        && loginPw.value.length>=5){
-        loginBtn.style.backgroundColor = "#0095F6";
-        loginBtn.disabled = false;
-    }else{
-        loginBtn.style.backgroundColor = "#C0DFFD";
-        loginBtn.disabled = true;
-    }
+function go_signup(){
+    location.href= "SignUp1.html";
 }
-
-function moveToMain(){
-    location.replace("main.html");
-}
-
-loginId.addEventListener('keyup', color);
-loginPw.addEventListener('keyup', color);
-loginBtn.addEventListener('click',moveToMain);

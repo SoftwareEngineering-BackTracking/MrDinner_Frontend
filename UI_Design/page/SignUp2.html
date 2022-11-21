@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mr.Daebak Dinner Service</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/SignUp2.css">   
+    <link href="../css/navbar.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <iframe src="navbar.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+    </iframe> <!-- navbar.html 추가-->
+    <div class="masthead"></div>
+    <div class = 'sign-container'>
+      <div class = 'signup-box'>
+        <div class = 'signup-title'><p style="margin-block-start: 0em; position: relative; top: 25%;">회원가입</p></div>
+        <div class = 'auth-title'><p> STEP 2. 사용할 아이디/비밀번호를 입력하세요</p></div>
+        <div class = 'id-box'>
+          <p class = 'id-title'>1. 아이디 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'id'>
+            <button class = 'duplicate-id' style="cursor:pointer"onclick = "checkId()">중복 확인</button>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>2. 비밀번호 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'password'>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>3. 비밀번호 재입력</p>
+          <div class = 'id-subbox'>
+            <input class = 're-password'>
+          </div>
+        </div>
+
+        <div class = 'id-box'>
+          <p class = 'id-title'>4. 닉네임 입력</p>
+          <div class = 'id-subbox'>
+            <input class = 'nickname'>
+          </div>
+        </div>
+
+        <div class = 'check-container'>
+          <input class = 'checkbox' type='checkbox'name='department' value='고객'/> 고객
+          <input class = 'checkbox' type='checkbox' name='department' value='직원' /> 직원
+        </div>
+        <div class = 'next-box'>
+          <button class = 'next-button2' style="cursor:pointer" onclick="signup()"> 다음으로 </button> <!--onclick="location.href='SignUp3.html'"-->
+        </div>
+      </div>
+    </div>
+    <div id = "waiting-modal" class = "modal-overlay">
+      <div class = "modal-window">
+        <div class = 'icon-border'>
+          <img class="icon" src="../assets/img/logos/icons8-개구리.gif" alt="c++">
+        </div>
+        <div class = "content">
+          <div class = "waiting-text1" style="font-size:40px;">사용 가능한</div>
+          <div class = "waiting-text2">아이디입니다!</div>
+          <button class = "waiting-button" onclick="modalOff()">확인</button>
+        </div>
+      </div>
+    </div>
+    <div id = "waiting-modal2" class = "modal-overlay2">
+      <div class = "modal-window2">
+        <div class = 'icon-border2'>
+          <img class="icon" src="../assets/img/logos/icons8-개구리.gif" alt="c++">
+        </div>
+        <div class = "content2">
+          <div class = "waiting-text21" style="color: red; font-size:40px;">이미 존재하는</div>
+          <div class = "waiting-text22">아이디입니다!</div>
+          <button class = "waiting-button2" onclick="modalOff2()">확인</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="../js/signup2.js"></script>

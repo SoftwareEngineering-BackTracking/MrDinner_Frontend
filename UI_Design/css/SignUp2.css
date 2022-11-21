@@ -1,0 +1,305 @@
+.masthead {
+  height: 120%;
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/img/main/front-image.jpg"); /* 메인 페이지 사진*/
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  z-index: 2;
+}
+.masthead .masthead-subheading {
+  padding-top: 16rem;
+  font-size: 2.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.sign-container {
+  position: relative;
+  margin-top: 80.4px;
+  height: 70vh;
+  z-index: 4;
+  
+}
+.signup-box {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 200px;
+  width: 50%;
+  height: 780px;
+  background-color: #fff;
+  border-radius: 5px;
+  
+}
+
+.signup-title {
+  height: 14vh;
+  text-align: center;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 30px;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.id-title{
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+
+.id {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+.duplicate-id{
+  position: relative;
+  height: 30px;
+  width: 100px;
+  border: 1px solid #fff;
+  background-color:  rgba(252,126,0,1);
+  color: #fff;
+  border-radius: 5px;
+  top:50%;
+  box-shadow: 0.5px 0.5px gray;
+  font-size: 15px;
+  
+}
+.duplicate-id:active{
+  margin-left: 2px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+
+
+
+.password {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.re-password {
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.nickname{
+  height: 30px;
+  border: 3px solid rgba(252,126,0,1);
+  width: 500px;
+  margin-left: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.auth-title {
+  margin-left: 30px;
+  margin-top: 10px;
+  color: gray;
+}
+
+.auth-box {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.check-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.IsCust{
+  color: gray;
+  font-size: 18px;
+  
+}
+.checkbox{
+  margin-left: 20px;
+  background-color: aqua;
+}
+.next-box{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.next-button2 {
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 1px 1px gray;
+}
+
+.next-button2:active {
+  margin-left: 2px;
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+#waiting-modal.modal-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 5000;
+}
+#waiting-modal .modal-window {
+	background: rgba( 255, 255, 255, 1 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 13.5px );
+	-webkit-backdrop-filter: blur( 13.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+#waiting-modal .icon-border {
+	text-align: center;
+	margin-top: 40px;
+	
+}
+#waiting-modal .title h2 {
+	display: inline;
+}
+
+#waiting-modal .content {
+	margin-top: 50px;
+	text-align: center;
+	padding: 0px 10px;
+	color: black;
+}
+
+.content .waiting-text1 {
+	font-size: 70px;
+}
+
+.content .waiting-text2 {
+	font-size: 30px;
+}
+.waiting-button{
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 1px 1px gray;
+  margin-top: 15px;
+}
+
+.waiting-button:active {
+  margin-left: 2px;
+  margin-top: 17px;
+  box-shadow: none;
+}
+
+#waiting-modal2.modal-overlay2 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 5000;
+}
+#waiting-modal2 .modal-window2 {
+	background: rgba( 255, 255, 255, 1 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 13.5px );
+	-webkit-backdrop-filter: blur( 13.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+#waiting-modal2 .icon-border2 {
+	text-align: center;
+	margin-top: 40px;
+	
+}
+#waiting-modal2 .title h2 {
+	display: inline;
+}
+
+#waiting-modal2 .content2 {
+	margin-top: 50px;
+	text-align: center;
+	padding: 0px 10px;
+	color: black;
+}
+
+.content2 .waiting-text21 {
+	font-size: 70px;
+}
+
+.content2 .waiting-text22 {
+	font-size: 30px;
+}
+.waiting-button2{
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: rgba(252,126,0,1);
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 1px 1px gray;
+  margin-top: 15px;
+}
+
+.waiting-button2:active {
+  margin-left: 2px;
+  margin-top: 17px;
+  box-shadow: none;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mr.Daebak Dinner Service</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/Stockmanagement.css" />
+    <script src="../js/stockManagement.js"></script>
+    <script type="module">
+        window.onload = fetchDinnerIngredient();
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
+            <!-- 로고 이미지 들어갈 곳-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="StockManagement.html">Stock</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="UserManagement.html">User & Profit</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orderManagement.html">Order</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead"></header>
+
+    <div class="v30_25">
+        <div class="v30_28"></div><span class="v30_29">재고 현황</span>
+        <div class="v30_37">
+            <div class="v30_27"></div>
+            <div class="v30_36">
+                <span class="ingrd0-1" id="dinner0">원산지 : 중국<br></span>
+                <span class="ingrd0-2" id="price0">원산지 : 중국<br></span>
+                <span class="ingrd0-3" id="demandDate0">원산지 : 중국</span>
+            </div>
+            <span class="v30_63" id="dinnerIngredient0">발렌타인</span>
+            <div class="v30_70"></div><span class="v30_71" id="stock0">남은 수량 : null</span>
+        </div>
+        <div class="v30_48">
+            <div class="v30_49"></div>
+            <div class="v30_50">
+                <span class="ingrd1-1" id="dinner1">원산지 : 중국<br></span>
+                <span class="ingrd1-2" id="price1">원산지 : 중국<br></span>
+                <span class="ingrd1-3" id="demandDate1">원산지 : 중국</span>
+            </div>
+            <span class="v30_64" id="dinnerIngredient1">버터 </span>
+            <div class="v30_72"></div><span class="v30_73" id="stock1">남은 수량 : null</span>
+        </div>
+        <div class="v279_31">
+            <div class="v279_32"></div>
+            <div class="v279_33 ">
+                <span class="ingrd2-1" id="dinner2">원산지 : 중국<br></span>
+                <span class="ingrd2-2" id="price2">원산지 : 중국<br></span>
+                <span class="ingrd2-3" id="demandDate2">원산지 : 중국</span>
+            </div>
+            <span class="v279_36" id="dinnerIngredient2">버터</span>
+            <div class="v279_38"></div><span class="v279_39" id="stock2">남은 수량 : null</span>
+        </div>
+        <div class="v279_40">
+            <div class="v279_41"></div>
+            <div class="v279_42">
+                <span class="ingrd3-1" id="dinner3">원산지 : 중국<br></span>
+                <span class="ingrd3-2" id="price3">원산지 : 중국<br></span>
+                <span class="ingrd3-3" id="demandDate3">원산지 : 중국</span>
+            </div>
+            <div class="v279_43">
+            </div><span class="v279_45" id="dinnerIngredient3">버터
+            </span>
+            <div class="v279_47"></div><span class="v279_48" id="stock3">남은 수량 : null</span>
+        </div>
+    </div>
+    <button class="prevBtn" id="prevBtn" onclick="lookPrev()">prev</button>
+    <button class="nextBtn" id="nextBtn" onclick="lookNext()">next</button>
+    <div class="v105_86"></div>
+</body>

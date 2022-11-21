@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mr.Daebak Dinner Service</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myPage.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../js/myPage.js"></script>
+    <script type="module">
+        function addLoadEvents(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    onload();
+                    func();
+                }
+            }
+        }
+        addLoadEvents(fetchUser());
+        addLoadEvents(fetchAddress());
+    </script>
+    </script>
+</head>
+<iframe src="navbar.html"
+    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+</iframe> <!-- navbar.html 추가-->
+<header class="masthead"></header>
+    <div class="area1">
+        <span class="title">개인정보 관리</span>
+        <span class="subtitle">개인정보를 확인하거나 필요한 경우 개인정보를 변경할 수 있습니다</span>
+    </div>
+    <hr class="line1" width="87%" color="#9C9A9A"></hr>
+    <div class="area2">
+        <img src="../assets/img/logos/propfile.PNG" alt="profile" class="profileimg">
+        <button class="imgchng">사진 변경</button>
+        <span class="name" id="name">defaultName</span>
+        <hr class="line2-1" width="600px" color="#9C9A9A"></hr>
+        <span class="nickname" id="nickname">ddefaultNickname</span>
+        <button class="chng-1">변경</button>
+        <hr class="line2-2" width="600px" color="#9C9A9A"></hr>
+        <span class="birth" id="birth">defaultBirth</span>
+        <hr class="line2-3" width="600px" color="#9C9A9A"></hr>
+        <span class="phone" id="phone">defaultPhone</span>
+        <button class="chng-2">변경</button>
+        <hr class="line2-4" width="600px" color="#9C9A9A"></hr>
+        <span class="email" id="email">defaultEmail</span>
+        <button class="chng-3">변경</button>
+        <hr class="line2-5" width="600px" color="#9C9A9A"></hr>
+        <span class="address" id="address">defaultAddress</span>
+        <button class="chng-4">변경</button>
+        <hr class="line2-6" width="600px" color="#9C9A9A"></hr>
+        <span class="type" id="type">defaultType</span>
+        <hr class="line2-7" width="600px" color="#9C9A9A"></hr>
+    </div>
+    <hr class="line2" width="87%" color="#9C9A9A"></hr>
+    <div class="area3">
+        <span class="cardreg">결제 수단 등록</span>
+        <hr class="line3" width="87%" color="#B6B6B6"></hr>
+        <span class="couponid">보유 쿠폰 확인</span>
+        <hr class="line4" width="87%" color="#B6B6B6"></hr>
+        <span class="outreg">회원 탈퇴</span>
+        <hr class="line5" width="87%" color="#B6B6B6"></hr>
+    </div>
+<body>
+</body>
+
+</html>
