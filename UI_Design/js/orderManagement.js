@@ -1,9 +1,13 @@
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchUser() {
   fetch(url + "/api/user", {
+    mode: "cors",
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
     },
   })
@@ -14,14 +18,14 @@ function fetchUser() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/"/g, "");
       var resData = JSON.parse(tempRes);
 
       for (var i in response.userList) {
         document.getElementById("nameinfo" + String(i)).innerHTML =
-          "이름 : " + JSON.stringify(resData.userList[i].name);
-        ("<br>");
+          "이름 : " + resData.userList[i].name + "<br>";
         document.getElementById("phoneinfo" + String(i)).innerHTML =
-          "Tel. : " + JSON.stringify(resData.userList[i].phoneNumber) + "<br>";
+          "Tel. : " + resData.userList[i].phoneNumber + "<br>";
       }
     })
     .catch((error) => console.log("error", error));
@@ -29,8 +33,12 @@ function fetchUser() {
 
 function fetchDemand() {
   fetch(url + "/api/demand", {
+    mode: "cors",
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
     },
   })
@@ -41,15 +49,19 @@ function fetchDemand() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/"/g, "");
+
       var resData = JSON.parse(tempRes);
 
       for (var i in response.demandList) {
-        const dateData = JSON.stringify(resData.demandList[i].createdDate).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
+        const dateData = JSON.stringify(
+          resData.demandList[i].createdDate
+        ).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
 
         document.getElementById("order" + String(i)).innerHTML =
-          "주문번호 " + JSON.stringify(resData.demandList[i].demandno);
+          "주문번호 " + resData.demandList[i].demandno;
         document.getElementById("status" + String(i)).innerHTML =
-          JSON.stringify(resData.demandList[i].status);
+          resData.demandList[i].status;
       }
     })
     .catch((error) => console.log("error", error));
@@ -57,8 +69,12 @@ function fetchDemand() {
 
 function fetchCartItem() {
   fetch(url + "/api/cartitem", {
+    mode: "cors",
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
     },
   })
@@ -69,14 +85,13 @@ function fetchCartItem() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/"/g, "");
+
       var resData = JSON.parse(tempRes);
 
       for (var i in response.cartItems) {
         document.getElementById("dinner" + String(i)).innerHTML =
-          JSON.stringify(resData.cartItems[i].dinner) +
-          "(" +
-          JSON.stringify(resData.cartItems[i].style) +
-          ")";
+          resData.cartItems[i].dinner + "(" + resData.cartItems[i].style + ")";
       }
     })
     .catch((error) => console.log("error", error));
@@ -84,8 +99,12 @@ function fetchCartItem() {
 
 function fetchCartDetail() {
   fetch(url + "/api/cartdetail", {
+    mode: "cors",
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
     },
   })
@@ -96,22 +115,26 @@ function fetchCartDetail() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/"/g, "");
+
       var resData = JSON.parse(tempRes);
 
       for (var i in response.cartDetails) {
         document.getElementById("add" + String(i)).innerHTML =
-          "* " +
-          JSON.stringify(resData.cartDetails[i].name) +
-          JSON.stringify(resData.cartDetails[i].status);
+          "* " + resData.cartDetails[i].name + resData.cartDetails[i].status;
       }
     })
     .catch((error) => console.log("error", error));
 }
 
-/*function fetchAddress() {
+function fetchAddress() {
   fetch(url + "/api/address", {
+    mode: "cors",
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
     },
   })
@@ -122,15 +145,17 @@ function fetchCartDetail() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/"/g, "");
+
       var resData = JSON.parse(tempRes);
 
       for (var i in response.addressList) {
         document.getElementById("addressinfo" + String(i)).innerHTML =
-          "주소 : " + JSON.stringify(resData.addressList[i].detail);
+          "주소 : " + resData.addressList[i].detail;
       }
     })
     .catch((error) => console.log("error", error));
-}*/
+}
 
 function prevLook() {}
 
