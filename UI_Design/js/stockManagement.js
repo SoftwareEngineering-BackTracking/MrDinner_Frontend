@@ -10,6 +10,7 @@ const fetchDinnerIngredient = async () => {
       Connection: "keep-alive",
       Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
+      "dinneringredient": null,
     },
   })
     .then((response) => {
@@ -54,3 +55,26 @@ function lookNext() {
   i += 3;
   fetchDinnerIngredient();
 }
+
+const addStock = async () => {
+  const postResponse = await fetch(url + "/api/dinneringredient", {
+    mode: "cors",
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+      for(var num in response.dinnerIngredientList) {
+        response.dinnerIngredientList[num].quantity += 50;
+      }
+    })
+    .catch((error) => console.log("error", error));
+};

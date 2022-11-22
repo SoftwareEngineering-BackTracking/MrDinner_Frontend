@@ -16,7 +16,22 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/orderIdentify.css" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="../js/myPage.js"></script>
+    <script src="../js/orderidentify.js"></script>
+    <script type="module">
+        function addLoadEvents(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    onload();
+                    func();
+                }
+            }
+        }
+        addLoadEvents(fetchDemand());
+        addLoadEvents(fetchPastDemand());
+    </script>
 </head>
 <iframe src="navbar.html"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
@@ -30,23 +45,23 @@
     <div class="ordercontainer">
         <div class="outercontainer">
             <div class="innercontainer">
-                <span class="ordertime">예상 시간 : 30분 후</span>
+                <span class="ordertime">30분 후 도착 예정</span>
                 <span class="info">※ 음식이 이미 배달 중인 경우 주문 변경과 취소가 불가능합니다.</span>
                 <p class="orderstatus">현재 조리가 진행중입니다</p>
             </div>
-            <button class="change">주문 변경</button>
-            <button class="cancel">주문 취소</button>
+            <button class="change" onclick="orderChange()">주문 변경</button>
+            <button class="cancel" onclick="orderCancel()">주문 취소</button>
         </div>
     </div>
     <hr class="line1" width="98%">
     <div class="crntorder">
         <p class="ordrinfo">현재 주문 정보</span>
         <img src="../assets/img/menu/steak.png" alt="menu" class="crntmenu">
-        <p class="crntname">발렌타인</p>
-        <p class="crntstyle">스타일 : deluxe<br></p>
-        <p class="crntstyle">갯수 : 1개<br></p>
-        <p class="crntstyle">추가사항 : default<br></p>
-        <p class="price">주문 금액</p>
+        <p class="crntname" id="crntname">발렌타인</p>
+        <p class="crntstyle" id="crntstyle">스타일 : deluxe<br></p>
+        <p class="crntstyle" id="crntnum">갯수 : 1개<br></p>
+        <p class="crntstyle" id="crntadd">추가사항 : default<br></p>
+        <p class="price" id="crntprice">주문 금액</p>
         <vr>
     </div>
     <hr class="line2" width="98%">
@@ -101,5 +116,4 @@
     </div>
     <hr class="line3" width="98%">
 </body>
-
 </html>

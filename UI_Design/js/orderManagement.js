@@ -21,7 +21,7 @@ function fetchUser() {
       var tempRes = JSON.stringify(response);
       tempRes.replace(/"/g, "");
       var resData = JSON.parse(tempRes);
-
+      
       for (i in response.userList) {
         document.getElementById("nameinfo" + String(i)).innerHTML =
           "이름 : " + resData.userList[i].name + "<br>";
@@ -41,6 +41,7 @@ function fetchDemand() {
       Connection: "keep-alive",
       Accept: "*/*",
       "Content-Type": "application/json;charset=utf-8",
+      "filter": "azz33",
     },
   })
     .then((response) => {
@@ -92,37 +93,7 @@ function fetchCartItem() {
 
       for (i in response.cartItems) {
         document.getElementById("dinner" + String(i)).innerHTML =
-          resData.cartItems[i].dinner + "(" + resData.cartItems[i].style + ")";
-      }
-    })
-    .catch((error) => console.log("error", error));
-}
-
-function fetchCartDetail() {
-  fetch(url + "/api/cartdetail", {
-    mode: "cors",
-    method: "GET",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      Connection: "keep-alive",
-      Accept: "*/*",
-      "Content-Type": "application/json;charset=utf-8",
-    },
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      console.log(response);
-
-      var tempRes = JSON.stringify(response);
-      tempRes.replace(/"/g, "");
-
-      var resData = JSON.parse(tempRes);
-
-      for (i in response.cartDetails) {
-        document.getElementById("add" + String(i)).innerHTML =
-          "* " + resData.cartDetails[i].name + resData.cartDetails[i].status;
+        resData.cartItems[i].dinner + "(" + resData.cartItems[i].style + ")";
       }
     })
     .catch((error) => console.log("error", error));

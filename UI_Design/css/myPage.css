@@ -159,8 +159,8 @@ header.masthead {
 
 .name {
   width: 400px;
-  margin-left: 3rem;
-  transform: translate(-53%, 15%);
+  margin-left: 51.5%;
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -173,7 +173,7 @@ header.masthead {
 .nickname {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -186,7 +186,7 @@ header.masthead {
 .birth {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -199,7 +199,7 @@ header.masthead {
 .phone {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -212,7 +212,7 @@ header.masthead {
 .email {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -225,7 +225,7 @@ header.masthead {
 .address {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
@@ -238,7 +238,7 @@ header.masthead {
 .type {
   width: 400px;
   margin-left: 51.5%;
-  transform: translate(-46%, 10%);
+  transform: translate(-50%, 10%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: medium;
