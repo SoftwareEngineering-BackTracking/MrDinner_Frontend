@@ -1,5 +1,6 @@
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 var i = 0;
+var j = 0;
 
 function fetchUser() {
   fetch(url + "/api/user", {
@@ -22,11 +23,13 @@ function fetchUser() {
       tempRes.replace(/"/g, "");
       var resData = JSON.parse(tempRes);
       
-      for (i in response.userList) {
-        document.getElementById("nameinfo" + String(i)).innerHTML =
+      for (i; i < i + 3; i++) {
+        document.getElementById("nameinfo" + String(j)).innerHTML =
           "이름 : " + resData.userList[i].name + "<br>";
-        document.getElementById("phoneinfo" + String(i)).innerHTML =
+        document.getElementById("phoneinfo" + String(j)).innerHTML =
           "Tel. : " + resData.userList[i].phoneNumber + "<br>";
+        if(j > 2) j = 0;
+        j++;
       }
     })
     .catch((error) => console.log("error", error));

@@ -1,5 +1,6 @@
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 var i = 0;
+var j = 0;
 
 const fetchDinnerIngredient = async () => {
   const postResponse = await fetch(url + "/api/dinneringredient", {
@@ -24,7 +25,7 @@ const fetchDinnerIngredient = async () => {
 
       var resData = JSON.parse(tempRes);
 
-      for (i in resData.dinnerIngredientList) {
+      for (i; i < i + 4; i++) {
         document.getElementById("dinnerIngredient" + String(i)).innerHTML =
           resData.dinnerIngredientList[i].dinnerIngredient;
         document.getElementById("dinner" + String(i)).innerHTML =
@@ -41,6 +42,8 @@ const fetchDinnerIngredient = async () => {
         document.getElementById("stock" + String(i)).innerHTML =
           "남은 수량 : " +
           resData.dinnerIngredientList[i].quantity;
+        if(j > 3) j = 0;
+        j++;  
       }
     })
     .catch((error) => console.log("error", error));
