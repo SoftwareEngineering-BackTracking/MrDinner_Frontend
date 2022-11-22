@@ -34,7 +34,7 @@ function orderCancel() {
 }
 
 function fetchDemand() {
-    
+
     fetch(url + "/api/demand", {
         mode: "cors",
         method: "GET",
@@ -58,7 +58,7 @@ function fetchDemand() {
             var resData = JSON.parse(tempRes);
 
             //
-            let crntindex = reponse.demandList.length - 1;
+            let crntindex = response.demandList.length - 1;
             document.getElementById("crntname").innerHTML =
                 resData.demandList[crntindex].name;
             document.getElementById("crntstyle").innerHTML =
@@ -74,7 +74,7 @@ function fetchDemand() {
 }
 
 function fetchPastDemand() {
-    
+
     fetch(url + "/api/demand", {
         mode: "cors",
         method: "GET",
@@ -92,23 +92,26 @@ function fetchPastDemand() {
         .then((response) => {
             console.log(response);
 
+            var i = 0;
             var tempRes = JSON.stringify(response);
             tempRes.replace(/"/g, "");
 
             var resData = JSON.parse(tempRes);
 
-            //
-            let crntindex = reponse.demandList.length - 1;
-            document.getElementById("crntname").innerHTML =
-                resData.demandList[crntindex].name;
-            document.getElementById("crntstyle").innerHTML =
-                "스타일 : " + resData.userList[0].phoneNumber;
-            document.getElementById("crntnum").innerHTML =
-                "갯수 : " + resData.userList[0].nickname;
-            document.getElementById("crntadd").innerHTML =
-                "추가사항 : " + resData.userList[0].email;
-            document.getElementById("crntprice").innerHTML =
-                "주문 금액 : " + resData.userList[0].department;
+            for (let j = (resData.demandList.length - 2); j < (resData.demandList.length - 4); i--) {
+                document.getElementById("crntname").innerHTML =
+                    resData.demandList[j].name;
+                document.getElementById("crntstyle").innerHTML =
+                    "스타일 : " + resData.userList[j].phoneNumber;
+                document.getElementById("crntnum").innerHTML =
+                    "갯수 : " + resData.userList[j].nickname;
+                document.getElementById("crntadd").innerHTML =
+                    "추가사항 : " + resData.userList[j].email;
+                document.getElementById("crntprice").innerHTML =
+                    "주문 금액 : " + resData.userList[j].department;
+                if(i > 2) i = 0;   
+                i++; 
+            }
         })
         .catch((error) => console.log("error", error));
 }

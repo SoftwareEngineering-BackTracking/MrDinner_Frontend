@@ -28,39 +28,39 @@ const fetchDinnerIngredient = async () => {
       for (i; i < i + 4; i++) {
         document.getElementById("dinnerIngredient" + String(i)).innerHTML =
           resData.dinnerIngredientList[i].dinnerIngredient;
-        document.getElementById("dinner" + String(i)).innerHTML =
+        document.getElementById("dinner" + String(j)).innerHTML =
           "디너 : " +
           resData.dinnerIngredientList[i].dinner +
           "<br>";
-        document.getElementById("price" + String(i)).innerHTML =
+        document.getElementById("price" + String(j)).innerHTML =
           "가격 : " +
           resData.dinnerIngredientList[i].price +
           "<br>";
-        document.getElementById("demandDate" + String(i)).innerHTML =
+        document.getElementById("demandDate" + String(j)).innerHTML =
           "입고일 : " +
           resData.dinnerIngredientList[i].demandDate;
-        document.getElementById("stock" + String(i)).innerHTML =
+        document.getElementById("stock" + String(j)).innerHTML =
           "남은 수량 : " +
           resData.dinnerIngredientList[i].quantity;
-        if(j > 3) j = 0;
-        j++;  
+        if (j > 3) j = 0;
+        j++;
       }
     })
     .catch((error) => console.log("error", error));
 };
 
 function lookPrev() {
-  i -= 3;
+  i -= 4;
   fetchDinnerIngredient();
 }
 
 function lookNext() {
-  i += 3;
+  i += 4;
   fetchDinnerIngredient();
 }
 
-const addStock = async () => {
-  const postResponse = await fetch(url + "/api/dinneringredient", {
+function addStock() {
+  fetch(url + "/api/dinneringredient", {
     mode: "cors",
     method: "GET",
     headers: {
@@ -75,8 +75,11 @@ const addStock = async () => {
     })
     .then((response) => {
       console.log(response);
-      for(var num in response.dinnerIngredientList) {
-        response.dinnerIngredientList[num].quantity += 50;
+      for (let num in response.dinnerIngredientList) {
+        response.dinnerIngredientList[num].quantity += 20;
+        document.getElementById("stock" + String(num)).innerHTML =
+          "남은 수량 : " +
+          JSON.stringify(response.dinnerIngredientList[num].quantity);
       }
     })
     .catch((error) => console.log("error", error));
