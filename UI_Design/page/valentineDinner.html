@@ -15,6 +15,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/navbar.css" rel="stylesheet" />
         <link href="../css/MenuInfo.css" rel="stylesheet" />
+        <script type="module">
+            window.onload = login();
+        </script> 
     </head>
 
     <body id="page-top">
@@ -40,6 +43,7 @@
                     </div>
                     <div class = 'dinner-name'>Valentine Dinner</div>
                     <div class = 'hash-tag'>#발렌타인 #하트모양 # 큐피드 #와인 #스테이크</div>
+                    
                     <div class = 'select-style-box'>
                         <div class = 'style-box-top'>
                             <p style="margin-right: 270px; font-size: 15px; font-weight: bold;" >스타일 선택</p>
@@ -63,7 +67,8 @@
                             <div class = 'cash-amount'>$ 35,000</div>
                         </div>
                     </div>
-                    <div class = 'add-cart-box' onclick="location.href = 'cart.html'">
+                    <!-- onclick="location.href = 'cart.html'" -->
+                    <div class = 'add-cart-box' onclick="createCartItem()">
                         <i class = 'fa-solid fa-cart-arrow-down' style="margin: 10px; color: orange;">장바구니 아이콘</i>
                         <p>장바구니에 추가</p>
                     </div>
