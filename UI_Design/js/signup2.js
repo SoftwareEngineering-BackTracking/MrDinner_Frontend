@@ -34,20 +34,25 @@ var CheckId = true
 
 const checkId = async () => {
     const postResponse = await fetch(url+"/api/auth/signup/checkid", {
+        mode: 'cors',
         method: "GET",
         headers: {
         'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin':'*',
+        'Connection': 'keep-alive',
+        'Accept': '*/*',
         'id': document.getElementsByClassName('id')
-        }}).then(response => response.json())
-        .then(console.log())
-        .then((postResponse) => {
-            var exception = postResponse.dtoMetaData.exception;
-            console.log(exception);
+        }}).then((response) => {
+            return response.json();
+          })
+        .then((response) => {
+            console.log(response)
+            var exception = response.dtoMetaData.exception;
             if (exception == null){
                 modalOn();
                 CheckId = true;
             }
-            else {
+            else{
                 modalOn2();
                 CheckId = false;
             }
@@ -76,32 +81,37 @@ var department = '직원'
 
 const signup = async () => {
     department = getCheckboxValue();
+    data = {
+        'id': document.getElementsByClassName('id')[0].value,
+        'password': document.getElementsByClassName('password')[0].value,
+        'name': getCookie('name'),
+        'birth': getCookie('birth'),
+        'phoneNumber': getCookie('phone'),
+        'email': getCookie('email'),
+        'nickname': document.getElementsByClassName('nickname')[0].value,
+        'department': department,
+        'address' : null
+    };
+    
     const postResponse = await fetch(url+"/api/user", {
+        mode: 'cors',
         method: "POST",
         headers: {
-        'Content-Type':'application/json;charset=utf-8'
+            'Content-Type':'application/json;charset=utf-8',
+            'Access-Control-Allow-Origin':'*',
+            Connection: 'keep-alive',
+            Accept: '*/*',
         },
-        body: JSON.stringify({
-            id: document.getElementsByClassName('id')[0],
-            password: document.getElementsByClassName('password')[0],
-            name: getCookie('name'),
-            birth: getCookie('birth'),
-            phoneNumber: getCookie('phone'),
-            email: getCookie('email'),
-            nickname: document.getElementsByClassName('password')[0],
-            department: '고객',
-            address : getCookie('address')
-        })
+        body: JSON.stringify(data)
     })
-    //const post = await postResponse.json()
     .then((response) => {
         if (response.ok && CheckId == true){
             console.log("response:", response.json());
             go_main();
-            return console.log('쿠키 저장 완료(로그인 성공)');
+            return console.log('회원가입 성공');
         }}).catch((error) => {
-            console.log('로그인 실패');
-            console.log("response:", error);
+            console.log('회원가입 실패');
+            console.log("error:", error);
         })
     
 }

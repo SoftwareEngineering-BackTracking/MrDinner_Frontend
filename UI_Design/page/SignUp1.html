@@ -86,9 +86,9 @@
     <div class = 'modal-content'>
       <p style="padding-top: 1rem; margin-bottom: 3rem;">이메일을 입력해주세요.</p>
       <input id = 'email-auth-code'>
-      <button id = 'resend'>재전송</button>
+      <button id = 'resend' onclick="sendEmail()">재전송</button>
     </div>
-    <button id = 'verify-email'>인증하기</button>
+    <button id = 'verify-email' onclick="verifyEmail()">인증하기</button>
   </div>
 </html>
 <script src="../js/signup.js"></script>

@@ -1,5 +1,5 @@
 document.write('<script src="../js/cookie.js"></script>');
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 
 document.getElementsByClassName('next-button1')[0].addEventListener('click', () => {
     var name = document.getElementById('name').value;
@@ -32,39 +32,39 @@ const duplicate_name = async () => {
     
 }
 
-
-
 function onInputEmail(){
-    function onInputEmail(){
-        document.getElementsByClassName('input-email-box')[0].style.display = 'flex';
-        console.log("oninPUTEmail");
-        sendEmail();
-        console.log("sendEmail");
-    }
+    document.getElementsByClassName('input-email-box')[0].style.display = 'flex';
+    sendEmail();
+}
+
+function offInputEmail(){
+    document.getElementsByClassName('input-email-box')[0].style.display = 'none';
 }
 
 const verifyEmail = async () => {
+    data = {email : document.getElementById('email').value,
+            authCode: document.getElementById('email-auth-code').value};
     const postResponse = await fetch(url+"/api/auth/code/send", {
         method: "POST",
         headers: {
         'Content-Type':'application/json;charset=utf-8',
         },
-        body: {
-            email: document.getElementById('email').value
-        }})
+        body: JSON.stringify(data)})
     //const post = await postResponse.json()
     .then((response) => {
-//        onInputEmail();
         if (response.ok){
             console.log("response:", response.json());
-            return console.log('쿠키 저장 완료(로그인 성공)')
+            offInputEmail();
+            console.log('이메일 인증 완료');
         }}).catch((error) => {
-            console.log('로그인 실패');
+            console.log('이메일 인증 실패');
             console.log(error);
         })
     
 }
+
 const sendEmail = async () => {
+    data = {email : document.getElementById('email').value};
     const postResponse = await fetch(url+"/api/auth/code/send", {
         method: "POST",
         mode: 'cors',
@@ -74,18 +74,17 @@ const sendEmail = async () => {
         Connection: 'keep-alive',
         Accept: '*/*'
         },
-        body: {
-            "email": document.getElementById('email').value
-        }})
+        body: JSON.stringify(data)
+    })
     //const post = await postResponse.json()
     .then((response) => {
         console.log(response.json());
 //        onInputEmail();
         if (response.ok){
-            console.log("response:", response.json());
-            return console.log('쿠키 저장 완료(이메일 성공)')
+            console.log("response:", response);
+            return console.log('메일 보내기 완료')
         }}).catch((error) => {
-            console.log('이메일 전송 실패');
+            console.log('메일 보내기 실패');
             console.log(error);
         })
     

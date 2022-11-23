@@ -124,7 +124,6 @@ function go_main() {
 
 /*
 function login(){
-
     fetch(url+"/api/user", {
         method: "POST",
         headers: {
@@ -170,18 +169,18 @@ function login(){
 })
 };
 */
-   
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
         method: "GET",
         headers: {
         'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'http://15.164.24.71',
+        'Access-Control-Allow-Origin':'ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com',
         'Connection': 'keep-alive',
         'Accept': '*/*',
-        'withCredentials': true,
-        'rejectUnauthorized': false,
+        'credential':true, 
+        'samesite':'none', 
+        'secure':true,
         'id': document.getElementById('ID').value,
         'password': document.getElementById('Password').value
         }
@@ -193,6 +192,8 @@ const login = async () => {
         if (response.ok){
             console.log("response:", response.json());
             setCookie('isLoggedin', true, 30); // 쿠키 저장
+            setCookie('id', document.getElementById('ID').value, 30);
+            setCookie('password', document.getElementById('Password').value, 30);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();
@@ -206,4 +207,3 @@ const login = async () => {
 function go_signup(){
     location.href= "SignUp1.html";
 }
-

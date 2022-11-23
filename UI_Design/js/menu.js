@@ -1,15 +1,14 @@
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
-const fetchAllDinner = async() => {
-  const postResponse = await fetch(url + "/api/dinner", {
+function fetchAllDinner() {
+  fetch(url + "/api/dinner", {
     mode: 'cors',
     method: "GET",
     headers: {
-      "Content-Type": "application/json;charset=utf-8",
+      'Content-Type':'application/json;charset=utf-8',
       'Access-Control-Allow-Origin':'*',
-      'withCredentials': true,
       Connection: 'keep-alive',
-      Accept: '*/*',
+      Accept: '*/*'
     },
   })
     .then((response) => {
@@ -19,23 +18,21 @@ const fetchAllDinner = async() => {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
-      tempRes.replace(/"/g, "");
-
       var resData = JSON.parse(tempRes);
 
       for (var i = 0; i < 4; i++) {
         document.getElementById("dinner" + String(i)).innerHTML =
-          resData.dinnerList[i].dinner;
+          JSON.stringify(resData.dinnerList[i].dinner);
         document.getElementById("detail" + String(i)).innerHTML =
-          resData.dinnerList[i].detail;
+          JSON.stringify(resData.dinnerList[i].detail);
         document.getElementById("price" + String(i)).innerHTML =
-          resData.dinnerList[i].price + "원";
+          JSON.stringify(resData.dinnerList[i].price) + "원";
       }
     })
     .catch((error) => console.log("error", error));
 }
 
-/*function createAddress(){
+function createAddress(){
   fetch(url + "/api/address", {
     method: "POST",
     headers: {
@@ -45,4 +42,32 @@ const fetchAllDinner = async() => {
       'detail': document.getElementsByClassName('address-setting')[0].value
     }
   })
-}*/
+}
+
+function get_voice(){
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  let recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+  recognition.lang = 'ko-KR';
+
+  recognition.start();
+  recognition.onstart = function() {
+    console.log('녹음 시작'); // 음성 인식 시작시마다 새로운 문단을 추가한다.
+  };
+  setTimeout(() => recognition.onend = function() {
+    recognition.start();
+    console.log('녹음 종료');
+  }, 3000);
+  
+  recognition.onresult = function(e) {
+    let texts = Array.from(e.results)
+            .map(results => results[0].transcript).join("");
+
+    texts.replace(/느낌표|강조|뿅/gi, '❗️');
+  
+    
+    };
+  console.log(texts);
+  
+}
