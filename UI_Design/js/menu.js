@@ -1,10 +1,14 @@
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchAllDinner() {
   fetch(url + "/api/dinner", {
+    mode: 'cors',
     method: "GET",
     headers: {
-      "Content-Type": "application/json;charset=utf-8",
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin':'*',
+      Connection: 'keep-alive',
+      Accept: '*/*'
     },
   })
     .then((response) => {
@@ -35,7 +39,35 @@ function createAddress(){
       "Content-Type": "application/json;charset=utf-8",
     },
     body: {
-      'detail': document.getElementsByClassName('address-setting')[0].value;
+      'detail': document.getElementsByClassName('address-setting')[0].value
     }
   })
+}
+
+function get_voice(){
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  let recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+  recognition.lang = 'ko-KR';
+
+  recognition.start();
+  recognition.onstart = function() {
+    console.log('녹음 시작'); // 음성 인식 시작시마다 새로운 문단을 추가한다.
+  };
+  setTimeout(() => recognition.onend = function() {
+    recognition.start();
+    console.log('녹음 종료');
+  }, 3000);
+  
+  recognition.onresult = function(e) {
+    let texts = Array.from(e.results)
+            .map(results => results[0].transcript).join("");
+
+    texts.replace(/느낌표|강조|뿅/gi, '❗️');
+  
+    
+    };
+  console.log(texts);
+  
 }
