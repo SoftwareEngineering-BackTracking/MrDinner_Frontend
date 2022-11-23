@@ -44,3 +44,11 @@ function allDelCookies(domain, path){
     alert('쿠키 전부 삭제완료!!');
   }
 };
+
+function go_signup(){
+  if (getCookie('isLoggedin') != 'true'){
+    location.href = 'login.html';
+  } else{
+    alert('이미 로그인 상태입니다.');
+  }
+};
