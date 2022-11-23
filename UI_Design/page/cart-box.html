@@ -20,15 +20,19 @@
 
 <script>
     var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io"
+    //var url = "http://127.0.0.1:8080"
     window.onload = function() {
     fetch(url+"/api/cartitem", {
         method: "GET",
         headers: {
-        'Content-Type':'application/json;charset=utf-8'
+        'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin':'*',
+        'Connection': 'keep-alive',
+        'Accept': '*/*'
         }}).then((response) => {
             return response.json()
         }).then((response) => {
-            console.log(response.cartItems.length)
+            //console.log(response.cartItems.length)
             for (var i = 0; i < response.cartItems.length; i++){
                 const dinner = response.cartItems[i].dinner;
                 const cartNo = response.cartItems[i].cartNo;

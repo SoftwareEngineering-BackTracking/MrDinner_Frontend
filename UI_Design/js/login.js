@@ -26,7 +26,7 @@ var LoginModalController = {
     },
     
     setState: function (state) {
-    	var base = this,
+       var base = this,
             elem = null;
         
         if (!state) {
@@ -34,7 +34,7 @@ var LoginModalController = {
         }
         
         if (base.tabsElement) {
-        	elem = $(base.tabsElement[state]);
+           elem = $(base.tabsElement[state]);
             elem.addClass("current");
             $("." + elem.attr("data-tabtar")).addClass("show");
         }
@@ -55,7 +55,7 @@ var LoginModalController = {
     },
    
     addClickEvents: function () {
-    	var base = this;
+       var base = this;
         
         base.hidePassword.on("click", function (e) {
             var $this = $(this),
@@ -105,10 +105,8 @@ var LoginModalController = {
 };
 
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
-<<<<<<< HEAD
+
 //var url = "http://127.0.0.1:8080"
-=======
->>>>>>> aa18ca9d6d60e9c09217e34c5f85c1f3f801b44f
 
 function modalOn() {
     const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
@@ -172,16 +170,18 @@ function login(){
 })
 };
 */
-
+   
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
         method: "GET",
         headers: {
         'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Origin':'http://15.164.24.71',
         'Connection': 'keep-alive',
         'Accept': '*/*',
+        'withCredentials': true,
+        'rejectUnauthorized': false,
         'id': document.getElementById('ID').value,
         'password': document.getElementById('Password').value
         }
@@ -192,25 +192,18 @@ const login = async () => {
         modalOn(); // 일단 대기창 띄워놓기
         if (response.ok){
             console.log("response:", response.json());
-            setCookie(document.getElementById('ID').value, document.getElementById('ID').value, 20); // 쿠키 저장
+            setCookie('isLoggedin', true, 30); // 쿠키 저장
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
-            go_main();
-            return console.log('쿠키 저장 완료(로그인 성공)')
-<<<<<<< HEAD
-        }})
-        // .catch((error) => {
-        //     console.log('로그인 실패');
-        // })
-=======
+            //go_main();
+            console.log(response.headers);
+            return console.log(document.cookie);
         }}).catch((error) => {
             console.log('로그인 실패');
-            console.log(error);
         })
-    
->>>>>>> aa18ca9d6d60e9c09217e34c5f85c1f3f801b44f
-}
+};
 
 function go_signup(){
     location.href= "SignUp1.html";
 }
+

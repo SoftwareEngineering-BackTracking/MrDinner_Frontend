@@ -32,8 +32,15 @@ const duplicate_name = async () => {
     
 }
 
+
+
 function onInputEmail(){
-    document.getElementsByClassName('input-email-box')[0].style.display = 'flex';
+    function onInputEmail(){
+        document.getElementsByClassName('input-email-box')[0].style.display = 'flex';
+        console.log("oninPUTEmail");
+        sendEmail();
+        console.log("sendEmail");
+    }
 }
 
 const verifyEmail = async () => {
@@ -57,25 +64,28 @@ const verifyEmail = async () => {
         })
     
 }
-
 const sendEmail = async () => {
     const postResponse = await fetch(url+"/api/auth/code/send", {
         method: "POST",
+        mode: 'cors',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin':'*',
+        Connection: 'keep-alive',
+        Accept: '*/*'
         },
         body: {
-            email: document.getElementById('email').value,
-            authCode: document.getElementById('email-auth-code').value
+            "email": document.getElementById('email').value
         }})
     //const post = await postResponse.json()
     .then((response) => {
+        console.log(response.json());
 //        onInputEmail();
         if (response.ok){
             console.log("response:", response.json());
-            return console.log('쿠키 저장 완료(로그인 성공)')
+            return console.log('쿠키 저장 완료(이메일 성공)')
         }}).catch((error) => {
-            console.log('로그인 실패');
+            console.log('이메일 전송 실패');
             console.log(error);
         })
     

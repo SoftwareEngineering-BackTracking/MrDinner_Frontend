@@ -1,21 +1,16 @@
-const res = require("express/lib/response");
 
-//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
-var url = "htttp://127.0.0.1:8080"
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://127.0.0.1:8080"
 
-function addOnload(func) { // 여러 개의 함수를 onload하기 위한 onload 추가 함수
-
-    var initOnLoad = window.onload;
-    if(typeof initOnLoad == 'function') {
-        alert('exist onload');
-        window.onload = function() {
-            initOnLoad();
+function addLoadEvents(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function () {
+            onload();
             func();
         }
-    }
-    else {
-        alert('not exist onload');
-        window.onload = func;
     }
 }
 
@@ -43,7 +38,7 @@ function fetchCartItem() {
             }
         })
 }
-addOnload(fetchCartItem); // onload 추가
+addLoadEvents(fetchCartItem); // onload 추가
 
 for(var k = 0; k < cartItemNo.length ; k++){
     function fetchCartDetail() {
@@ -66,7 +61,7 @@ for(var k = 0; k < cartItemNo.length ; k++){
                 }
             })
     }
-    addOnload(fetchCartDetail); // onload 추가
+    addLoadEvents(fetchCartDetail); // onload 추가
 }
 
 
