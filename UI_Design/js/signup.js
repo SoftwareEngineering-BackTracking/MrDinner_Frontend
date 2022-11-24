@@ -1,5 +1,6 @@
 document.write('<script src="../js/cookie.js"></script>');
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+var url = "http://localhost:8080";
 
 document.getElementsByClassName('next-button1')[0].addEventListener('click', () => {
     var name = document.getElementById('name').value;

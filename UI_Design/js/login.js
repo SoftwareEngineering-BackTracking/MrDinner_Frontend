@@ -104,9 +104,9 @@ var LoginModalController = {
     }
 };
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 
-//var url = "http://127.0.0.1:8080"
+var url = "http://127.0.0.1:8080";
 
 function modalOn() {
     const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
@@ -124,6 +124,7 @@ function go_main() {
 
 /*
 function login(){
+
     fetch(url+"/api/user", {
         method: "POST",
         headers: {
@@ -169,18 +170,17 @@ function login(){
 })
 };
 */
+
+
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
         method: "GET",
         headers: {
         'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com',
+        'Access-Control-Allow-Origin':'*',
         'Connection': 'keep-alive',
         'Accept': '*/*',
-        'credential':true, 
-        'samesite':'none', 
-        'secure':true,
         'id': document.getElementById('ID').value,
         'password': document.getElementById('Password').value
         }
@@ -196,8 +196,10 @@ const login = async () => {
             setCookie('password', document.getElementById('Password').value, 30);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
-            //go_main();
+            go_main();
             console.log(response.headers);
+            console.log(response.headers.get('Set-Cookie'));
+            
             return console.log(document.cookie);
         }}).catch((error) => {
             console.log('로그인 실패');
@@ -207,3 +209,4 @@ const login = async () => {
 function go_signup(){
     location.href= "SignUp1.html";
 }
+

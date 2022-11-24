@@ -159,7 +159,7 @@ header.masthead {
 
   .name {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,0%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -172,7 +172,7 @@ header.masthead {
 
   .nickname {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -185,7 +185,7 @@ header.masthead {
 
   .birth {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -198,7 +198,7 @@ header.masthead {
 
   .phone {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -211,7 +211,7 @@ header.masthead {
 
   .email {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -224,7 +224,7 @@ header.masthead {
 
   .address {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -237,7 +237,7 @@ header.masthead {
 
   .type {
     width: 400px;
-    margin-left: 51.5%;
+    margin-left: 55%;
     transform: translate(-53%,10%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
@@ -279,7 +279,7 @@ header.masthead {
   .chng-1 {
     width: 60px;
     height: 23px;
-    margin-left: -4.5%;
+    margin-left: -6%;
     background-color: #bdbdbd;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -297,7 +297,7 @@ header.masthead {
   .chng-2 {
     width: 60px;
     height: 23px;
-    margin-left: -4.5%;
+    margin-left: -6%;
     background-color: #bdbdbd;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -315,7 +315,7 @@ header.masthead {
   .chng-3 {
     width: 60px;
     height: 23px;
-    margin-left: -4.5%;
+    margin-left: -6%;
     background-color: #bdbdbd;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -333,7 +333,7 @@ header.masthead {
   .chng-4 {
     width: 60px;
     height: 23px;
-    margin-left: -4.5%;
+    margin-left: -6%;
     background-color: #bdbdbd;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

@@ -25,11 +25,13 @@ function getPromise() {
       .then(funcData => console.log(`이것이 바로 우리가 추출하고 싶어하는 value : ${funcData}`))
 }
 
-function go_main() {
-    location.href= "main.html";
+function go_login() {
+    location.href= "login.html";
 }
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+var url = "http://localhost:8080";
+
 var CheckId = true
 
 const checkId = async () => {
@@ -89,8 +91,7 @@ const signup = async () => {
         'phoneNumber': getCookie('phone'),
         'email': getCookie('email'),
         'nickname': document.getElementsByClassName('nickname')[0].value,
-        'department': department,
-        'address' : null
+        'department': department
     };
     
     const postResponse = await fetch(url+"/api/user", {
@@ -107,7 +108,7 @@ const signup = async () => {
     .then((response) => {
         if (response.ok && CheckId == true){
             console.log("response:", response.json());
-            go_main();
+            go_login();
             return console.log('회원가입 성공');
         }}).catch((error) => {
             console.log('회원가입 실패');
