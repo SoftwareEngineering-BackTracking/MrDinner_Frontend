@@ -1,127 +1,130 @@
 document.write('<script src="../js/cookie.js"></script>');
 
 var LoginModalController = {
-    tabsElementName: ".logmod__tabs li",
-    tabElementName: ".logmod__tab",
-    inputElementsName: ".logmod__form .input",
-    hidePasswordName: ".hide-password",
-    
-    inputElements: null,
-    tabsElement: null,
-    tabElement: null,
-    hidePassword: null,
-    
-    activeTab: null,
-    tabSelection: 0, // 0 - first, 1 - second
-    
-    findElements: function () {
-        var base = this;
-        
-        base.tabsElement = $(base.tabsElementName);
-        base.tabElement = $(base.tabElementName);
-        base.inputElements = $(base.inputElementsName);
-        base.hidePassword = $(base.hidePasswordName);
-        
-        return base;
-    },
-    
-    setState: function (state) {
-    	var base = this,
-            elem = null;
-        
-        if (!state) {
-            state = 0;
-        }
-        
-        if (base.tabsElement) {
-        	elem = $(base.tabsElement[state]);
-            elem.addClass("current");
-            $("." + elem.attr("data-tabtar")).addClass("show");
-        }
-  
-        return base;
-    },
-    
-    getActiveTab: function () {
-        var base = this;
-        
-        base.tabsElement.each(function (i, el) {
-           if ($(el).hasClass("current")) {
-               base.activeTab = $(el);
-           }
-        });
-        
-        return base;
-    },
-   
-    addClickEvents: function () {
-    	var base = this;
-        
-        base.hidePassword.on("click", function (e) {
-            var $this = $(this),
-                $pwInput = $this.prev("input");
-            
-            if ($pwInput.attr("type") == "password") {
-                $pwInput.attr("type", "text");
-                $this.text("Hide");
-            } else {
-                $pwInput.attr("type", "password");
-                $this.text("Show");
-            }
-        });
- 
-        base.tabsElement.on("click", function (e) {
-            var targetTab = $(this).attr("data-tabtar");
-            
-            e.preventDefault();
-            base.activeTab.removeClass("current");
-            base.activeTab = $(this);
-            base.activeTab.addClass("current");
-            
-            base.tabElement.each(function (i, el) {
-                el = $(el);
-                el.removeClass("show");
-                if (el.hasClass(targetTab)) {
-                    el.addClass("show");
-                }
-            });
-        });
-        
-        base.inputElements.find("label").on("click", function (e) {
-           var $this = $(this),
-               $input = $this.next("input");
-            
-            $input.focus();
-        });
-        
-        return base;
-    },
-    
-    initialize: function () {
-        var base = this;
-        
-        base.findElements().setState().getActiveTab().addClickEvents();
+  tabsElementName: ".logmod__tabs li",
+  tabElementName: ".logmod__tab",
+  inputElementsName: ".logmod__form .input",
+  hidePasswordName: ".hide-password",
+
+  inputElements: null,
+  tabsElement: null,
+  tabElement: null,
+  hidePassword: null,
+
+  activeTab: null,
+  tabSelection: 0, // 0 - first, 1 - second
+
+  findElements: function () {
+    var base = this;
+
+    base.tabsElement = $(base.tabsElementName);
+    base.tabElement = $(base.tabElementName);
+    base.inputElements = $(base.inputElementsName);
+    base.hidePassword = $(base.hidePasswordName);
+
+    return base;
+  },
+
+  setState: function (state) {
+    var base = this,
+      elem = null;
+
+    if (!state) {
+      state = 0;
     }
+
+    if (base.tabsElement) {
+      elem = $(base.tabsElement[state]);
+      elem.addClass("current");
+      $("." + elem.attr("data-tabtar")).addClass("show");
+    }
+
+    return base;
+  },
+
+  getActiveTab: function () {
+    var base = this;
+
+    base.tabsElement.each(function (i, el) {
+      if ($(el).hasClass("current")) {
+        base.activeTab = $(el);
+      }
+    });
+
+    return base;
+  },
+
+  addClickEvents: function () {
+    var base = this;
+
+    base.hidePassword.on("click", function (e) {
+      var $this = $(this),
+        $pwInput = $this.prev("input");
+
+      if ($pwInput.attr("type") == "password") {
+        $pwInput.attr("type", "text");
+        $this.text("Hide");
+      } else {
+        $pwInput.attr("type", "password");
+        $this.text("Show");
+      }
+    });
+
+    base.tabsElement.on("click", function (e) {
+      var targetTab = $(this).attr("data-tabtar");
+
+      e.preventDefault();
+      base.activeTab.removeClass("current");
+      base.activeTab = $(this);
+      base.activeTab.addClass("current");
+
+      base.tabElement.each(function (i, el) {
+        el = $(el);
+        el.removeClass("show");
+        if (el.hasClass(targetTab)) {
+          el.addClass("show");
+        }
+      });
+    });
+
+    base.inputElements.find("label").on("click", function (e) {
+      var $this = $(this),
+        $input = $this.next("input");
+
+      $input.focus();
+    });
+
+    return base;
+  },
+
+  initialize: function () {
+    var base = this;
+
+    base.findElements().setState().getActiveTab().addClickEvents();
+  },
 };
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+
+//var url = "http://127.0.0.1:8080"
 
 function modalOn() {
-    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
-    waiting_modal.style.display = 'flex';
+  const waiting_modal = document.getElementsByClassName("modal-overlay")[0];
+  waiting_modal.style.display = "flex";
 }
 
 function modalOff() {
-    const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
-    waiting_modal.style.display = 'none';
+  const waiting_modal = document.getElementsByClassName("modal-overlay")[0];
+  waiting_modal.style.display = "none";
 }
 
 function go_main() {
-    location.href= "main.html";
+  location.href = "main.html";
 }
 
 /*
 function login(){
+
     fetch(url+"/api/user", {
         method: "POST",
         headers: {
@@ -169,40 +172,37 @@ function login(){
 */
 
 const login = async () => {
-    const postResponse = await fetch(url+"/api/auth/login", {
-        method: "GET",
-        headers: {
-        'Content-Type':'application/json;charset=utf-8',
-        'id': document.getElementById('ID').value,
-        'password': document.getElementById('Password').value
-        }})
+  const postResponse = await fetch(url + "/api/auth/login", {
+    mode: "cors",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
+      id: document.getElementById("ID").value,
+      password: document.getElementById("Password").value,
+    },
+  })
     //const post = await postResponse.json()
     .then((response) => {
-        
-        modalOn(); // 일단 대기창 띄워놓기
-        if (response.ok){
-            console.log("response:", response.json());
-            setCookie(document.getElementById('ID').value, document.getElementById('ID').value, 20); // 쿠키 저장
-            setTimeout(function() {
-                modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
-            go_main();
-            /*function go_main_improve() {
-                for(var i in response.userList) {
-                    if((response.userList[i].id == document.getElementById('ID').value) && (response.userList[i].department == "고객")) {
-                        location.href= "main.html";
-                    } else {
-                        location.href = "empmain.html"
-                    }
-                }
-            }*/
-            return console.log('쿠키 저장 완료(로그인 성공)')
-        }}).catch((error) => {
-            console.log('로그인 실패');
-            console.log(error);
-        })
-    
-}
+      modalOn(); // 일단 대기창 띄워놓기
+      if (response.ok) {
+        console.log("response:", response.json());
+        setCookie("isLoggedin", true, 30); // 쿠키 저장
+        setTimeout(function () {
+          modalOff();
+        }, 1000); // 성공시 1초 후 대기창 내리기
+        //go_main();
+        console.log(response.headers);
+        return console.log(document.cookie);
+      }
+    })
+    .catch((error) => {
+      console.log("로그인 실패");
+    });
+};
 
-function go_signup(){
-    location.href= "SignUp1.html";
+function go_signup() {
+  location.href = "SignUp1.html";
 }
