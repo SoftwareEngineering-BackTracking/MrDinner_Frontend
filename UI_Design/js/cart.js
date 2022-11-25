@@ -1,100 +1,52 @@
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+var url = "http://127.0.0.1:8080"
+document.write('<script src="../js/cookie.js"></script>');
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
-//var url = "http://127.0.0.1:8080"
 
-function addLoadEvents(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function () {
-            onload();
-            func();
-        }
-    }
-}
-
-const cartItemNo = -1;
-
-function fetchCartItem() {
-    fetch(url+"/api/cartitem", {
+const fetchCartItem = async () => {
+    const postResponse = await fetch(url+"/api/cartitem", {
+        mode: 'cors',
         method: "GET",
-        mode: 'cors',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'*',
-        'Connection': 'keep-alive',
-        'Accept': '*/*'
-        }}).then((response) => {
-            return response.json()
+        'Access-Control-Allow-Origin': '*',
+        Connection: 'keep-alive',
+        Accept: '*/*',
+        id: getCookie('id')
+        }})
+    .then((response) => {
+        
+        response.json()
         }).then((response) => {
-            console.log(response.cartItems.length)
-            for (var i = 0; i < response.cartItems.length; i++){
-                cartItemNo = response.cartItems[i].cartItemNo;
-                const dinner = response.cartItems[i].dinner;
-                const cartNo = response.cartItems[i].cartNo;
-                const price = response.cartItems[i].price;
-                const style = response.cartItems[i].style;
+            return response
+        }).catch((error) => {
+            console.log('장바구니 아이템 불러오기 실패');
+        })
+    
+}
+
+const deleteCartItem = async (cartNo) => {
+    const postResponse = await fetch(url+"/api/cartitem", {
+        mode: 'cors',
+        method: "DEL",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        Connection: 'keep-alive',
+        Accept: '*/*',
+        id: getCookie('id')
+        },
+        body:JSON.stringify({
+            'cartItemNo': cartNo
+        })}).then((response) => {
+            if (response.ok){
+                alert('장바구니 품목이 삭제되었습니다!');
             }
-        })
-}
-addLoadEvents(fetchCartItem); // onload 추가
-
-for(var k = 0; k < cartItemNo.length ; k++){
-    function fetchCartDetail() {
-        fetch(url+"/api/cartdetail", {
-            method: "GET",
-            mode: 'cors',
-            headers: {
-            'Content-Type':'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin':'*',
-            'Connection': 'keep-alive',
-            'Accept': '*/*',
-            'cartItemNo': cartItemNo[k]
-            }}).then((response) => {
-                return response.json()
-            }).then((response) => {
-                console.log(response.cartItems.length)
-                for (var i = 0; i < response.cartItems.length; i++){
-                    const name = response.cartDetails[i].name;
-                    const status = response.cartDetails[i].status;
-                }
-            })
-    }
-    addLoadEvents(fetchCartDetail); // onload 추가
-}
-
-
-function deleteCartItem() {
-    fetch(url+"/api/cartitem", {
-        method: "DELETE",
-        mode: 'cors',
-        headers: {
-        'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'*',
-        'Connection': 'keep-alive',
-        'Accept': '*/*',
-        'cartItemNo': cartItemNo[input] // input 값이 들어와야함 -> html에서 받아오자
-        }}).then((response) => {
-            return response.json()
+        response.json()
         }).then((response) => {
-            console.log(response.dtoMetaData.message);
+            return response
+        }).catch((error) => {
+            console.log('장바구니 아이템 불러오기 실패');
         })
-}
-
-function deleteCartDetail() {
-    fetch(url+"/api/cartdetail", {
-        method: "DELETE",
-        mode: 'cors',
-        headers: {
-        'Content-Type':'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin':'*',
-        'Connection': 'keep-alive',
-        'Accept': '*/*',
-        'cartDetailNo': cartItemNo[input] // input 값이 들어와야함 -> html에서 받아오자
-        }}).then((response) => {
-            return response.json()
-        }).then((response) => {
-            console.log(response.dtoMetaData.message);
-        })
-}
+    
+};
