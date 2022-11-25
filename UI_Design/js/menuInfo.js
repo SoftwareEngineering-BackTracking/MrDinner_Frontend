@@ -2,31 +2,6 @@ document.write('<script src="../js/cookie.js"></script>');
 
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
-const login = async () => {
-  const postResponse = await fetch(url+"/api/auth/login", {
-      mode: 'cors',
-      method: "GET",
-      headers: {
-      'Content-Type':'application/json;charset=utf-8',
-      'Access-Control-Allow-Origin':'*',
-      'Connection': 'keep-alive',
-      'Accept': '*/*',
-      'id': getCookie('id'),
-      'password': getCookie('password')
-      }
-  })
-  //const post = await postResponse.json()
-  .then((response) => {
-      if (response.ok){
-          return console.log(response.json());
-      }}).then((response)=> {
-        localStorage.setItem('access-token', response.value);
-      }).catch((error) => {
-          console.log('로그인 실패');
-      })
-};
-
-
 if (document.getElementsByClassName('dinner-name')[0].textContent == 'Valentine Dinner'){
   var dinner = '발렌타인';
 } else if(document.getElementsByClassName('dinner-name')[0].textContent == 'English Dinner'){
@@ -39,10 +14,6 @@ if (document.getElementsByClassName('dinner-name')[0].textContent == 'Valentine 
 
 const createCartItem = async () => {
   var style = document.getElementById('style-select');
-  data = {
-    'dinner': dinner,
-    'style': style.options[style.selectedIndex].value
-  };
   const postResponse = await fetch(url + "/api/cartitem", {
     method: "POST",
     mode: 'cors',
@@ -50,11 +21,17 @@ const createCartItem = async () => {
     'Content-Type':'application/json;charset=utf-8',
     'Access-Control-Allow-Origin':'*',
     Connection: 'keep-alive',
-    Accept: '*/*',
-    
+    Accept: '*/*'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify({
+      'id': getCookie('id'),
+      'dinner': dinner,
+      'style': style.options[style.selectedIndex].value
+    })
   }).then((response) => {
+    if (response.ok){
+      location.href = 'cart.html'
+    }
       return response.json();
     })
     .catch((error) => console.log("error", error));
@@ -70,10 +47,9 @@ const fetchCartItem = async () => {
   const postResponse = await fetch(url+"/api/cartitem", {
       mode: 'cors',
       method: "GET",
-      credentials: 'same-origin',
       headers: {
       'Content-Type':'application/json;charset=utf-8',
-      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Origin': '*',
       Connection: 'keep-alive',
       Accept: '*/*'
       }
