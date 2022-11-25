@@ -42,12 +42,19 @@
         </div>
         <div class = 'border'></div>
     </header>
-
+    <div class = 'order-container'>
+        <div class = 'title'>주문 정보</div>
+        <iframe src="order-box.html" onload="
+            this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
+            </iframe>
+    </div>
+    <hr style="width: 70%; margin-top: 50px;">        
+    
     <div class = 'customer-info-container'>
+        <div class = 'title'>결제</div>
         <div class = 'customer-info-box'>
             <div class = 'customer-info-top'>
                 <div class = 'customer-title'>주문자 정보</div>
-                <a class = 'customer-info-update'>주문자 정보 변경</a>
             </div>
             <div class = 'customer-info'>
                 <div class = 'name'>김민서</div>
@@ -55,18 +62,45 @@
                 <div class = 'address'>서울특별시 동대문구 전농동 서울시립대학교</div>
             </div>
         </div>
+        <hr style="width: 60%; margin-top: 50px;"> 
+        <div class = 'title' style="font-size: 20px; margin-top: 3rem;">결제 수단 등록</div>
+        <div class = 'purchase-info-box'>
+            <div class = 'purchase-info-top'>
+                <div class = 'purchase-title'>결제 수단 정보</div>
+                <a id = 'create-purchase' style="color: blue;" onclick="openPurchaseModal()">결제 수단 등록하기</button></a>
+            </div>
+            <div class = 'purchase-info'>
+                <div id = 'bank'>NH농협</div>
+                <div id = 'card-number'>302-4530-9648-81</div>
+            </div>
+        </div>
     </div>
     
-    <hr style="width: 70%; margin-top: 50px;">
-    <div class = 'order-container'>
-        <div class = 'title'>주문 정보</div>
-        <iframe src="order-box.html" onload="
-            this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
-            </iframe>
 
-        <hr style="width: 70%; margin-top: 50px;">
-        <div class = 'title'>결제</div>
-        <input id = 'order-request' value = '배송 요청사항을 입력하세요(최대 20자)'>
-        
+    
+
+    <div class = 'modal-container' id = "modal">
+        <div id = 'pay-modal'>
+            <div id = 'close-btn'><i class="fa fa-times" onclick="closePurchaseModal()"></i></div>
+            <div class = 'pay-modal-title' style="color: black;">결제창</div>
+            <div class = 'pay-modal-content'>
+                <div class = 'about'style="color: black;">카드 번호를 입력하세요!</div>
+                
+                <select id = 'bank-select' name = 'bank-select'>
+                    <option value = '농협'>NH농협</option>
+                    <option value = '기업'>IBK기업</option>
+                    <option value = '국민'>KB국민</option>
+                </select>
+                <div class = 'card-number-box'>
+                    <input id = 'card-number1'>ㅡ
+                    <input id = 'card-number2'>ㅡ
+                    <input id = 'card-number3'>ㅡ
+                    <input id = 'card-number4'>
+                    <button class = 'pay' style="cursor:pointer" onclick="createPurchase()">등록</button>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </html>
+<script src="../js/orderPay.js"></script>
