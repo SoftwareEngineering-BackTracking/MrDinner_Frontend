@@ -33,7 +33,6 @@
 
 .cart-container{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -59,8 +58,8 @@
 
 .order-box{
     margin-top: 3%;
-    width: 70%;
-    text-align: end;
+    width: 100%;
+    text-align:right;
 }
 .order{
     font-size: 30px;
@@ -69,6 +68,8 @@
     color: #fff;
     border-radius: 8px;
     padding: 0.5rem;
+    margin-right: 15%;
+    cursor: pointer;
 }
 
 .order:active {
