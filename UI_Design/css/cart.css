@@ -33,8 +33,28 @@
 
 .cart-container{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.ad1{
+    margin-top: 3rem;
+    margin-left: 2%;
+    width: 13%;
+    height: 800px;
+    background: url('../assets/img/ad/ad-uos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ad2{
+    margin-top: 3rem;
+    margin-right: 2%;
+    width: 13%;
+    height: 800px;
+    background: url('../assets/img/ad/ad-uos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .order-box{
@@ -57,3 +77,13 @@
     opacity: 0.8;
 
   }
+
+.cart-subcontainer{
+    width: 70%;
+}
+
+#cart-test{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
