@@ -98,10 +98,16 @@ const createDemand = async () => {
       }
         return response.json();
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        console.log("error", error);
+        alert('주문 생성 실패!');
+    });
 };
 
 const payCart = async () => {
+    if (getCookie('id') == null){
+      return alert('다시 로그인하세요!')
+    };
     createDemand();
     const postResponse = await fetch(url + "/api/cart/payment", {
       method: "POST",
@@ -120,8 +126,8 @@ const payCart = async () => {
     }).then((response) => {
       if (response.ok){
         alert('결제 성공');
-      }
+        }
         return response.json();
       })
       .catch((error) => console.log("error", error));
-}
+};
