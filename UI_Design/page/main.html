@@ -30,7 +30,8 @@
                         <li class="nav-item"><a class="nav-link" href="main.html">HOME</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">MENU</a></li>
                         <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" onclick="go_signup()">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" style="cursor: pointer;" onclick="go_signup()">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" style="cursor: pointer;" onclick="logout()">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -530,6 +531,39 @@
                 } else{
                     alert('이미 로그인 상태입니다.');
                 }
+            };
+        </script>
+        <script>
+            function logout(){
+                if (getCookie('isLoggedin') == 'true'){
+                    allDelCookies();
+                } else{
+                    alert('비로그인 상태입니다.');
+                }
+            };
+        </script>
+        <script>
+            var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+            const logout = async () => {
+                const postResponse = await fetch(url+"/api/auth/logout", {
+                    mode: 'cors',
+                    method: "GET",
+                    credentials: 'same-origin',
+                    withCredentials: true,
+                    headers: {
+                    'Content-Type':'application/json;charset=utf-8',
+                    'Access-Control-Allow-Origin':'*',
+                    'Connection': 'keep-alive',
+                    'Accept': '*/*'
+                }}).then((response) => {
+                    if (response.ok){
+                        console.log("response:", response.json());
+                        window.allDelCookies;
+                        return console.log(response);
+                    }
+                }).catch((error) => {
+                    console.log('로그아웃 실패');
+                })
             };
         </script>
         <script src="../js/cookie.js"></script>
