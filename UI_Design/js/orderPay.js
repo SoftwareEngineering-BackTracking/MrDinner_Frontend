@@ -131,3 +131,48 @@ const payCart = async () => {
       })
       .catch((error) => console.log("error", error));
 };
+
+
+const fetchCartItem = async () => {
+  const postResponse = await fetch(url+"/api/cartitem", {
+      mode: 'cors',
+      method: "GET",
+      headers: {
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      Connection: 'keep-alive',
+      Accept: '*/*',
+      id: getCookie('id')
+      }})
+  .then((res) => {
+      return res.json();
+      }).then((res) => {
+          console.log(res.cartItems);
+          var orderContent = document.getElementById('order-content');
+
+          for(i=0; i<res.cartItems.length; i++){
+            orderContent.innerHTML += `
+              <div class = 'cart-box'>
+              <div class = 'cart-img-box'>
+                  <div class = 'cart-img'></div>
+              </div>
+              <div class = 'cart-info-box'>
+                  <div class = 'title'>${res.cartItems[i].dinner.dinner}</div>
+                  <div class = 'style'>${res.cartItems[i].style.style}</div>
+                  <div class = 'hash-tag'>${res.cartItems[i].dinner.detail}</div>
+                  <div class = 'hash-tag'>${res.cartItems[i].style.detail}</div>
+              </div>
+              <div class = 'cart-right-box'>
+                  <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
+                  <div class = 'cart-price'>${res.cartItems[i].price}원</div>
+              </div>
+          </div>
+      
+              `
+              
+          }
+      }).catch((error) => {
+          console.log(error);
+      })
+  
+}
