@@ -15,7 +15,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/navbar.css" rel="stylesheet" />
         <link href="../css/orderPay.css" rel="stylesheet" />
-        <link href="../css/order-box.css" rel="stylesheet" />       
+        <link href="../css/order-box.css" rel="stylesheet" />
+        <link href="../css/cart-box.css" rel="stylesheet" />
     </head>
 
     <body id="page-top">
@@ -44,9 +45,7 @@
     </header>
     <div class = 'order-container'>
         <div class = 'title'>주문 정보</div>
-        <iframe src="order-box.html" onload="
-            this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
-            </iframe>
+        <div id = 'order-content'></div>
     </div>
     <hr style="width: 70%; margin-top: 50px;">        
     
@@ -104,3 +103,52 @@
     </div>
 </html>
 <script src="../js/orderPay.js"></script>
+
+<script>
+    res = {
+"dtoMetaData": {
+"message": "장바구니에 담긴 모든 주문 조회 성공",
+"exception": null
+},
+"cartItems": [
+{
+"createdDate": null,
+"modifiedDate": null,
+"cartItemNo": 26,
+"cartNo": 1,
+"dinner": "발렌타인",
+"style": "simple",
+"price": 16000
+},
+{
+"createdDate": "2022-11-10T15:24:37.103614",
+"modifiedDate": "2022-11-10T15:24:37.103614",
+"cartItemNo": 27,
+"cartNo": 1,
+"dinner": "발렌타인",
+"style": "심플",
+"price": 18000
+}]
+};
+    var orderContent = document.getElementById('order-content');
+
+    for(i=0; i<res.cartItems.length; i++){
+        orderContent.innerHTML += `
+        <div class = 'cart-box'>
+        <div class = 'cart-img-box'>
+            <div class = 'cart-img'></div>
+        </div>
+        <div class = 'cart-info-box'>
+            <div class = 'title'>${res.cartItems[i].dinner}</div>
+            <div class = 'style'>${res.cartItems[i].style}</div>
+            <div class = 'hash-tag'>#해시태그</div>
+        </div>
+        <div class = 'cart-right-box'>
+            <div class = 'cart-price'>${res.cartItems[i].price}원</div>
+        </div>
+    </div>
+
+        `
+        
+    }
+</script>
