@@ -41,15 +41,15 @@ header.masthead {
   }
 
   .subtitle {
-    width: 500px;
+    width: 900px;
     margin-left: -5%;
-    transform: translate(-45%,420%);
+    transform: translate(-25%,420%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
     font-weight: 400;
     font-size: 15px;
     opacity: 1;
-    text-align: center;
+    text-align: left;
     display: inline-block;
   }
 
@@ -345,5 +345,23 @@ header.masthead {
     font-family: Inter;
     font-weight: semi Bold;
     font-size: 10px;
+    text-align: center;
+  }
+
+  .allchangebtn {
+    transform: translate(700%, 100%);
+    width: 120px;
+    height: 30px;
+    background-color: #bdbdbd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    border-color: transparent;
+    color: white;
+    font-family: Inter;
+    font-weight: semi Bold;
+    font-size: 15px;
     text-align: center;
   }

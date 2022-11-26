@@ -18,9 +18,6 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../js/myPage.js"></script>
     <script type="module">
-        window.onload = login_info();
-    </script> 
-    <script type="module">
         function addLoadEvents(func) {
             var oldonload = window.onload;
             if (typeof window.onload != 'function') {
@@ -37,49 +34,57 @@
     </script>
     </script>
 </head>
-<body>
 <iframe src="navbar.html"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
-</iframe> <!-- navbar.html 추가-->  
+</iframe> <!-- navbar.html 추가-->
 <header class="masthead"></header>
-    <div class="area1">
-        <span class="title">개인정보 관리</span>
-        <span class="subtitle">개인정보를 확인하거나 필요한 경우 개인정보를 변경할 수 있습니다</span>
-    </div>
-    <hr class="line1" width="87%" color="#9C9A9A"></hr>
-    <div class="area2">
-        <img src="../assets/img/logos/nav_logo2.png" alt="profile" class="profileimg">
-        <span class="name" id="name">defaultName</span>
-        <hr class="line2-1" width="600px" color="#9C9A9A"></hr>
-        <span class="nickname" id="nickname">ddefaultNickname</span>
-        <button class="chng-1">변경</button>
-        <hr class="line2-2" width="600px" color="#9C9A9A"></hr>
-        <span class="birth" id="birth">defaultBirth</span>
-        <hr class="line2-3" width="600px" color="#9C9A9A"></hr>
-        <span class="phone" id="phone">defaultPhone</span>
-        <button class="chng-2">변경</button>
-        <hr class="line2-4" width="600px" color="#9C9A9A"></hr>
-        <span class="email" id="email">defaultEmail</span>
-        <button class="chng-3">변경</button>
-        <hr class="line2-5" width="600px" color="#9C9A9A"></hr>
-        <span class="address" id="address">defaultAddress</span>
-        <button class="chng-4">변경</button>
-        <hr class="line2-6" width="600px" color="#9C9A9A"></hr>
-        <span class="type" id="type">defaultType</span>
-        <hr class="line2-7" width="600px" color="#9C9A9A"></hr>
-    </div>
-    <hr class="line2" width="87%" color="#9C9A9A"></hr>
-    <div class="area3">
-        <span class="cardreg">결제 수단 등록</span>
-        <hr class="line3" width="87%" color="#B6B6B6"></hr>
-        <span class="couponid">보유 쿠폰 확인</span>
-        <hr class="line4" width="87%" color="#B6B6B6"></hr>
-        <span class="outreg">회원 탈퇴</span>
-        <hr class="line5" width="87%" color="#B6B6B6"></hr>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<div class="area1">
+    <span class="title">개인정보 관리</span>
+    <span class="subtitle">개인정보를 확인하거나 필요한 경우 개인정보를 변경할 수 있습니다. 변경 후 반영하기 버튼을 눌러야 저장이 됩니다.</span>
+</div>
+<hr class="line1" width="87%" color="#9C9A9A">
+</hr>
+<div class="area2">
+    <img src="../assets/img/logos/nav_logo2.png" alt="profile" class="profileimg">
+    <span class="name" id="name">defaultName</span>
+    <hr class="line2-1" width="600px" color="#9C9A9A">
+    </hr>
+    <span class="nickname" id="nickname">defaultNickname</span>
+    <button class="chng-1" onclick="chngNickname()">변경</button>
+    <hr class="line2-2" width="600px" color="#9C9A9A">
+    </hr>
+    <span class="birth" id="birth">defaultBirth</span>
+    <hr class="line2-3" width="600px" color="#9C9A9A">
+    </hr>
+    <span class="phone" id="phone">defaultPhone</span>
+    <button class="chng-2" onclick="chngPhone()">변경</button>
+    <hr class="line2-4" width="600px" color="#9C9A9A">
+    </hr>
+    <span class="email" id="email">defaultEmail</span>
+    <button class="chng-3" onclick="chngEmail()">변경</button>
+    <hr class="line2-5" width="600px" color="#9C9A9A">
+    </hr>
+    <span class="address" id="address">defaultAddress</span>
+    <button class="chng-4" onclick="chngAddress()">변경</button>
+    <hr class="line2-6" width="600px" color="#9C9A9A">
+    </hr>
+</div>
+<button class="allchangebtn" onclick="changeAll()">반영하기</button>
+<hr class="line2" width="87%" color="#9C9A9A">
+</hr>
+<div class="area3">
+    <span class="cardreg">결제 수단 등록</span>
+    <hr class="line3" width="87%" color="#B6B6B6">
+    </hr>
+    <span class="couponid">보유 쿠폰 확인</span>
+    <hr class="line4" width="87%" color="#B6B6B6">
+    </hr>
+    <span class="outreg">회원 탈퇴</span>
+    <hr class="line5" width="87%" color="#B6B6B6">
+    </hr>
+</div>
+
+<body>
 </body>
 
 </html>
