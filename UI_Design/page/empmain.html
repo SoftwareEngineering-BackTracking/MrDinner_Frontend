@@ -15,26 +15,22 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
-        <script type="module">
-            window.onload = login_info();
-        </script> 
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="main.html"><img src="../assets/img/logos/nav_logo2.png" width="100" height="120" alt="..." /></a> <!-- 로고 이미지 들어갈 곳-->
+                <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" width="100" height="120" alt="..." /></a> <!-- 로고 이미지 들어갈 곳-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="main.html">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">MENU</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#FAQ">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" style="cursor: pointer;" onclick="go_signup()">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" style="cursor: pointer;" onclick="logout()">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="empmain.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="StockManagement.html">STOCK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="UserManagement.html">USER & PROFIT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="orderManagement.html">ORDER</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,23 +57,124 @@
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Good Dish</h4>
-                        <p class="text-muted">질 좋은 음식과 함께 하세요!</p>
+                        <p class="text-muted">You can eat good food comfortably at home. If you don't have time to go to a restaurant, order from home now!</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Good Choice</h4>
-                        <p class="text-muted">합리적인 선택으로 식사를 즐기세요!</p>
+                        <h4 class="my-3">Good Dish</h4>
+                        <p class="text-muted">You can eat good food comfortably at home. If you don't have time to go to a restaurant, order from home now!</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Good Time</h4>
-                        <p class="text-muted">기다리지 말고 드세요!</p>
+                        <h4 class="my-3">Good Dish</h4>
+                        <p class="text-muted">You can eat good food comfortably at home. If you don't have time to go to a restaurant, order from home now!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">여기엔 뭐 넣을까?</h2>
+                    <h3 class="section-subheading text-muted">부가 설명이 들어가야 해</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Threads</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/3.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Finish</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/4.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lines</div>
+                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/5.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Southwest</div>
+                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="../assets/img/portfolio/6.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Window</div>
+                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,60 +183,58 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">미스터 대박 디너와 함께 한 저녁식사들</h2>
-                    <h3 class="section-subheading text-muted">Dinner with MrDaeBak</h3>
+                    <h2 class="section-heading text-uppercase">우리 서비스에 대한 설명을 넣어볼까?</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2008    </h4>
-                                <h4 class="subheading">미스터 대박 디너 창립</h4>
+                                <h4>2009-2011</h4>
+                                <h4 class="subheading">Our Humble Beginnings</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">서울특별시 전농동 서울시립대로 창설 <br/>
-                                직원수 3명의 작은 가게로 운영</p></div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/2.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2013</h4>
-                                <h4 class="subheading">주문 100만건 돌파</h4>
+                                <h4>March 2011</h4>
+                                <h4 class="subheading">An Agency is Born</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">누적 합산 주문 100만건 돌파를 통한 <br/>
-                                연매출 2억 달성</p></div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
                     </li>
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2013-2020</h4>
-                                <h4 class="subheading">미스터 대박 디너 100호점 오픈</h4>
+                                <h4>December 2015</h4>
+                                <h4 class="subheading">Transition to Full Service</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">전국 가맹점 100개 오픈 <br/> 연매출 1억 돌파 32지점 갱신</p></div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2022-</h4>
-                                <h4 class="subheading">즐거운 저녁식사를 위해 요리하는 중</h4>
+                                <h4>July 2020</h4>
+                                <h4 class="subheading">Phase Two Expansion</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">맛있는 저녁식사를 만들기 위한 지속적 연구 <br/> </p></div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
-                                Delivery
+                                Be Part
                                 <br />
-                                Delicious
+                                Of Our
                                 <br />
-                                Dinner!
+                                Story!
                             </h4>
                         </div>
                     </li>
@@ -150,15 +245,15 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">창립자</h2>
-                    <h3 class="section-subheading text-muted">MEMBER</h3>
+                    <h2 class="section-heading text-uppercase">우리 사진 여기에 넣으면 간지날듯</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="..." />
-                            <h4>김민서</h4>
-                            <p class="text-muted">회계/재무</p>
+                            <h4>Parveen Anand</h4>
+                            <p class="text-muted">Lead Designer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -167,8 +262,8 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="..." />
-                            <h4>나인규</h4>
-                            <p class="text-muted">마켓팅/운영</p>
+                            <h4>Diana Petersen</h4>
+                            <p class="text-muted">Lead Marketer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -176,9 +271,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/3.jpg" alt="..." />
-                            <h4>임재석</h4>
-                            <p class="text-muted">요리</p>
+                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
+                            <h4>Larry Parker</h4>
+                            <p class="text-muted">Lead Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -186,7 +281,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">미스터 대박 디너 운영진은 맛있는 저녁식사를 위해 언제나 힘쓰겠습니다.</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                 </div>
             </div>
         </section>
@@ -428,52 +523,5 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-<<<<<<< HEAD
-        
-=======
-        <script>
-            function go_signup(){
-                if (getCookie('isLoggedin') != 'true'){
-                    location.href = 'login.html';
-                } else{
-                    alert('이미 로그인 상태입니다.');
-                }
-            };
-        </script>
-        <script>
-            function logout(){
-                if (getCookie('isLoggedin') == 'true'){
-                    allDelCookies();
-                } else{
-                    alert('비로그인 상태입니다.');
-                }
-            };
-        </script>
-        <script>
-            var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
-            const logout = async () => {
-                const postResponse = await fetch(url+"/api/auth/logout", {
-                    mode: 'cors',
-                    method: "GET",
-                    credentials: 'same-origin',
-                    withCredentials: true,
-                    headers: {
-                    'Content-Type':'application/json;charset=utf-8',
-                    'Access-Control-Allow-Origin':'*',
-                    'Connection': 'keep-alive',
-                    'Accept': '*/*'
-                }}).then((response) => {
-                    if (response.ok){
-                        console.log("response:", response.json());
-                        window.allDelCookies;
-                        return console.log(response);
-                    }
-                }).catch((error) => {
-                    console.log('로그아웃 실패');
-                })
-            };
-        </script>
->>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
-        <script src="../js/cookie.js"></script>
     </body>
 </html>

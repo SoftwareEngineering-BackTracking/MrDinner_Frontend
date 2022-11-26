@@ -122,30 +122,40 @@ function go_main() {
     location.href= "main.html";
 }
 
+function go_main_advenced() {
+    let dept = 0;
+  
+    fetch(url + "/api/user", {
+      mode: "cors",
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        Connection: "keep-alive",
+        Accept: "*/*",
+        "Content-Type": "application/json;charset=utf-8",
+        id: document.getElementById("ID").value,
+        password: document.getElementById("Password").value,
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+        for (let i in response.userList) {
+          if (response.userList[i].id == document.getElementById("ID").value) {
+            dept = response.userList[i].department;
+          }
+        }
+      })
+      .catch((error) => console.log("error", error));
+  
+    if (dept == 0) {
+      location.href = "main.html";
+    } else location.href = "empmain.html";
+  }
 
-<<<<<<< HEAD
-    fetch(url+"/api/user", {
-        method: "POST",
-        headers: {
-        'Content-Type':'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            id: document.getElementById('ID').value,
-            password: document.getElementById('Password').value
-        })
-    }).then((response) => {
-        modalOn();
-        if (response.status == 200) {
-//            console.log("response:", response.json());
-            let json = response.json();
-            console.log(json.value);
-            setTimeout(function() {
-                modalOff()}, 3000);
-            //setTimeout(function() {
-          //      go_main()}, 3000);
-        }}).catch((error) => console.log("error", error))
-};
-*/
+
 
 /*
 function login(){
@@ -171,8 +181,6 @@ function login(){
 */
 
 
-=======
->>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
@@ -197,14 +205,11 @@ const login = async () => {
             setCookie('id', document.getElementById('ID').value, 90);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
-<<<<<<< HEAD
-            go_main();
+            //go_main();
+            go_main_advenced();
             console.log(response.headers);
             console.log(response.headers.get('Set-Cookie'));
-=======
-            //go_main();
->>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
-            
+
             return console.log(document.cookie);
         }}).catch((error) => {
             console.log('로그인 실패');

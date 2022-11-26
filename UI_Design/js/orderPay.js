@@ -1,4 +1,5 @@
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+var url = "http://localhost:8080";
 document.write('<script src="../js/cookie.js"></script>');
 
 function openPurchaseModal(){
@@ -50,17 +51,19 @@ const createPurchase = async () => {
     var bank = document.getElementById('bank-select');
     const postResponse = await fetch(url+"/api/purchase", {
         mode: 'cors',
-        method: "GET",
+        method: "POST",
         credentials: 'same-origin',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
         'Access-Control-Allow-Origin':'*',
         'Connection': 'keep-alive',
-        'Accept': '*/*',
-        'id': getCookie('id'),
-        'cardNumber': cardNumbmer,
-        'bank': bank.options[bank.selectedIndex].value
-        }
+        'Accept': '*/*'
+        },
+        body: JSON.stringify({
+          'id': getCookie('id'),
+          'cardNumber': cardNumbmer,
+          'bank': bank.options[bank.selectedIndex].value
+        })
     })
     //const post = await postResponse.json()
     .then((response) => {
