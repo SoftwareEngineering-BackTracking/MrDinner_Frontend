@@ -54,7 +54,9 @@ function go_signup(){
 
 function login_info(){
   if (getCookie('isLoggedin') == 'true'){
-      document.getElementById('sign_up').innerHTML = 'MY INFO';
+    setTimeout(function() {
+      document.getElementById('sign_up').innerHTML = 'MY INFO';}, 50);
+      
   }
 };
 
