@@ -1,3 +1,4 @@
+document.write('<script src="../js/cookie.js"></script>');
 var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchAllDinner() {
@@ -35,12 +36,17 @@ function fetchAllDinner() {
 function createAddress(){
   fetch(url + "/api/address", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: {
+      mode: 'cors',
+      headers: {
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin':'*',
+      Connection: 'keep-alive',
+      Accept: '*/*'
+      },
+    body: JSON.stringify({
+      'id': getCookie('id'),
       'detail': document.getElementsByClassName('address-setting')[0].value
-    }
+    })
   })
 }
 
