@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="main.html"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
             <!-- 로고 이미지 들어갈 곳-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,17 +59,85 @@
     <span class="v155_89">자주 찾는 도움말</span>
     <hr class="bottomline" width="87%" color="#8F8F8F">>
     <div class="faqset">
-        <span class="v155_95">[ ID / PW 찾기 ] 인증메일이 안 날라와요</span>
+
+        <button class="v155_95">[ ID / PW 찾기 ] 인증메일이 날라오지 않습니다</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>이메일이 정확히 입력되었는지 확인하세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line1" width="87%" color="#9C9A9A">
-        <span class="v155_102">[ 로그인 ] 계정이 정지되었어요</span>
+
+        <button class="v155_102">[ 로그인 ] 계정이 정지되었습니다.</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>서비스 이용 수칙을 위반하였는지 확인하세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line2" width="87%" color="#9C9A9A">
-        <span class="v155_103">[ 음식 주문 ] 음성인식이 동작하지 않아요</span>
+
+        <button class="v155_103">[ 음식 주문 ] 음성인식이 동작하지 않습니다</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>마이크의 고장 유무를 확인하세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line3" width="87%" color="#9C9A9A">
-        <span class="v155_104">[ 음식 주문 ] 컴플레인을 걸고 싶어요</span>
+
+        <button class="v155_104">[ 음식 주문 ] 장바구니에 메뉴가 담기지 않습니다.</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>디너 선택에 이상이 없는지 확인하세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line4" width="87%" color="#9C9A9A">
-        <span class="v155_105">[ 결제 ] 잔고가 없어요</span>
+
+        <button class="v155_105">[ 결제 ] 올바르지 않은 정보라고 표시됩니다.</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>카드번호를 정확히 입력했는지 확인하세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line5" width="87%" color="#9C9A9A">
-        <span class="v155_106">[ 쿠폰 이용 ] 쿠폰 더 주세요</span>
+
+        <button class="v155_106">[ 쿠폰 이용 ] 쿠폰이 사용되지 않습니다.</button>
+        <div class="modal hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>쿠폰의 사용기간이 만료되었는지 확인해보세요.</p>
+                <button class="closeBtn">닫기</button>
+            </div>
+        </div>
         <hr class="line6" width="87%" color="#9C9A9A">
     </div>
+
+    <script>
+        const open = () => {
+            document.querySelector(".modal").classList.remove("hidden");
+        }
+
+        const close = () => {
+            document.querySelector(".modal").classList.add("hidden");
+        }
+
+        document.querySelector(".v155_95").addEventListener("click", open);
+        document.querySelector(".v155_102").addEventListener("click", open);
+        document.querySelector(".v155_103").addEventListener("click", open);
+        document.querySelector(".v155_104").addEventListener("click", open);
+        document.querySelector(".v155_105").addEventListener("click", open);
+        document.querySelector(".v155_106").addEventListener("click", open);
+
+        document.querySelector(".closeBtn").addEventListener("click", close);
+        document.querySelector(".bg").addEvnetListener("click", close);
+    </script>
 </body>

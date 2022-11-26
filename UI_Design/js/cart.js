@@ -14,13 +14,12 @@ const fetchCartItem = async () => {
         Accept: '*/*',
         id: getCookie('id')
         }})
-    .then((response) => {
-        
-        response.json()
+        .then((response) => {
+            return response.json();
         }).then((response) => {
-            return response
+            console.log(response);
         }).catch((error) => {
-            console.log('장바구니 아이템 불러오기 실패');
+            console.log(error);
         })
     
 }

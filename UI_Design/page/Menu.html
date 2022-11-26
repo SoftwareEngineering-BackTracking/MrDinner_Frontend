@@ -18,6 +18,7 @@
         <script src="../js/menu.js"></script>  
         <script type="module">
             window.onload = fetchAllDinner();
+            window.onload = login_info();
         </script> 
     </head>
 
@@ -36,9 +37,9 @@
                     <button class = 'voice-order'>
                         <i id = 'voice-icon' class="fa-solid fa-microphone" onclick="get_voice()"></i>
                     </button>
-                    <a class = 'address-search' href="main.html"><i id = 'search-icon'class="fa-solid fa-magnifying-glass"></i>
+                    <a class = 'address-search' onclick="createAddress()"><i id = 'search-icon'class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                </div>
+                </div>  
             </div>
         </div>
 
@@ -215,5 +216,5 @@
     
     
     // </script>
-    
+    <script src="../js/cookie.js"></script>
 </html>    

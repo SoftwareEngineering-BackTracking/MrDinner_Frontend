@@ -37,11 +37,15 @@ function createAddress(){
   fetch(url + "/api/address", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json;charset=utf-8",
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin':'*',
+      Connection: 'keep-alive',
+      Accept: '*/*'
     },
-    body: {
+    body: JSON.stringify({
+      'id': getCookie('id'),
       'detail': document.getElementsByClassName('address-setting')[0].value
-    }
+    })
   })
 }
 
