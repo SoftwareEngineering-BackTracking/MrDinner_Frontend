@@ -83,10 +83,227 @@
     font-weight: bold;
     padding-top: 20px;
 }
-
+.customer-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.customer-info-container .title{
+    align-self: flex-start;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-left: 20%;
+}
 .order-container #order-request{
     margin-top: 30px;
     height: 100px;
     width: 50%;
     font-size: 15px;
 }
+
+
+.purchase-menu{
+    display: flex;
+    gap: 30%;
+    margin-left: 5%;
+}
+
+
+
+
+
+
+.purchase-info-box{
+    margin-top: 50px;
+    width: 50%;
+    border: 2px solid gray;
+}
+
+.purchase-info-top{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchase-title {
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#create-purchase{
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.purchase-info{
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.purchase-info #bank{
+    font-size: 15px;
+    margin-top: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.purchase-info #card-number{
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+#order-content{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+#pay-modal{
+    background: rgba(0,0,0,.5);
+    overflow: hidden;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    border-radius: 5px;
+}
+
+.pay-modal-title{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: orange;
+    border-bottom: 2px solid orange;
+}
+
+.pay-modal-content{
+    margin-top: 2rem;
+    margin-left: 5%;
+}
+
+.pay-modal-content .about{
+    font-size: 20px;
+    padding-bottom: 1.5rem;
+}
+
+.card-number-box{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.card-number-box #card-number2, #card-number3{
+    height: 30px;
+    width: 15%;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 18px;
+    text-align: center;
+    padding: .8em .5em;
+    border: 1px solid #999;
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.card-number-box #card-number1{
+    height: 30px;
+    width: 15%;
+    margin-right: 1%;
+    font-size: 18px;
+    text-align: center;
+    padding: .8em .5em;
+    border: 1px solid #999;
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+.card-number-box #card-number4{
+    height: 30px;
+    width: 15%;
+    margin-right: 3%;
+    margin-left: 1%;
+    font-size: 18px;
+    text-align: center;
+    padding: .8em .5em;
+    border: 1px solid #999;
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+#close-btn{
+    position: absolute;
+    align-self: flex-end;
+    margin-right: 3%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 2%;
+
+}
+.pay{
+    padding: .4em .2em;
+    border: 1px solid #999;
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    width: 90px;
+    font-size:large;
+    color: black;
+    margin-right: 5%;
+}
+
+.pay:active{
+    opacity: 0.8;
+}
+
+
+
+
+.modal-container {
+    background: rgba(0,0,0,.5);
+    display: none;
+    /* this is how we cover the entire page */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+select {
+    width: 150px; 
+    padding: .8em .5em;
+    border: 1px solid #999;
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+    
+select::-ms-expand {
+    display: none;
+}
+    

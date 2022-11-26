@@ -140,3 +140,19 @@
 #Password{
 	-webkit-text-security: disc; 
 }
+
+.recoveryId {
+	width: 200px;
+	height: 37px;
+	opacity: 1;
+	transform: translate(50%, 50%);
+	overflow: hidden;
+	background: transparent;
+	border-color: transparent;
+	color: rgba(53, 53, 53, 1);
+	font-family: Inter;
+	font-weight: Semi Bold;
+	font-size: 16px;
+	text-align: center;
+	z-index: 1;
+ }

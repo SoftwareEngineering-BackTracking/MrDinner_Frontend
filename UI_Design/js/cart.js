@@ -4,6 +4,7 @@ document.write('<script src="../js/cookie.js"></script>');
 
 
 const fetchCartItem = async () => {
+    console.log(1);
     const postResponse = await fetch(url+"/api/cartitem", {
         mode: 'cors',
         method: "GET",
@@ -14,8 +15,8 @@ const fetchCartItem = async () => {
         Accept: '*/*',
         id: getCookie('id')
         }})
-        .then((response) => {
-            return response.json();
+    .then((response) => {
+        return response.json()
         }).then((response) => {
             console.log(response);
         }).catch((error) => {

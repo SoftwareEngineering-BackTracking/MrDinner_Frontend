@@ -83,6 +83,7 @@ var department = '직원'
 
 const signup = async () => {
     department = getCheckboxValue();
+<<<<<<< HEAD
     data = {
         'id': document.getElementsByClassName('id')[0].value,
         'password': document.getElementsByClassName('password')[0].value,
@@ -93,6 +94,18 @@ const signup = async () => {
         'nickname': document.getElementsByClassName('nickname')[0].value,
         'department': department
     };
+=======
+    // data = {
+    //     'id': document.getElementsByClassName('id')[0].value,
+    //     'password': document.getElementsByClassName('password')[0].value,
+    //     'name': getCookie('name'),
+    //     'birth': getCookie('birth'),
+    //     'phoneNumber': getCookie('phone'),
+    //     'email': getCookie('email'),
+    //     'nickname': document.getElementsByClassName('nickname')[0].value,
+    //     'department': department
+    // };
+>>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
     
     const postResponse = await fetch(url+"/api/user", {
         mode: 'cors',
@@ -103,7 +116,16 @@ const signup = async () => {
             Connection: 'keep-alive',
             Accept: '*/*',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+            'id': document.getElementsByClassName('id')[0].value,
+            'password': document.getElementsByClassName('password')[0].value,
+            'name': getCookie('name'),
+            'birth': getCookie('birth'),
+            'phoneNumber': getCookie('phone'),
+            'email': getCookie('email'),
+            'nickname': document.getElementsByClassName('nickname')[0].value,
+            'department': department
+        })
     })
     .then((response) => {
         if (response.ok && CheckId == true){

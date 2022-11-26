@@ -122,9 +122,8 @@ function go_main() {
     location.href= "main.html";
 }
 
-/*
-function login(){
 
+<<<<<<< HEAD
     fetch(url+"/api/user", {
         method: "POST",
         headers: {
@@ -172,10 +171,13 @@ function login(){
 */
 
 
+=======
+>>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
         method: "GET",
+        credentials: 'same-origin',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
         'Access-Control-Allow-Origin':'*',
@@ -191,14 +193,17 @@ const login = async () => {
         modalOn(); // 일단 대기창 띄워놓기
         if (response.ok){
             console.log("response:", response.json());
-            setCookie('isLoggedin', true, 30); // 쿠키 저장
-            setCookie('id', document.getElementById('ID').value, 30);
-            setCookie('password', document.getElementById('Password').value, 30);
+            setCookie('isLoggedin', true, 90); // 쿠키 저장
+            setCookie('id', document.getElementById('ID').value, 90);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
+<<<<<<< HEAD
             go_main();
             console.log(response.headers);
             console.log(response.headers.get('Set-Cookie'));
+=======
+            //go_main();
+>>>>>>> d46e91b4d1074facd36f8c2da85a596c4094955a
             
             return console.log(document.cookie);
         }}).catch((error) => {
