@@ -1,9 +1,14 @@
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
+var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchUser() {
   fetch(url + "/api/user", {
-    method: "GET",
-    headers: {
+    cors: {
+      origin: "*",
+      method: "GET",
+      preflightContinue: false,
+      optionSuccessStatus: 204,
+    },
+      headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
   })

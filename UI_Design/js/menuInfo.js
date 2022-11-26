@@ -1,6 +1,7 @@
 document.write('<script src="../js/cookie.js"></script>');
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+// var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+var url = "http://127.0.0.1:8080";
 
 if (document.getElementsByClassName('dinner-name')[0].textContent == 'Valentine Dinner'){
   var dinner = '발렌타인';
@@ -14,6 +15,11 @@ if (document.getElementsByClassName('dinner-name')[0].textContent == 'Valentine 
 
 const createCartItem = async () => {
   var style = document.getElementById('style-select');
+  data = {
+    'id': getCookie('id'),
+    'dinner': dinner,
+    'style': style.options[style.selectedIndex].value
+  };
   const postResponse = await fetch(url + "/api/cartitem", {
     method: "POST",
     mode: 'cors',

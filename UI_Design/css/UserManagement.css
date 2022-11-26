@@ -137,15 +137,25 @@ body {
   overflow: hidden;
 }
 
+.earning {
+  display: flex;
+  justify-content: left;
+}
+
+.user {
+  display: flex;
+  justify-content: left;
+}
+
 .v22_35 {
   width: 388px;
   height: 41px;
   background: rgba(74, 34, 28, 0.8500000238418579);
   opacity: 0.949999988079071;
-  position: relative;
-  top: 175px;
-  left: 37%;
-  transform: translate(-93%, 0);
+  position: absolute;
+  top: 22%;
+  margin-left: 24.6rem;
+  transform: translate(0,-50%);
   color: white;
   font-family: Inter;
   font-weight: Bold;
@@ -328,10 +338,8 @@ body {
   height: 41px;
   background: rgba(74, 34, 28, 0.8500000238418579);
   opacity: 0.949999988079071;
-  position: relative;
-  top: -436px;
-  left: 37%;
-  transform: translate(-93%, 0%);
+  margin-left: 24.6rem; 
+  margin-top: 11rem;
   color: white;
   font-family: Inter;
   font-weight: Bold;

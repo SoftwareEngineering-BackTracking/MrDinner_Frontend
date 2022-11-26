@@ -1,5 +1,7 @@
+
+var url = "http://127.0.0.1:8080";
 document.write('<script src="../js/cookie.js"></script>');
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchAllDinner() {
   fetch(url + "/api/dinner", {
@@ -42,6 +44,7 @@ function createAddress(){
       'Access-Control-Allow-Origin':'*',
       Connection: 'keep-alive',
       Accept: '*/*'
+
       },
     body: JSON.stringify({
       'id': getCookie('id'),

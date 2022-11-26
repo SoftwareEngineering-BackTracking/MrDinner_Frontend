@@ -27,6 +27,28 @@ header.masthead {
   opacity: 0.6;
 }
 
+.allcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.container0 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+}
+
 .redbox {
   width: 455px;
   height: 57px;
@@ -49,39 +71,36 @@ header.masthead {
   width: 380px;
   height: 663px;
   background: #c5c5c5;
-  margin-top: auto;
-  margin-left: 10%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
+  box-shadow: 5px 5px 15px #6a6a6aec;
 }
 
 .outercontainer1 {
   width: 380px;
   height: 663px;
   background: #c5c5c5;
-  margin-top: -38.5%;
-  margin-left: 39%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
+  box-shadow: 5px 5px 15px #6a6a6aec;
 }
 
 .outercontainer2 {
   width: 380px;
   height: 663px;
   background: #c5c5c5;
-  margin-top: -38.5%;
-  margin-left: 69%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
+  box-shadow: 5px 5px 15px #6a6a6aec;
 }
 
 .innercontainer0 {
@@ -94,6 +113,7 @@ header.masthead {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border: 3px solid #b0b0b0;
   overflow: hidden;
 }
 
@@ -107,6 +127,7 @@ header.masthead {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border: 3px solid #b0b0b0;
   overflow: hidden;
 }
 
@@ -120,15 +141,16 @@ header.masthead {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border: 3px solid #b0b0b0;
   overflow: hidden;
 }
 
 .ordernumber0 {
   width: 320px;
   height: 52px;
-  background: #A9A9A9;
+  background: #a9a9a9;
   margin: auto;
-  transform: translate(0,100%);
+  transform: translate(0, 100%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -146,9 +168,9 @@ header.masthead {
 .ordernumber1 {
   width: 320px;
   height: 52px;
-  background: #A9A9A9;
+  background: #a9a9a9;
   margin: auto;
-  transform: translate(0,100%);
+  transform: translate(0, 100%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -166,9 +188,9 @@ header.masthead {
 .ordernumber2 {
   width: 320px;
   height: 52px;
-  background: #A9A9A9;
+  background: #a9a9a9;
   margin: auto;
-  transform: translate(0,100%);
+  transform: translate(0, 100%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -197,7 +219,7 @@ header.masthead {
 
 .dinnername {
   width: 200px;
-  transform: translate(15%,100%);
+  transform: translate(15%, 100%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: Bold;
@@ -210,7 +232,7 @@ header.masthead {
 .add {
   width: 200px;
   margin-left: 4%;
-  transform: translate(-25%,190%);
+  transform: translate(-25%, 190%);
   color: rgba(0, 0, 0, 1);
   font-family: semi bold;
   font-weight: 400;
@@ -236,7 +258,7 @@ header.masthead {
 .userinfo {
   width: 200px;
   margin-left: -10%;
-  transform: translate(0,570%);
+  transform: translate(0, 570%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
@@ -248,7 +270,7 @@ header.masthead {
 
 .nameinfo {
   width: 200px;
-  transform: translate(15%,670%);
+  transform: translate(15%, 670%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
@@ -260,7 +282,7 @@ header.masthead {
 
 .phoneinfo {
   width: 200px;
-  transform: translate(15%,710%);
+  transform: translate(15%, 710%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
@@ -273,7 +295,7 @@ header.masthead {
 .addressinfo {
   width: 300px;
   top: 30px;
-  transform: translate(10%,670%);
+  transform: translate(10%, 670%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
@@ -286,7 +308,7 @@ header.masthead {
 .ordertime {
   width: 200px;
   margin-left: 48%;
-  transform: translate(0,570%);
+  transform: translate(0, 570%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: semi bold;
@@ -298,7 +320,7 @@ header.masthead {
 
 .userreq {
   width: 200px;
-  transform: translate(-20%,830%);
+  transform: translate(-20%, 830%);
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: bold;
@@ -325,8 +347,7 @@ header.masthead {
   width: 380px;
   height: 60px;
   background: rgb(255, 0, 30);
-  margin-left: 10%;
-  transform: translate(0,50%);
+  transform: translate(0, 50%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -339,14 +360,14 @@ header.masthead {
   opacity: 0.8;
   text-align: center;
   line-height: 60px;
+  box-shadow: 5px 5px 10px #20040438;
 }
 
 .orderstatus1 {
   width: 380px;
   height: 60px;
   background: rgb(255, 0, 30);
-  margin-left: 39%;
-  transform: translate(0,55%);
+  transform: translate(0, 50%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -359,14 +380,14 @@ header.masthead {
   opacity: 0.8;
   text-align: center;
   line-height: 60px;
+  box-shadow: 5px 5px 10px #20040438;
 }
 
 .orderstatus2 {
   width: 380px;
   height: 60px;
   background: rgb(255, 0, 30);
-  margin-left: 69%;
-  transform: translate(0,63%);
+  transform: translate(0, 50%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -379,6 +400,7 @@ header.masthead {
   opacity: 0.8;
   text-align: center;
   line-height: 60px;
+  box-shadow: 5px 5px 10px #20040438;
 }
 
 .prevBtn {

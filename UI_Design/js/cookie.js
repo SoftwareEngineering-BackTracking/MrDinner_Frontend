@@ -48,7 +48,14 @@ function go_signup(){
   if (getCookie('isLoggedin') != 'true'){
     location.href = 'login.html';
   } else{
-    alert('이미 로그인 상태입니다.');
+    location.href = 'myPage.html';
+  }
+};
+
+function login_info(){
+  if (getCookie('isLoggedin') == 'true'){
+      const element = document.getElementById('sign_up');
+      element.innerHTML = 'MY INFO';
   }
 };
 

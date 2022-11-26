@@ -57,7 +57,7 @@
                             <p style="margin-block-end: 0.5rem;">예상 소요 시간</p>
                             <div class = 'time-icon-box'>
                                 <i class="fa-regular fa-clock" style="margin-right: 10px;"></i>
-                                <p style="margin-block-start:0rem; margin-block-end:0rem;">35min</p>
+                                <p style="margin-block-start:0rem; margin-block-end:0rem;">30min</p>
                             </div>
                         </div>
                         <div class = 'cash-box'>
@@ -67,7 +67,7 @@
                     <!-- onclick="location.href = 'cart.html'" -->
                     <div class = 'add-cart-box' onclick="createCartItem()">
                         <i class = 'fa-solid fa-cart-arrow-down' style="margin: 10px; color: orange;">장바구니 아이콘</i>
-                        <p>장바구니에 추가</p>
+                        <p onclick="go_menu()">장바구니에 추가</p>
                     </div>
                     <div class = 'ad-box' onclick="location.href = 'https:\/\/admission.uos.ac.kr\/admission\/main.do#'"></div>
 
@@ -221,6 +221,11 @@
             reviewContainer.classList.add('slide-left');
             infoContainer.classList.add('slide-left');
         });
+    </script>
+    <script>
+        function go_menu(){
+            location.href = 'menu.html'
+        };
     </script>
     <script src="../js/menuInfo.js"></script>
 </html>

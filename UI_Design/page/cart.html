@@ -68,58 +68,17 @@
 <script src="../js/cart.js"></script>
 
 <script language = 'JavaScript'>
+    var res;
     function get_res(){
-        var res = fetchCartItem();
-    }
-    window.onload = fetchCartItem();
-    
-    res = {
-"dtoMetaData": {
-"message": "장바구니에 담긴 모든 주문 조회 성공",
-"exception": null
-},
-"cartItems": [
-{
-"createdDate": null,
-"modifiedDate": null,
-"cartItemNo": 26,
-"cartNo": 1,
-"dinner": "발렌타인",
-"style": "simple",
-"price": 16000
-},
-{
-"createdDate": "2022-11-10T15:24:37.103614",
-"modifiedDate": "2022-11-10T15:24:37.103614",
-"cartItemNo": 27,
-"cartNo": 1,
-"dinner": "발렌타인",
-"style": "심플",
-"price": 18000
-}
-]
-};
-    
-    var cartTest = document.getElementById('cart-test');
-
-    for(i=0; i<res.cartItems.length; i++){
-        cartTest.innerHTML += `
-        <div class = 'cart-box'>
-        <div class = 'cart-img-box'>
-            <div class = 'cart-img'></div>
-        </div>
-        <div class = 'cart-info-box'>
-            <div class = 'title'>${res.cartItems[i].dinner}</div>
-            <div class = 'style'>${res.cartItems[i].style}</div>
-            <div class = 'hash-tag'>#해시태그</div>
-        </div>
-        <div class = 'cart-right-box'>
-            <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
-            <div class = 'cart-price'>${res.cartItems[i].price}원</div>
-        </div>
-    </div>
-
-        `
+        res = fetchCartItem().then((response) => {
+            console.log(response);
+            return response;
+        });
         
     }
+
+    window.onload = get_res();
+    
+   
+
 </script>

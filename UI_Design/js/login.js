@@ -104,9 +104,9 @@ var LoginModalController = {
     }
 };
 
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 
-//var url = "http://127.0.0.1:8080"
+var url = "http://127.0.0.1:8080";
 
 function modalOn() {
     const waiting_modal = document.getElementsByClassName('modal-overlay')[0];
@@ -121,6 +121,64 @@ function modalOff() {
 function go_main() {
     location.href= "main.html";
 }
+
+function go_main_advenced() {
+    let dept = 0;
+  
+    fetch(url + "/api/user", {
+      mode: "cors",
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        Connection: "keep-alive",
+        Accept: "*/*",
+        "Content-Type": "application/json;charset=utf-8",
+        id: document.getElementById("ID").value,
+        password: document.getElementById("Password").value,
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+        for (let i in response.userList) {
+          if (response.userList[i].id == document.getElementById("ID").value) {
+            dept = response.userList[i].department;
+          }
+        }
+      })
+      .catch((error) => console.log("error", error));
+  
+    if (dept == 0) {
+      location.href = "main.html";
+    } else location.href = "empmain.html";
+  }
+
+
+
+/*
+function login(){
+    fetch(url+"/api/auth/login", {
+        method: "POST",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            id: document.getElementById('ID').value,
+            password: document.getElementById('Password').value
+        })
+    }).then((response) => {
+        modalOn(); // 일단 대기창 띄워놓기
+        // 정상 status = 200번 대
+        if (response.ok) {
+            
+        }
+    }).then((data) => { // 세션 아이디 받아오기
+        
+})
+};
+*/
 
 
 const login = async () => {
@@ -148,7 +206,10 @@ const login = async () => {
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();
-            
+            go_main_advenced();
+            console.log(response.headers);
+            console.log(response.headers.get('Set-Cookie'));
+
             return console.log(document.cookie);
         }}).catch((error) => {
             console.log('로그인 실패');
@@ -158,5 +219,4 @@ const login = async () => {
 function go_signup(){
     location.href= "SignUp1.html";
 }
-
 
