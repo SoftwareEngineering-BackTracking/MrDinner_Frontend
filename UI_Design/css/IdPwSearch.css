@@ -138,6 +138,20 @@ header.masthead {
   border-radius: 5px;
 }
 
+#pw-modal{
+  background: rgba(0,0,0,.5);
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  border-radius: 5px;
+}
+
 .modal-title{
   z-index: 100;
   text-align: center;
@@ -181,6 +195,17 @@ header.masthead {
   z-index: 2;
 }
 
+.modal-container2 {
+  background: rgba(0,0,0,.5);
+  display: flex;
+  /* this is how we cover the entire page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
 
 select {
   width: 150px; 
@@ -262,5 +287,36 @@ select::-ms-expand {
 }
 
 #go-main:active{
+  opacity: 0.8;
+}
+
+.recover-box{
+  display: flex;
+  justify-content: center;
+}
+
+#recovered-password{
+  margin-right: 1rem;
+  height: 40px;
+  width: 50%;
+  border: 2px solid orange;
+  font-size: 18px;
+}
+
+#recovered-password:focus{
+  outline: 2px solid orange;
+}
+
+.recover-btn{
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid rgb(161, 105, 1);
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.recover-btn:active{
   opacity: 0.8;
 }

@@ -85,7 +85,21 @@
               <p style="font-size: 18px; margin-right: 1rem;">아이디: </p><p style="font-size: 18px; font-weight: bold;" id = 'recovered-id'></p>
           </div>
       </div>
-  </div>
+    </div>
+
+    <div class = 'modal-container2' id = "modal2">
+      <div id = 'pw-modal'>
+          <div class = 'modal-title' style="color: black;">알림!</div>
+          <div id = 'close-btn' onclick="closePwModal()">X</div>
+          <div class = 'modal-content' style='display: flex; flex-direction: column; align-items: center;'>
+            <p style="font-size: 18px; font-weight: bold;">변경할 비밀번호를 입력하세요!</p>
+            <div class = 'recover-box'>
+              <input id = 'recovered-password'>
+              <button class = 'recover-btn' onclick="recoverPw()">확인</button>
+            </div>
+          </div>
+      </div>
+    </div>
 
   
   </body>

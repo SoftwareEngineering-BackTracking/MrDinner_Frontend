@@ -1,4 +1,5 @@
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
+var url = "http://localhost:8080";
 var i = 0;
 
 const fetchDinnerIngredient = async () => {
@@ -18,29 +19,22 @@ const fetchDinnerIngredient = async () => {
     })
     .then((response) => {
       console.log(response);
+      
 
-      var tempRes = JSON.stringify(response);
-      tempRes.replace(/"/g, "");
-
-      var resData = JSON.parse(tempRes);
-
-      for (i in resData.dinnerIngredientList) {
+      for (i=0; i<response.dinnerIngredientList.length; i++) {
         document.getElementById("dinnerIngredient" + String(i)).innerHTML =
-          resData.dinnerIngredientList[i].dinnerIngredient;
-        document.getElementById("dinner" + String(i)).innerHTML =
-          "디너 : " +
-          resData.dinnerIngredientList[i].dinner +
+        response.dinnerIngredientList[i].dinnerIngredient;
           "<br>";
         document.getElementById("price" + String(i)).innerHTML =
           "가격 : " +
-          resData.dinnerIngredientList[i].price +
+          response.dinnerIngredientList[i].price +
           "<br>";
         document.getElementById("demandDate" + String(i)).innerHTML =
           "입고일 : " +
-          resData.dinnerIngredientList[i].demandDate;
+          response.dinnerIngredientList[i].demandDate;
         document.getElementById("stock" + String(i)).innerHTML =
           "남은 수량 : " +
-          resData.dinnerIngredientList[i].quantity;
+          response.dinnerIngredientList[i].quantity;
       }
     })
     .catch((error) => console.log("error", error));

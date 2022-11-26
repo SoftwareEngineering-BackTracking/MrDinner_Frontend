@@ -1,4 +1,5 @@
-var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+//var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
+var url = "http://localhost:8080";
 
 function openIdModal(){
     document.getElementById('modal').style.display = 'flex';
@@ -19,7 +20,39 @@ function closePwModal(){
 const recoverId = async () => {
     const postResponse = await fetch(url+"/api/recover/id", {
         mode: 'cors',
-        method: "POST",
+        method: "GET",
+        credentials: 'same-origin',
+        headers: {
+        'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin':'*',
+        'Connection': 'keep-alive',
+        'Accept': '*/*',
+        'email': document.getElementById('email').value
+        }
+    })
+    //const post = await postResponse.json()
+    .then((response) => {
+        if (response.ok){
+            return response.json();
+        }}).then((response) => {
+            console.log("response:", response);
+            
+            document.getElementById('recovered-id').innerHTML = response.id;
+            openIdModal();
+
+        }).catch((error) => {
+            console.log('ID 정보 생성 실패');
+            console.log(error);
+        })
+};
+
+const recoverPw = async () => {
+    if (document.getElementById('recovered-password').value == ''){
+        return alert('비밀번호를 입력하세요.');
+    }
+    const postResponse = await fetch(url+"/api/recover/password", {
+        mode: 'cors',
+        method: "PUT",
         credentials: 'same-origin',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
@@ -27,25 +60,21 @@ const recoverId = async () => {
         'Connection': 'keep-alive',
         'Accept': '*/*'
         },
-        body: JSON.stringify({
-            'email': document.getElementById('email').value
+        body:JSON.stringify({
+            'id': document.getElementById('id').value,
+            'newPassword': document.getElementById('recovered-password').value 
         })
     })
     //const post = await postResponse.json()
     .then((response) => {
         if (response.ok){
-            return console.log(response.json());
-        }}).then((response) => {
-            console.log("response:", response);
-            var tempRes = JSON.stringify(response);
-            var resData = JSON.parse(tempRes);
-            
-            document.getElementById('recovered-id').innerHTML = resData.id;
-            openIdModal();
-
-        }).catch((error) => {
-            console.log('결제 정보 생성 실패');
+            alert('변경되었습니다.');
+            closePwModal();
+            return response.json();
+        }}).catch((error) => {
+            console.log('비밀번호 수정 실패');
             console.log(error);
+            alert('비밀번호 수정 실패');
         })
 };
 
@@ -94,6 +123,7 @@ const sendEmail = async () => {
         }}).catch((error) => {
             console.log('메일 보내기 실패');
             console.log(error);
+            alert('메일 보내기 실패');
         })
     
 }
@@ -112,9 +142,11 @@ const verifyEmail2 = async () => {
         if (response.ok){
             console.log("response:", response.json());
             console.log('이메일 인증 완료');
+            openPwModal();
         }}).catch((error) => {
             console.log('이메일 인증 실패');
             console.log(error);
+            alert('이메일 인증 실패')
         })
     
 }
