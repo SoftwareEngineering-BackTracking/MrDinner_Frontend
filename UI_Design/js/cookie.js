@@ -33,7 +33,7 @@ function allDelCookies(domain, path){
 
   // 반목문 순회하면서 쿠키 전체 삭제
   if (!document.cookie) {
-    alert('삭제할 쿠키가 없습니다.');
+  
   } else {
     for (i = 0; i < cookies.length; i++) {
       // const uname = cookies[i].split('=')[0];
@@ -41,7 +41,6 @@ function allDelCookies(domain, path){
       document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration;
       // document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration + '; domain =' + domain;
     }
-    alert('쿠키 전부 삭제완료!!');
   }
 };
 
@@ -50,5 +49,15 @@ function go_signup(){
     location.href = 'login.html';
   } else{
     alert('이미 로그인 상태입니다.');
+  }
+};
+
+function logout(){
+  if (getCookie('isLoggedin') == 'true'){
+      allDelCookies();
+      alert('로그아웃 되었습니다.');
+      location.href = 'login.html'
+  } else{
+      alert('비로그인 상태입니다.');
   }
 };
