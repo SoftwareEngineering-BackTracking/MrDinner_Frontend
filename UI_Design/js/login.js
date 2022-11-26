@@ -122,58 +122,12 @@ function go_main() {
     location.href= "main.html";
 }
 
-/*
-function login(){
 
-    fetch(url+"/api/user", {
-        method: "POST",
-        headers: {
-        'Content-Type':'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            id: document.getElementById('ID').value,
-            password: document.getElementById('Password').value
-        })
-    }).then((response) => {
-        modalOn();
-        if (response.status == 200) {
-//            console.log("response:", response.json());
-            let json = response.json();
-            console.log(json.value);
-            setTimeout(function() {
-                modalOff()}, 3000);
-            //setTimeout(function() {
-          //      go_main()}, 3000);
-        }}).catch((error) => console.log("error", error))
-};
-*/
-
-/*
-function login(){
-    fetch(url+"/api/auth/login", {
-        method: "POST",
-        headers: {
-        'Content-Type':'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-            id: document.getElementById('ID').value,
-            password: document.getElementById('Password').value
-        })
-    }).then((response) => {
-        modalOn(); // 일단 대기창 띄워놓기
-        // 정상 status = 200번 대
-        if (response.ok) {
-            
-        }
-    }).then((data) => { // 세션 아이디 받아오기
-        
-})
-};
-*/
 const login = async () => {
     const postResponse = await fetch(url+"/api/auth/login", {
         mode: 'cors',
         method: "GET",
+        credentials: 'same-origin',
         headers: {
         'Content-Type':'application/json;charset=utf-8',
         'Access-Control-Allow-Origin':'*',
@@ -189,13 +143,12 @@ const login = async () => {
         modalOn(); // 일단 대기창 띄워놓기
         if (response.ok){
             console.log("response:", response.json());
-            setCookie('isLoggedin', true, 30); // 쿠키 저장
-            setCookie('id', document.getElementById('ID').value, 30);
-            setCookie('password', document.getElementById('Password').value, 30);
+            setCookie('isLoggedin', true, 90); // 쿠키 저장
+            setCookie('id', document.getElementById('ID').value, 90);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();
-            console.log(response.headers);
+            
             return console.log(document.cookie);
         }}).catch((error) => {
             console.log('로그인 실패');
