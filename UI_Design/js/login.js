@@ -206,8 +206,8 @@ const login = async () => {
         modalOn(); // 일단 대기창 띄워놓기
         if (response.ok){
             console.log("response:", response.json());
-            setCookie('isLoe, 90ggedin', true, 90); // 쿠키 저장
-            setCookie('id', document.getElementById('ID').valu);
+            setCookie('isLoggedin', true, 90); // 쿠키 저장
+            setCookie('id', document.getElementById('ID').value);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();

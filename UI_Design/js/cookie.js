@@ -54,8 +54,7 @@ function go_signup(){
 
 function login_info(){
   if (getCookie('isLoggedin') == 'true'){
-      const element = document.getElementById('sign_up');
-      element.innerHTML = 'MY INFO';
+      document.getElementById('sign_up').innerHTML = 'MY INFO';
   }
 };
 
