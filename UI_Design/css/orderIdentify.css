@@ -56,6 +56,22 @@ header.masthead {
     transform: translate(0, 20%);
 }
 
+.crntmenu {
+    width: 250px;
+    height: 210px;
+    position: relative;
+    right: 200px;
+    transform: translate(0, 135%);
+}
+
+.orderstatus {
+    color: rgba(0, 0, 0, 1);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 28px;
+    opacity: 1;
+}
+
 .outercontainer {
     width: 1098px;
     height: 350px;
@@ -77,18 +93,27 @@ header.masthead {
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    text-align: center;
+    line-height: 70px;
 }
 
 .info {
-    margin-left: 30rem;
-    transform: translate(0, -200%);
+    position: relative;
+    left: 200px;
+    top: 220px;
     font-family: Inter;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    text-align: right;
+    text-align: left;
     color: #F10606
+}
+
+.ordertime {
+    position: relative;
+    left: 620px;
+    text-align: left;
 }
 
 .change {
@@ -204,19 +229,51 @@ button:hover {
     text-align: left;
 }
 
-.pastordercontainer {
+.pastorderset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pastordercontainer0 {
     display: flex;
     flex-direction: row;
 }
 
-.pastoutercontainer {
+.pastordercontainer1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pastordercontainer2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.pastoutercontainer0 {
+    margin-top: 3rem;
+    width: 350px;
+    height: 400px;
+    background: #D9D9D9;
+    border-radius: 15px; 
+}
+
+.pastoutercontainer1 {
     margin-top: 3rem;
     margin-left: 10rem;
     width: 350px;
     height: 400px;
     background: #D9D9D9;
-    border-radius: 15px;
-    
+    border-radius: 15px; 
+}
+
+.pastoutercontainer2 {
+    margin-top: 3rem;
+    margin-left: 10rem;
+    width: 350px;
+    height: 400px;
+    background: #D9D9D9;
+    border-radius: 15px; 
 }
 
 .pastinnercontainer {
@@ -231,13 +288,34 @@ button:hover {
     border-bottom-right-radius: 15px;
 }
 
+.pastmenu0 {
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+    width: 150px;
+    height: 120px;
+}
+
+.pastmenu1 {
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+    width: 150px;
+    height: 120px;
+}
+
+.pastmenu2 {
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+    width: 150px;
+    height: 120px;
+}
+
 .line3 {
     margin-top: 5rem;
     margin-bottom: 2rem;
 }
 
 .pastdinner {
-    margin-top: 9rem;
+    margin-top: 1.2rem;
     margin-left: 1.2rem;
     font-family: Inter;
     font-style: normal;

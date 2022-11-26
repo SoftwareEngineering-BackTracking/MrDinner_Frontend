@@ -123,7 +123,7 @@ function go_main() {
 }
 
 function go_main_advenced() {
-    let dept = 0;
+    let dept = '직원';
   
     fetch(url + "/api/user", {
       mode: "cors",
@@ -142,17 +142,22 @@ function go_main_advenced() {
       })
       .then((response) => {
         console.log(response);
-        for (let i in response.userList) {
-          if (response.userList[i].id == document.getElementById("ID").value) {
-            dept = response.userList[i].department;
-          }
+        if (response.department != null) {
+          //if (response.userList[i].id == document.getElementById("ID").value) {
+            dept = response.department;
+            console.log(dept);
+            //}
         }
+        if (dept == '고객') {
+            location.href = "main.html";
+          } 
+          else {
+            location.href = "empmain.html";
+          }
       })
       .catch((error) => console.log("error", error));
   
-    if (dept == 0) {
-      location.href = "main.html";
-    } else location.href = "empmain.html";
+
   }
 
 
@@ -201,8 +206,8 @@ const login = async () => {
         modalOn(); // 일단 대기창 띄워놓기
         if (response.ok){
             console.log("response:", response.json());
-            setCookie('isLoggedin', true, 90); // 쿠키 저장
-            setCookie('id', document.getElementById('ID').value, 90);
+            setCookie('isLoe, 90ggedin', true, 90); // 쿠키 저장
+            setCookie('id', document.getElementById('ID').valu);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();

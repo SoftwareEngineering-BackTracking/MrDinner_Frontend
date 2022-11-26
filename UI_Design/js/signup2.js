@@ -79,10 +79,9 @@ function getCheckboxValue()  {
     // 출력
     return result
 }
-var department = '직원'
 
 const signup = async () => {
-    department = getCheckboxValue();
+    let department = getCheckboxValue();
 
     // data = {
     //     'id': document.getElementsByClassName('id')[0].value,

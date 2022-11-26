@@ -1,199 +1,199 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Mr.Daebak Dinner Service</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mr.Daebak Dinner Service</title>
 
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-    <link href="../css/navbar.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/Stockmanagement2.css" />
-    <script src="../js/stockManagement.js"></script>
-    <script type="module">
-        window.onload = fetchDinnerIngredient();
-    </script>
-</head>
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <link href="../css/navbar.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/Stockmanagement.css" />
+        <script src="../js/stockManagement.js"></script>
+        <script type="module">
+            window.onload = fetchDinnerIngredient();
+        </script>
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
-            <!-- 로고 이미지 들어갈 곳-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="main.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="StockManagement.html">Stock</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="UserManagement.html">User & Profit</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="orderManagement.html">Order</a>
-                    </li>
-                </ul>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="../assets/img/logos/nav_logo2.png" alt="..." /></a>
+                <!-- 로고 이미지 들어갈 곳-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empmain.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="StockManagement.html">Stock</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="UserManagement.html">User & Profit</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="orderManagement.html">Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="masthead"></header>
+        <div class="allcontainer">
+            <div class="titlebox">
+                <div class="titlebar">재고 관리</div>
+                <button class="addbtn" onclick="addStock()">재고 추가</button>
+            </div>
+            <div class="boxcontainer">
+                <div class="outerbox0">
+                    <div class="innerbox0">
+                        <div class="contentbox0">
+                            <div class="content">
+                                <p id="dinnerIngredient0">발렌타인</p>
+                                <span class="ingrd0-1" id="dinner0">원산지 : 중국<br></span>
+                                <span class="ingrd0-2" id="price0">원산지 : 중국<br></span>
+                                <span class="ingrd0-3" id="demandDate0">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox0" id="stock0">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox1">
+                    <div class="innerbox1">
+                        <div class="contentbox1">
+                            <div class="content">
+                                <p id="dinnerIngredient1">발렌타인</p>
+                                <span class="ingrd1-1" id="dinner1">원산지 : 중국<br></span>
+                                <span class="ingrd1-2" id="price1">원산지 : 중국<br></span>
+                                <span class="ingrd1-3" id="demandDate1">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox1" id="stock1">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox2">
+                    <div class="innerbox2">
+                        <div class="contentbox2">
+                            <div class="content">
+                                <p id="dinnerIngredient2">발렌타인</p>
+                                <span class="ingrd2-1" id="dinner2">원산지 : 중국<br></span>
+                                <span class="ingrd2-2" id="price2">원산지 : 중국<br></span>
+                                <span class="ingrd2-3" id="demandDate2">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox2" id="stock2">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox3">
+                    <div class="innerbox3">
+                        <div class="contentbox3">
+                            <div class="content">
+                                <p id="dinnerIngredient3">발렌타인</p>
+                                <span class="ingrd3-1" id="dinner3">원산지 : 중국<br></span>
+                                <span class="ingrd3-2" id="price3">원산지 : 중국<br></span>
+                                <span class="ingrd3-3" id="demandDate3">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox3" id="stock3">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox4">
+                    <div class="innerbox4">
+                        <div class="contentbox4">
+                            <div class="content">
+                                <p id="dinnerIngredient4">발렌타인</p>
+                                <span class="ingrd4-1" id="dinner4">원산지 : 중국<br></span>
+                                <span class="ingrd4-2" id="price4">원산지 : 중국<br></span>
+                                <span class="ingrd4-3" id="demandDate4">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox4" id="stock4">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox5">
+                    <div class="innerbox5">
+                        <div class="contentbox5">
+                            <div class="content">
+                                <p id="dinnerIngredient5">발렌타인</p>
+                                <span class="ingrd5-1" id="dinner5">원산지 : 중국<br></span>
+                                <span class="ingrd5-2" id="price5">원산지 : 중국<br></span>
+                                <span class="ingrd5-3" id="demandDate5">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox5" id="stock5">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox6">
+                    <div class="innerbox6">
+                        <div class="contentbox6">
+                            <div class="content">
+                                <p id="dinnerIngredient6">발렌타인</p>
+                                <span class="ingrd6-1" id="dinner6">원산지 : 중국<br></span>
+                                <span class="ingrd6-2" id="price6">원산지 : 중국<br></span>
+                                <span class="ingrd6-3" id="demandDate6">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox6" id="stock6">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox7">
+                    <div class="innerbox7">
+                        <div class="contentbox7">
+                            <div class="content">
+                                <p id="dinnerIngredient7">발렌타인</p>
+                                <span class="ingrd7-1" id="dinner7">원산지 : 중국<br></span>
+                                <span class="ingrd7-2" id="price7">원산지 : 중국<br></span>
+                                <span class="ingrd7-3" id="demandDate7">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox7" id="stock7">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox8">
+                    <div class="innerbox8">
+                        <div class="contentbox8">
+                            <div class="content">
+                                <p id="dinnerIngredient8">발렌타인</p>
+                                <span class="ingrd8-1" id="dinner8">원산지 : 중국<br></span>
+                                <span class="ingrd8-2" id="price8">원산지 : 중국<br></span>
+                                <span class="ingrd8-3" id="demandDate8">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox8" id="stock8">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outerbox9">
+                    <div class="innerbox9">
+                        <div class="contentbox9">
+                            <div class="content">
+                                <p id="dinnerIngredient9">발렌타인</p>
+                                <span class="ingrd9-1" id="dinner9">원산지 : 중국<br></span>
+                                <span class="ingrd9-2" id="price9">원산지 : 중국<br></span>
+                                <span class="ingrd9-3" id="demandDate9">원산지 : 중국</span>
+                            </div>
+                            <div class="numbox9" id="stock9">남은 수량 : 0</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <header class="masthead"></header>
-    <div class="allcontainer">
-        <div class="titlebox">
-            <div class="titlebar">재고 관리</div>
-            <button class="addbtn" onclick="addStock()">재고 추가</button>
-        </div>
-        <div class="boxcontainer">
-            <div class="outerbox0">
-                <div class="innerbox0">
-                    <div class="contentbox0">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd0-1" id="dinner0">원산지 : 중국<br></span>
-                            <span class="ingrd0-2" id="price0">원산지 : 중국<br></span>
-                            <span class="ingrd0-3" id="demandDate0">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox0">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox1">
-                <div class="innerbox1">
-                    <div class="contentbox1">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd1-1" id="dinner1">원산지 : 중국<br></span>
-                            <span class="ingrd1-2" id="price1">원산지 : 중국<br></span>
-                            <span class="ingrd1-3" id="demandDate1">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox1">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox2">
-                <div class="innerbox2">
-                    <div class="contentbox2">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd2-1" id="dinner2">원산지 : 중국<br></span>
-                            <span class="ingrd2-2" id="price2">원산지 : 중국<br></span>
-                            <span class="ingrd2-3" id="demandDate2">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox2">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox3">
-                <div class="innerbox3">
-                    <div class="contentbox3">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd3-1" id="dinner3">원산지 : 중국<br></span>
-                            <span class="ingrd3-2" id="price3">원산지 : 중국<br></span>
-                            <span class="ingrd3-3" id="demandDate3">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox3">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox4">
-                <div class="innerbox4">
-                    <div class="contentbox4">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd4-1" id="dinner4">원산지 : 중국<br></span>
-                            <span class="ingrd4-2" id="price4">원산지 : 중국<br></span>
-                            <span class="ingrd4-3" id="demandDate4">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox4">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox5">
-                <div class="innerbox5">
-                    <div class="contentbox5">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd5-1" id="dinner5">원산지 : 중국<br></span>
-                            <span class="ingrd5-2" id="price5">원산지 : 중국<br></span>
-                            <span class="ingrd5-3" id="demandDate5">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox5">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox6">
-                <div class="innerbox6">
-                    <div class="contentbox6">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd6-1" id="dinner6">원산지 : 중국<br></span>
-                            <span class="ingrd6-2" id="price6">원산지 : 중국<br></span>
-                            <span class="ingrd6-3" id="demandDate6">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox6">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox7">
-                <div class="innerbox7">
-                    <div class="contentbox7">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd7-1" id="dinner7">원산지 : 중국<br></span>
-                            <span class="ingrd7-2" id="price7">원산지 : 중국<br></span>
-                            <span class="ingrd7-3" id="demandDate7">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox7">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox8">
-                <div class="innerbox8">
-                    <div class="contentbox8">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd8-1" id="dinner8">원산지 : 중국<br></span>
-                            <span class="ingrd8-2" id="price8">원산지 : 중국<br></span>
-                            <span class="ingrd8-3" id="demandDate8">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox8">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="outerbox9">
-                <div class="innerbox9">
-                    <div class="contentbox9">
-                        <div class="content">
-                            <p class="dinner">발렌타인</p>
-                            <span class="ingrd9-1" id="dinner9">원산지 : 중국<br></span>
-                            <span class="ingrd9-2" id="price9">원산지 : 중국<br></span>
-                            <span class="ingrd9-3" id="demandDate9">원산지 : 중국</span>
-                        </div>
-                        <div class="numbox9">남은 수량 : 0</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
+    </body>
