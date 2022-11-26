@@ -307,3 +307,24 @@ select::-ms-expand {
     display: none;
 }
     
+.pay-container{
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+#pay-btn{
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid rgb(161, 105, 1);
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+  
+#pay-btn:active{
+    opacity: 0.8;
+}
