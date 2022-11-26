@@ -101,9 +101,23 @@
             </div>
         </div>
     </div>
-
+    <script src="../js/orderPay.js"></script>
     <div class = 'pay-container'>
         <button id = 'pay-btn' onclick="payCart()">결제하기</button>
     </div>
+    <script language = 'JavaScript'>
+        var res;
+        function get_res(){
+            res = fetchCartItem().then((response) => {
+                console.log(response);
+                return response;
+            });
+            
+        }
+    
+        window.onload = get_res();
+        
+       
+    
+    </script>
 </html>
-<script src="../js/orderPay.js"></script>

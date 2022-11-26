@@ -18,6 +18,9 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../js/myPage.js"></script>
     <script type="module">
+        window.onload = login_info();
+    </script> 
+    <script type="module">
         function addLoadEvents(func) {
             var oldonload = window.onload;
             if (typeof window.onload != 'function') {
@@ -34,9 +37,10 @@
     </script>
     </script>
 </head>
+<body>
 <iframe src="navbar.html"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
-</iframe> <!-- navbar.html 추가-->
+</iframe> <!-- navbar.html 추가-->  
 <header class="masthead"></header>
     <div class="area1">
         <span class="title">개인정보 관리</span>
@@ -73,7 +77,9 @@
         <span class="outreg">회원 탈퇴</span>
         <hr class="line5" width="87%" color="#B6B6B6"></hr>
     </div>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>
