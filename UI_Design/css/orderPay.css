@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-.customer-info-box{
+#customer-info-box{
     margin-top: 50px;
     width: 50%;
     border: 2px solid gray;
@@ -327,4 +327,99 @@ select::-ms-expand {
   
 #pay-btn:active{
     opacity: 0.8;
+}
+
+#coupon-btn{
+    align-self: flex-end;
+    margin-right: 20%;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    border: 2px solid rgb(161, 105, 1);
+    
+}
+
+#coupon-modal{
+    background: rgba(0,0,0,.5);
+    overflow: hidden;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+.coupon-modal-title{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: orange;
+    border-bottom: 2px solid orange;
+}
+
+.pay-modal-content{
+    margin-top: 2rem;
+    margin-left: 5%;
+}
+
+.coupon-modal-content .about{
+    font-size: 20px;
+    padding-bottom: 1.5rem;
+    overflow: auto;
+}
+
+#modal2{
+    display: none;
+}
+
+
+
+
+
+
+.coupon{
+    border-radius: 12px;
+    border: 2px solid #A1A1A1;
+    box-shadow: 5px 8px 10px #d6d5d533
+}
+
+  
+.code:hover{
+    background: green;
+    color: #fff;cursor: pointer
+}
+  
+#coupon-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.coupon-box{
+    border-top: 2px solid #bdbdbd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    padding-left: 4%;
+    margin-bottom: 3rem;
+}
+
+.col-md-6 {
+    flex: 0 0 100%;
+    max-width: 70%;
+}
+
+.container:active{
+    opacity: 0.5;
 }
