@@ -29,7 +29,7 @@ function fetchUser() {
         html += '<td>' + resData.userList[i].name + '</td>';
         html += '<td>' + resData.userList[i].id + '</td>';
         html += '<td>' + resData.userList[i].nickname + '</td>';
-        html += '<td>' + resData.userList[i].phoneNumber + '</td>';
+        html += '<td>' + String(resData.userList[i].phoneNumber).slice(0,3) + '-' + String(resData.userList[i].phoneNumber).slice(3,7) + '-' + String(resData.userList[i].phoneNumber).slice(7)+'</td>';
         html += '<td>' + resData.userList[i].email + '</td>';
         html += '</tr>';
       }
@@ -59,9 +59,10 @@ function fetchDemand() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
+      date = document.get
       for (var i in resData.demandList) {
         const dateData = resData.demandList[i].createdDate.match(/\d{4}-\d{2}-\d{2}/);
-
+       
         html += '<tr>';
         html += '<td>' + dateData + '</td>';
         html += '<td>' + resData.demandList[i].price + '</td>';
