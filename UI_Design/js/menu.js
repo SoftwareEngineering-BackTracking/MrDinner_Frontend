@@ -1,16 +1,17 @@
+
 var url = "http://127.0.0.1:8080";
 document.write('<script src="../js/cookie.js"></script>');
 //var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080";
 
 function fetchAllDinner() {
   fetch(url + "/api/dinner", {
-    mode: "cors",
+    mode: 'cors',
     method: "GET",
     headers: {
-      "Content-Type": "application/json;charset=utf-8",
-      "Access-Control-Allow-Origin": "*",
-      Connection: "keep-alive",
-      Accept: "*/*",
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin':'*',
+      Connection: 'keep-alive',
+      Accept: '*/*'
     },
   })
     .then((response) => {
@@ -34,57 +35,48 @@ function fetchAllDinner() {
     .catch((error) => console.log("error", error));
 }
 
-function createAddress() {
-  let insertedAddress =
-    document.getElementsByClassName("address-setting")[0].value;
-
-  if (insertedAddress == "") {
-    alert("주소를 반드시 입력해주세요.");
-  } else {
-    fetch(url + "/api/address", {
-      method: "POST",
-      mode: "cors",
+function createAddress(){
+  fetch(url + "/api/address", {
+    method: "POST",
+      mode: 'cors',
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-        Connection: "keep-alive",
-        Accept: "*/*",
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin':'*',
+      Connection: 'keep-alive',
+      Accept: '*/*'
+
       },
-      body: JSON.stringify({
-        id: getCookie("id"),
-        detail: insertedAddress,
-      }),
-    });
-  }
+    body: JSON.stringify({
+      'id': getCookie('id'),
+      'detail': document.getElementsByClassName('address-setting')[0].value
+    })
+  })
 }
 
-function get_voice() {
-  window.SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
+function get_voice(){
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   let recognition = new SpeechRecognition();
   recognition.interimResults = true;
-  recognition.lang = "ko-KR";
+  recognition.lang = 'ko-KR';
 
   recognition.start();
-  recognition.onstart = function () {
-    console.log("녹음 시작"); // 음성 인식 시작시마다 새로운 문단을 추가한다.
+  recognition.onstart = function() {
+    console.log('녹음 시작'); // 음성 인식 시작시마다 새로운 문단을 추가한다.
   };
-  setTimeout(
-    () =>
-      (recognition.onend = function () {
-        recognition.start();
-        console.log("녹음 종료");
-      }),
-    3000
-  );
-
-  recognition.onresult = function (e) {
+  setTimeout(() => recognition.onend = function() {
+    recognition.start();
+    console.log('녹음 종료');
+  }, 3000);
+  
+  recognition.onresult = function(e) {
     let texts = Array.from(e.results)
-      .map((results) => results[0].transcript)
-      .join("");
+            .map(results => results[0].transcript).join("");
 
-    texts.replace(/느낌표|강조|뿅/gi, "❗️");
-  };
+    texts.replace(/느낌표|강조|뿅/gi, '❗️');
+  
+    
+    };
   console.log(texts);
+  
 }
