@@ -66,6 +66,9 @@ function fetchDemand() {
         html += '<tr>';
         html += '<td>' + dateData + '</td>';
         html += '<td>' + resData.demandList[i].price + '</td>';
+        html += '<td>' + resData.demandList[i].userId.id + '</td>';
+        html += '<td>' + resData.demandList[i].purchase.bank + '</td>';
+        html += '<td>' + resData.demandList[i].purchase.cardNumber + '</td>';
         html += '</tr>';
       }
 
