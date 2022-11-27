@@ -10,22 +10,10 @@ function closePurchaseModal(){
     document.getElementById('modal').style.display = 'none';
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 function openCouponModal(){
   document.getElementById('modal2').style.display = 'flex';
   fetchMyCoupon();
 };
-=======
-function openCouponModal() {
-  document.getElementById("modal2").style.display = "flex";
-}
->>>>>>> 794bd02d31a3b3632704330fb6849d02c3eb8b7f
-=======
-function openCouponModal(){
-  document.getElementById('modal2').style.display = 'flex';
-};
->>>>>>> 902daa9e921a326d089322ee729d16dea3da6f8d
 
 function closeCouponModal(){
   document.getElementById('modal2').style.display = 'none';
@@ -67,41 +55,6 @@ const fetchPurchase = async () => {
         })
 };
 
-<<<<<<< HEAD
-
-
-const payCart = async () => {
-    if (getCookie('id') == null){
-      return alert('다시 로그인하세요!')
-    };
-    var couponNo = null;
-    if(document.getElementById('couponNo') != null){
-      couponNo = document.getElementById('couponNo').value;
-    }
-    const postResponse = await fetch(url + "/api/cart/payment", {
-      method: "POST",
-      mode: 'cors',
-      headers: {
-      'Content-Type':'application/json;charset=utf-8',
-      'Access-Control-Allow-Origin':'*',
-      Connection: 'keep-alive',
-      Accept: '*/*'
-      },
-      body: JSON.stringify({
-        'id': getCookie('id'),
-        'couponNo': couponNo,
-        'purchaseNo': getCookie('purchaseNo')
-      })
-    }).then((response) => {
-      if (response.ok){
-        
-        createDemand();
-        alert('결제 성공');
-        }
-        return response.json();
-      })
-      .catch((error) => console.log("error", error));
-=======
 const createPurchase = async () => {
     var cardNumbmer = document.getElementById('card-number1').value+ document.getElementById('card-number2').value+ document.getElementById('card-number3').value+ document.getElementById('card-number4').value;
     var bank = document.getElementById('bank-select');
@@ -123,22 +76,6 @@ const createPurchase = async () => {
     })
     //const post = await postResponse.json()
     .then((response) => {
-<<<<<<< HEAD
-      if (response.ok) {
-        return console.log(response.json());
-      }
-    })
-    .then((response) => {
-      console.log("response:", response);
-      document.getElementById("modal").style.display = "none";
-      fetchPurchase();
-    })
-    .catch((error) => {
-      console.log("결제 정보 생성 실패");
-      console.log(error);
-    });
->>>>>>> 794bd02d31a3b3632704330fb6849d02c3eb8b7f
-=======
         if (response.ok){
             return console.log(response.json());
         }}).then((response) => {
@@ -149,7 +86,6 @@ const createPurchase = async () => {
             console.log('결제 정보 생성 실패');
             console.log(error);
         })
->>>>>>> 902daa9e921a326d089322ee729d16dea3da6f8d
 };
 
 const createDemand = async () => {
@@ -183,7 +119,10 @@ const payCart = async () => {
     if (getCookie('id') == null){
       return alert('다시 로그인하세요!')
     };
-    createDemand();
+    var couponNo = null;
+    if(document.getElementById('couponNo') != null){
+      couponNo = document.getElementById('couponNo').value;
+    }
     const postResponse = await fetch(url + "/api/cart/payment", {
       method: "POST",
       mode: 'cors',
@@ -195,11 +134,13 @@ const payCart = async () => {
       },
       body: JSON.stringify({
         'id': getCookie('id'),
-        'couponNo': getElementById('couponNo').value,
+        'couponNo': couponNo,
         'purchaseNo': getCookie('purchaseNo')
       })
     }).then((response) => {
       if (response.ok){
+        
+        createDemand();
         alert('결제 성공');
         }
         return response.json();

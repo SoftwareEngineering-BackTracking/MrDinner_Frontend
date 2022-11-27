@@ -101,7 +101,7 @@ function changeAll() {
           Accept: "*/*",
           id: getCookie("id"),
         },
-        body: {
+        body: JSON.stringify({
             "id": getCookie("id"),
             "name": null,
             "birth": null,
@@ -109,7 +109,7 @@ function changeAll() {
             "email": modifiedEmail,
             "nickname": modifiedNickname,
             "address": modifiedAddress,
-        }
+        })
       })
         .then((response) => {
           return response.json();

@@ -85,6 +85,7 @@
             <div class = 'cart-subcontainer'>
                 <div id = 'cart-test'>
                     <div class = 'cart-box'>
+                        <div class = 'show-detail' onclick="openrenderDetail()">?</div>
                         <div class = 'cart-img-box'>
                             <div class = 'cart-img'></div>
                         </div>
@@ -92,12 +93,17 @@
                             <p id = 'cartItemNo'></p>
                             <div class = 'title'>발렌타인</div>
                             <div class = 'style'>심플</div>
-                            <div class = 'style' style = 'background-color: orange; color: white;  cursor: pointer;' onclick="renderDetail(document.getElementById('title').innerText,document.getElementById('cartItemNo').innerText)">추가메뉴</div>
-                            <div class = 'hash-tag'>#해시태그 쿠키자</div>
+                            <div class = 'style' style = 'cursor: pointer;' onclick="renderDetail('${res.cartItems[i].dinner.dinner}', ${res.cartItems[i].cartItemNo})">추가메뉴</div>
+                            <div class = 'hash-tag'>ㅋㅋ</div>
                         </div>
                         <div class = 'cart-right-box'>
-                            <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(1)">삭제하기</button>
-                            <div class = 'cart-price'>1000원</div>
+                            <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
+                            <div class = 'cart-price'>1원</div>
+                        </div>
+                        <div class = 'render-detail'>
+                            <div id = 'close-detail-btn' onclick="closerenderDetail()">X</div>
+                            <div class = 'title'>추가된 목록</div>
+                            <p style="font-size: 20px; padding-left: 2rem;">1. 발렌타인_고기, 가격:</p>
                         </div>
                     </div>
                 </div>
@@ -145,11 +151,16 @@
 </script>
 
 <script>
-    function openDetail(){
-        document.getElementsByClassName('detail-modal')[0].style.display = 'flex';
+    function openrenderDetail(cartNo){
+        document.getElementsByClassName('render-detail')[0].style.display = 'flex';
+        fetchCartDetail(cartNo);
     }
 
     function closeDetail(){
         document.getElementsByClassName('detail-modal')[0].style.display = 'none';
+    }
+
+    function closerenderDetail(){
+        document.getElementsByClassName('render-detail')[0].style.display = 'none';
     }
 </script>
