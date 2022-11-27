@@ -17,9 +17,7 @@ const fetchCartItem = async () => {
     .then((res) => {
         return res.json();
         }).then((res) => {
-            console.log(res.cartItems);
             var cartTest = document.getElementById('cart-test');
-
             for(i=0; i<res.cartItems.length; i++){
                 cartTest.innerHTML += `
                     <div class = 'cart-box'>
@@ -30,7 +28,7 @@ const fetchCartItem = async () => {
                             <p id = 'cartItemNo'></p>
                             <div class = 'title'>${res.cartItems[i].dinner.dinner}</div>
                             <div class = 'style'>${res.cartItems[i].style.style}</div>
-                            <div class = 'style' style = 'cursor: pointer;' onclick="renderDetail(${res.cartItems[i].dinner.dinner},${res.cartItems[i].cartItemNo})">추가메뉴</div>
+                            <div class = 'style' style = 'cursor: pointer;' onclick="renderDetail('${res.cartItems[i].dinner.dinner}', ${res.cartItems[i].cartItemNo})">추가메뉴</div>
                             <div class = 'hash-tag'>${res.cartItems[i].style.detail}</div>
                         </div>
                         <div class = 'cart-right-box'>
@@ -39,7 +37,7 @@ const fetchCartItem = async () => {
                         </div>
                     </div>
                 `
-                
+                console.log("\'"+res.cartItems[i].dinner.dinner+"\'");
             }
         }).catch((error) => {
             console.log(error);
@@ -85,7 +83,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('발렌타인_고기', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>발렌타인_고기</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>6000원</div>
@@ -102,7 +100,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('잉글리시_고기', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>잉글리시_고기</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>8000원</div>
@@ -114,7 +112,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('샐러드_채소', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>샐러드_채소</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>4000원</div>
@@ -131,7 +129,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('프렌치_고기', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>프렌치_고기</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>7000원</div>
@@ -148,7 +146,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('샴페인_축제_고기', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>샴페인_축제_고기</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>9000원</div>
@@ -160,7 +158,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('와인', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>와인</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>7000원</div>
@@ -172,7 +170,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('샴페인', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>샴페인</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>8000원</div>
@@ -184,7 +182,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('계란', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>계란</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>2000원</div>
@@ -196,7 +194,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('빵', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>빵</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>2000원</div>
@@ -208,7 +206,7 @@ function renderDetail(dinner, cartNo){
                 <div class = 'detail-img'></div>
             </div>
             <div class = 'detail-info-box'>
-                <button id = 'add-detail' onclick = "createCartDetail(${cartNo})">추가하기</button>
+                <button id = 'add-detail' onclick = "createCartDetail('베이컨', ${cartNo})">추가하기</button>
                 <div id = 'dinnerIngredient'>베이컨</div>
                 <div class = 'price-quantity-box'>
                     <div id = 'price'>2000원</div>
@@ -222,10 +220,10 @@ function renderDetail(dinner, cartNo){
     }
 }
 
-const createCartDetail = async (cartItemNo) => {
+const createCartDetail = async (dinner, cartItemNo) => {
     data = {
         cartItemNo : cartItemNo,
-        name: [document.getElementById('dinnerIngredient').value],
+        name: [dinner],
         status: ['추가'],
         dinnerStyles: ['디너']
         };

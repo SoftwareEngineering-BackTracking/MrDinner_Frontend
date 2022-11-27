@@ -8,6 +8,10 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
         <link href="../css/navbar.css" rel="stylesheet" />
+        <script src="../js/orderManagement.js"></script>
+        <script>
+            window.onload = fetchDemand()
+        </script>
     </head>
 
     <body>
@@ -39,35 +43,8 @@
     <!-- Swiper -->
         <div class = 'swiper-page' style="width: 100%; overflow-x: hidden; height: 800px; overflow-y: hidden;">
             <div class="swiper-container mySwiper">
-                <div id="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="container0">
-                            <div class=outercontainer0>
-                                <div class="innercontainer">
-                                    <div class="area1">
-                                        <div class="dinnercontainer">
-                                            <div class="dinnername" id="dinner" style="margin-top: 1rem;">발렌타인</div>
-                                            <div class="add">추가사항</div>
-                                            <div id = 'add-info'>참치</div>
-                                        </div>
-                                    </div>
-                                    <div class = 'line-box' style="display: flex; justify-content: center;">
-                                        <div class = 'line' style="border: 1px solid black; width: 90%;"></div>
-                                    </div>
-                                    <div class="area2">
-                                        <div class="dinnercontainer">
-                                            <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보:</div>
-                                            <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름: </div>
-                                            <div id = 'tel'style="margin-top: 1rem; padding-left: 2rem;">Tel.</div>
-                                            <div id = 'address'style="margin-top: 1rem; padding-left: 2rem;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ordernumber0" id="order0">주문번호 n</div>
-                            </div>
-                            <div class="orderstatus0" id="status0">주문대기중</div>
-                        </div>
-                    </div>
+                <div class="swiper-wrapper">
+                    
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
