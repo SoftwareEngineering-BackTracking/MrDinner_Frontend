@@ -462,7 +462,7 @@ body{
 
 #order-info-box{
   width: 70%;
-  overflow: scroll;
+  overflow: auto;
   height: 250px;
 }
 
