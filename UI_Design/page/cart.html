@@ -46,10 +46,61 @@
             </div>
             <div class = 'border'></div>
         </header>
+        <div class = 'detail-modal'>
+            <div class = 'modal-title'>품목 추가</div>
+            <div id = 'modal-content'>
+                <div id = 'close-btn' onclick="closeDetail()">X</div>
+                <div class = 'detail-box'>
+                    
+                    <div class = 'detail-img-box'>
+                        <div class = 'detail-img'></div>
+                    </div>
+                    <div class = 'detail-info-box'>
+                        <button id = 'add-detail'>추가하기</button>
+                        <div id = 'dinnerIngredient'>발렌타인_고기</div>
+                        <div class = 'price-quantity-box'>
+                            <div id = 'price'>1000원</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class = 'detail-box'>
+                    
+                    <div class = 'detail-img-box'>
+                        <div class = 'detail-img'></div>
+                    </div>
+                    <div class = 'detail-info-box'>
+                        <button id = 'add-detail'>추가하기</button>
+                        <div id = 'dinnerIngredient'>발렌타인_고기</div>
+                        <div class = 'price-quantity-box'>
+                            <div id = 'price'>1000원</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <div class = 'cart-container'>
             <div class = 'ad1'></div>
             <div class = 'cart-subcontainer'>
-                <div id = 'cart-test'></div>
+                <div id = 'cart-test'>
+                    <div class = 'cart-box'>
+                        <div class = 'cart-img-box'>
+                            <div class = 'cart-img'></div>
+                        </div>
+                        <div class = 'cart-info-box'>
+                            <p id = 'cartItemNo'></p>
+                            <div class = 'title'>발렌타인</div>
+                            <div class = 'style'>심플</div>
+                            <div class = 'style' style = 'background-color: orange; color: white;  cursor: pointer;' onclick="renderDetail(document.getElementById('title').innerText,document.getElementById('cartItemNo').innerText)">추가메뉴</div>
+                            <div class = 'hash-tag'>#해시태그 쿠키자</div>
+                        </div>
+                        <div class = 'cart-right-box'>
+                            <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(1)">삭제하기</button>
+                            <div class = 'cart-price'>1000원</div>
+                        </div>
+                    </div>
+                </div>
                 <div class = 'order-box'>
                     <button class = 'order' onclick="location.href = 'orderPay.html'">주문하기</button>
                 </div>
@@ -91,4 +142,14 @@
     
    
 
+</script>
+
+<script>
+    function openDetail(){
+        document.getElementsByClassName('detail-modal')[0].style.display = 'flex';
+    }
+
+    function closeDetail(){
+        document.getElementsByClassName('detail-modal')[0].style.display = 'none';
+    }
 </script>
