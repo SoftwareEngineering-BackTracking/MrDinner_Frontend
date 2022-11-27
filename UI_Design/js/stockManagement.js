@@ -39,9 +39,34 @@ const fetchDinnerIngredient = async () => {
 };
 
 const addStock = async () => {
+  let stock = prompt("추가할 물품을 입력하세요.");
+  let stockNum = prompt("추가할 갯수를 입력하세요.");
+  let quantity = stockNum;
+  var i = 0;
+  while(true){
+    console.log(document.getElementById("dinnerIngredient" + String(i)).innerText);
+    console.log(document.getElementById("dinnerIngredient" + String(i)).innerText, stock);
+    if(document.getElementById("dinnerIngredient" + String(i)).innerText == stock){
+      console.log (parseInt(stockNum));
+
+      quantity = parseInt(document.getElementById("stock" + String(i)).innerText.slice(8, )) + parseInt(stockNum);
+      break;
+    }
+    i++;
+  }
+  
+  
+  var today = new Date();
+  var date =
+    today.getFullYear() +
+    "-" +
+    ("0" + (today.getMonth() + 1)).slice(-2) +
+    "-" +
+    ("0" + today.getDate()).slice(-2);
+
   const postResponse = await fetch(url + "/api/dinneringredient", {
     mode: "cors",
-    method: "GET",
+    method: "PUT",
     headers: {
       "Access-Control-Allow-Origin": "*",
       Connection: "keep-alive",
@@ -49,31 +74,23 @@ const addStock = async () => {
       "Content-Type": "application/json;charset=utf-8",
       dinnerIngredient: null,
     },
+    body: JSON.stringify({
+      dinnerIngredient: stock,
+      quantity: quantity,
+      demandDate: date,
+    }),
   })
     .then((response) => {
-      return response.json();  
+      return response.json();
     })
     .then((response) => {
       console.log(response);
-
-      for (i = 0; i < response.dinnerIngredientList.length; i++) {
-        let stockNum = response.dinnerIngredientList[i].quantity + 20;
-
-        fetch(url + "/api/dinneringredient", {
-          mode: "cors",
-          method: "PUT",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Connection: "keep-alive",
-            Accept: "*/*",
-            "Content-Type": "application/json;charset=utf-8",
-            dinnerIngredient: null,
-          },
-          body: JSON.stringify({
-            quantity: stockNum,
-          }),
-        });
-      }
+      alert(stock + " " + String(stockNum) + "개가 추가되었습니다.");
+      location.href = 'StockManagement.html';
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => {
+      console.log("error", error)
+      alert("해당 재고가 없습니다.");
+    }
+    );
 };

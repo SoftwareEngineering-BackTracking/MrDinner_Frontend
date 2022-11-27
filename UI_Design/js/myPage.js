@@ -34,6 +34,8 @@ function fetchUser() {
         "Tel. : " + JSON.stringify(response.phoneNumber);
       document.getElementById("nickname").innerHTML =
         "닉네임 : " + JSON.stringify(response.nickname);
+      document.getElementById("birth").innerHTML =
+        "생일. : " + JSON.stringify(response.birth);
       document.getElementById("email").innerHTML =
         "이메일 : " + JSON.stringify(response.email);
       document.getElementById("type").innerHTML =
@@ -207,6 +209,34 @@ const fetchMyCoupon = async () => {
   
 }
 
+function fetchAddress() {
+  fetch(url + "/api/address", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
+      id: getCookie("id"),
+      addressNo: null,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+
+      var tempRes = JSON.stringify(response);
+      var resData = JSON.parse(tempRes);
+
+      document.getElementById("address").innerHTML =
+        "주소 : " + JSON.stringify(resData.addressList[0].detail);
+    })
+    .catch((error) => console.log("error", error));
+}
+
+
 const fetchDemand = async () => {
   const postResponse = await fetch(url+"/api/demand", {
       mode: 'cors',
@@ -221,22 +251,25 @@ const fetchDemand = async () => {
   .then((res) => {
       return res.json();
       }).then((res) => {
-          console.log(res.demandList);
+          console.log(res);
           var orderInfoBox = document.getElementById('order-info-box');
 
           for(i=0; i<res.demandList.length; i++){
-            orderInfoBox.innerHTML += `
-            <div class = 'order-info'>
-              <div id = 'No' style="padding-right: 1rem;">${res.demandList[i].demandno}</div>
-              <div id = 'title' style="font-weight: bold; padding-right: 0.5rem;">${res.demandItemList[i].dinner}</div>
-              <div id = 'style' style="padding-right: 2rem;">(${res.demandItemList[i].style})</div>
-              <div id = 'price' style="padding-right: 2rem;">${res.demandList[i].price}원</div>
-              <div class = 'status-box' onclick="cancelDemand(${res.demandList[i].demandno})">
-                <div id = 'status'>${res.demandList[i].status}</div>
-              </div>
-            </div>
-            `
-              
+            for(j=0 ; j < res.demandItemList.length ; j++){
+                if(res.demandList[i].demandno == res.demandItemList[i][j].demandNo.demandno){
+                  orderInfoBox.innerHTML += `
+                  <div class = 'order-info'>
+                    <div id = 'No' style="padding-right: 1rem;">${res.demandList[i].demandno}</div>
+                    <div id = 'title' style="font-weight: bold; padding-right: 0.5rem;">${res.demandItemList[i][j].dinner.dinner}</div>
+                    <div id = 'style' style="padding-right: 2rem;">(${res.demandItemList[i][j].style.style})</div>
+                    <div id = 'price' style="padding-right: 2rem;">${res.demandList[i].price}원</div>
+                    <div class = 'status-box' onclick="cancelDemand(${res.demandList[i].demandno})">
+                      <div id = 'status'>${res.demandList[i].status}</div>
+                    </div>
+                  </div>
+                  `
+                }
+              } 
           }
       }).catch((error) => {
           console.log(error);

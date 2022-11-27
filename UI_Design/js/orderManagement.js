@@ -1,10 +1,13 @@
-var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
-
+//var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
+var url = "http://localhost:8080";
 function fetchUser() {
   fetch(url + "/api/user", {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -32,6 +35,9 @@ function fetchDemand() {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -43,19 +49,26 @@ function fetchDemand() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      var swiperWrapper = document.getElementById("swiper-wrapper");
+      var swiperWrapper = document.getElementsByClassName("swiper-wrapper")[0];
 
-      for (var i in response.demandList.length) {
-        swiperWrapper.innerHTML += `
+      for (i = 0; i < response.demandList.length; i++) {
+        for (j = 0; j < response.demandItemList.length; j++) {
+          for (k = 0; j < response.demandDetailList.length; k++) {
+            if (
+              response.demandList[i].demandno ==
+              response.demandItemList[i][j].demandNo.demandno
+            ) {
+              //if(response.demandItemList[i][j].demandNo.demandno == response.demandDetaiList[j][k].demandItemNo.demanditemno){
+              swiperWrapper.innerHTML += `
         <div class="swiper-slide">
           <div class="container0">
             <div class=outercontainer0>
               <div class="innercontainer">
                 <div class="area1">
                   <div class="dinnercontainer">
-                    <div class="dinnername" id="dinner" style="margin-top: 1rem;">발렌타인</div>
+                    <div class="dinnername" id="dinner" style="margin-top: 1rem;">${response.demandItemList[i][j].dinner.dinner}</div>
                     <div class="add">추가사항</div>
-                    <div id = 'add-info'>참치</div>
+                    <div id = 'add-info'>${response.demandDetailList[j][k].name} ${response.demandDetailList[j][k].status}</div>
                   </div>
                 </div>
                 <div class = 'line-box' style="display: flex; justify-content: center;">
@@ -63,9 +76,9 @@ function fetchDemand() {
                 </div>
                 <div class="area2">
                   <div class="dinnercontainer">
-                    <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보:</div>
-                    <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름: </div>
-                    <div id = 'tel'style="margin-top: 1rem; padding-left: 2rem;">Tel.</div>
+                    <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보: ${response.demandList[i].userId.id}</div>
+                    <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름: ${response.demandList[i].userId.name}</div>
+                    <div id = 'tel'style="margin-top: 1rem; padding-left: 2rem;">Tel. ${response.demandList[i].userId.phoneNumber}</div>
                     <div id = 'address'style="margin-top: 1rem; padding-left: 2rem;"></div>
                   </div>
                 </div>
@@ -76,14 +89,18 @@ function fetchDemand() {
           </div>
         </div>
         `;
-        const dateData = JSON.stringify(
-          resData.demandList[i].createdDate
-        ).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
+              const dateData = JSON.stringify(
+                resData.demandList[i].createdDate
+              ).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
 
-        document.getElementById("order" + String(i)).innerHTML =
-          "주문번호 " + JSON.stringify(resData.demandList[i].demandno);
-        document.getElementById("status" + String(i)).innerHTML =
-          JSON.stringify(resData.demandList[i].status);
+              document.getElementById("order" + String(i)).innerHTML =
+                //"주문번호 " + JSON.stringify(resData.demandList[i].demandno);
+                "주문번호 " + (i + 1);
+              document.getElementById("status" + String(i)).innerHTML =
+                JSON.stringify(resData.demandList[i].status);
+            }
+          }
+        }
       }
     })
     .catch((error) => console.log("error", error));
@@ -94,6 +111,9 @@ function fetchCartItem() {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -121,6 +141,9 @@ function fetchCartDetail() {
     method: "GET",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
+      "Access-Control-Allow-Origin": "*",
+      Connection: "keep-alive",
+      Accept: "*/*",
     },
   })
     .then((response) => {

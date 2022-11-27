@@ -222,9 +222,13 @@ const fetchMyAddress = async () => {
       console.log(res.addressList);
       address = res.addressList[res.addressList.length - 1];
 
-      document.getElementById("purchaseaddress").innerHTML = JSON.stringify(
-        response.dinnerIngredientList[i].dinnerIngredient
-      );
+      for (let i = 0; i < response.userList.length; i++) {
+        if (getCookie("id") == response.userList[i].id) {
+          document.getElementById("purchaseaddress").innerHTML = JSON.stringify(
+            response.dinnerIngredientList[i].dinnerIngredient
+          );
+        }
+      }
     })
     .catch((error) => {
       console.log(error);
