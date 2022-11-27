@@ -21,6 +21,10 @@ const fetchCartItem = async () => {
             for(i=0; i<res.cartItems.length; i++){
                 cartTest.innerHTML += `
                     <div class = 'cart-box'>
+                        <div class = 'show-detail' onclick="openrenderDetail('${res.cartItems[i].cartItemNo}')">?</div>
+                        <div class = 'cart-img-box'>
+                            <div class = 'cart-img'></div>
+                        </div>
                         <div class = 'cart-img-box'>
                             <div class = 'cart-img'></div>
                         </div>
@@ -247,6 +251,35 @@ const createCartDetail = async (dinner, cartItemNo) => {
             return console.log('메일 보내기 완료')
         }}).catch((error) => {
             console.log('메일 보내기 실패');
+            console.log(error);
+        })
+    
+}
+
+
+const fetchCartDetail = async (cartNo) => {
+    const postResponse = await fetch(url+"/api/cartdetail", {
+        mode: 'cors',
+        method: "GET",
+        headers: {
+        'Content-Type':'application/json;charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        Connection: 'keep-alive',
+        Accept: '*/*',
+        cartItemNo: cartNo
+        }})
+    .then((res) => {
+        return res.json();
+        }).then((res) => {
+            var renderDetailBox = document.getElementById('render-detail');
+            for(i=0; i<res.cartDetails.length; i++){
+                renderDetailBox.innerHTML += `
+                <div id = 'close-detail-btn' onclick="closeDetail()">X</div>
+                <div class = 'title'>추가된 목록</div>
+                <p style="font-size: 20px; padding-left: 2rem;">${i + 1}. ${res.cartDetails[i].name}, 가격:${res.cartDetails[i].price}원</p>
+                `
+            }
+        }).catch((error) => {
             console.log(error);
         })
     
