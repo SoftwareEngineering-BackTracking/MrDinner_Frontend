@@ -77,8 +77,8 @@
                 <a id = 'create-purchase' style="color: blue;" onclick="openPurchaseModal()">결제 수단 등록하기</button></a>
             </div>
             <div class = 'purchase-info'>
-                <div id = 'bank'>NH농협</div>
-                <div id = 'card-number'>302-4530-9648-81</div>
+                <div id = 'bank'>결제 정보</div>
+                <div id = 'card-number'>결제 정보가 없습니다.</div>
             </div>
         </div>
     </div>
@@ -91,33 +91,7 @@
                 <div class = 'about'style="color: black;">
                     <p style="font-size: 25px; padding-left: 2rem; padding-top: 1rem; font-weight: bold;"> 사용할 쿠폰을 선택하세요! </p>
                     <div id = 'coupon-list'>
-                        <div class="container mt-5" style="cursor: pointer;">
-                            <div class="d-flex justify-content-center row">
-                            <div class="col-md-6">
-                                <div class="coupon p-3 bg-white" style="width: 100%">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4 border-right">
-                                    <div class="d-flex flex-column align-items-center">
-                                        <img src="../assets/img/logos/icons8-개구리.gif" width="100px">
-                                        <span class="d-block"></span>
-                                    </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                    <div>
-                                        <div id = 'couponNo' style = 'color:transparent;'>1</div>
-                                        <div class="d-flex flex-row justify-content-end off">
-                                        <h1 id = 'price' style = "font-size: 30px;">5000</h1><h1 style = "font-size: 30px;">원</h1>
-                                        </div>
-                                        <div class="d-flex flex-row justify-content-between off px-3 p-2">
-                                        <span id = 'endTime'>~2012-12-03</span>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -150,7 +124,7 @@
     </div>
     <script src="../js/orderPay.js"></script>
     <div class = 'pay-container'>
-        <button id = 'pay-btn' onclick="payCart(); location.href = 'main.html'">결제하기</button>
+        <button id = 'pay-btn' onclick="payCart()">결제하기</button>
     </div>
     <script language = 'JavaScript'>
         var res;

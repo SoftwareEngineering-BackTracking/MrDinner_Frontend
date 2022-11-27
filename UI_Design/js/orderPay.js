@@ -12,6 +12,7 @@ function closePurchaseModal(){
 
 function openCouponModal(){
   document.getElementById('modal2').style.display = 'flex';
+  fetchMyCoupon();
 };
 
 function closeCouponModal(){
@@ -118,7 +119,10 @@ const payCart = async () => {
     if (getCookie('id') == null){
       return alert('다시 로그인하세요!')
     };
-    createDemand();
+    var couponNo = null;
+    if(document.getElementById('couponNo') != null){
+      couponNo = document.getElementById('couponNo').value;
+    }
     const postResponse = await fetch(url + "/api/cart/payment", {
       method: "POST",
       mode: 'cors',
@@ -130,11 +134,13 @@ const payCart = async () => {
       },
       body: JSON.stringify({
         'id': getCookie('id'),
-        'couponNo': getElementById('couponNo').value,
+        'couponNo': couponNo,
         'purchaseNo': getCookie('purchaseNo')
       })
     }).then((response) => {
       if (response.ok){
+        
+        createDemand();
         alert('결제 성공');
         }
         return response.json();
