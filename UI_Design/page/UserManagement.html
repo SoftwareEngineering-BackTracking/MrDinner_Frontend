@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    Access-Control-Allow-Origin: *
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -68,7 +67,7 @@
         <div class="v22_35">고객정보</div>
         <div class="v22_36">
             <div class="v22_37">
-                <table id="dynamicTable">
+                <table id="dynamicTable" class = type11>
                     <thead>
                         <tr>
                             <th>날짜</th>
@@ -88,7 +87,17 @@
         <div class="v16_31">매출관리</div>
         <div class="v13_15">
             <div class="v13_17">
-                <table id="dynamicTable">
+                <div id="input-form" style="display: flex;">
+                    <select name = 'query' style="font-size: 18px; border-radius: 15px; border: 1px solid white; background-color: orange; color: #fff; padding: 0.5rem; margin-right: 1rem; margin-left: 2rem;">
+                        <option value="1">이름</option>
+                        <option value="2">아이디</option>
+                        <option value="3">닉네임</option>
+                        <option value="4">전화번호</option>
+                        <option value="5">e-mail</option>
+                    </select>
+                    <input type="text" id="keyword" style="border-bottom: 1px solid grange;"/>
+                </div>
+                <table id="dynamicTable" class = 'type11'>
                     <thead>
                         <tr>
                             <th>이름</th>
@@ -105,3 +114,20 @@
         </div>
     </div>
 </body>
+
+<script>
+    var query;
+    $("select[name=query]").change(function(){
+        query = $(this).val(); //value값 가져오기
+    });
+    $(document).ready(function() {
+            $("#keyword").keyup(function() {
+                var k = $(this).val();
+                $(".type11 > tbody > tr").hide();
+                
+                var temp = $(".type11 > tbody > tr > td:nth-child(5n + "+ query +"):contains('" + k + "')");
+
+                $(temp).parent().show();
+            })
+        })
+</script>
