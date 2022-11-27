@@ -344,7 +344,7 @@ select::-ms-expand {
 
 #coupon-modal{
     background: rgba(0,0,0,.5);
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     position: fixed;
     flex-direction: column;
@@ -422,4 +422,16 @@ select::-ms-expand {
 
 .container:active{
     opacity: 0.5;
+}
+
+#cart-price-box{
+    margin-top: 2rem;
+    display: flex;
+    width: 70%;
+    justify-content: flex-end;
+}
+#total-price{
+    font-weight: bold;
+    font-size: 30px;
+    
 }

@@ -52,7 +52,27 @@
     </header>
     <div class = 'order-container'>
         <div class = 'title'>주문 정보</div>
-        <div id = 'order-content'></div>
+        <div id = 'order-content'>
+            <div class = 'cart-box'>
+                <div class = 'cart-img-box'>
+                  <div class = 'cart-img'></div>
+                </div>
+                <div class = 'cart-info-box'>
+                  <div class = 'title'>발렌타인</div>
+                  <div class = 'style'>심플</div>
+                  <div class = 'hash-tag'>ㅋㅋ</div>
+                  <div class = 'hash-tag'>ㅋㅋ</div>
+                </div>
+                <div class = 'cart-right-box'>
+                  <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
+                  <div class = 'cart-price'>18000원</div>
+                </div>
+            </div>
+        </div>     
+            <div id = 'cart-price-box'>
+                <div id = 'total-price'>Total Price: 100원</div>
+            </div>
+        
     </div>
     <hr style="width: 70%; margin-top: 50px;">        
     
@@ -91,33 +111,6 @@
                 <div class = 'about'style="color: black;">
                     <p style="font-size: 25px; padding-left: 2rem; padding-top: 1rem; font-weight: bold;"> 사용할 쿠폰을 선택하세요! </p>
                     <div id = 'coupon-list'>
-                        <div class="container mt-5" style="cursor: pointer;">
-                            <div class="d-flex justify-content-center row">
-                            <div class="col-md-6">
-                                <div class="coupon p-3 bg-white" style="width: 100%">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4 border-right">
-                                    <div class="d-flex flex-column align-items-center">
-                                        <img src="../assets/img/logos/icons8-개구리.gif" width="100px">
-                                        <span class="d-block"></span>
-                                    </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                    <div>
-                                        <div id = 'couponNo' style = 'color:transparent;'>1</div>
-                                        <div class="d-flex flex-row justify-content-end off">
-                                        <h1 id = 'price' style = "font-size: 30px;">5000</h1><h1 style = "font-size: 30px;">원</h1>
-                                        </div>
-                                        <div class="d-flex flex-row justify-content-between off px-3 p-2">
-                                        <span id = 'endTime'>~2012-12-03</span>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,31 @@
 //var url = "http://ec2-15-164-24-71.ap-northeast-2.compute.amazonaws.com:8080"
 var url = "http://localhost:8080";
+var totalPrice;
+function get_total_price(){
+  var priceContent = document.getElementsByClassName('cart-price');
+  var totalContent = document.getElementById('total-price');
+  totalPrice = 0
+  for (i = 0; i < priceContent.length; i++){
+    totalPrice += Number(priceContent[i].innerText.replace(/[^0-9]/g, ""));
+  }
+  totalContent.innerHTML = `
+  Total Price: ${totalPrice}원
+  `
+
+}
+window.onchange = get_total_price();
+
 document.write('<script src="../js/cookie.js"></script>');
+
+function saleByCoupon(price){
+  var totalContent = document.getElementById('total-price');
+  var totalPrice_coupon = totalPrice - Number(price);
+  totalContent.innerHTML = 
+  `
+  Total Price: ${totalPrice_coupon}원
+  `
+  closeCouponModal();
+}
 
 function openPurchaseModal(){
     document.getElementById('modal').style.display = 'flex';
@@ -267,7 +292,7 @@ const fetchMyCoupon = async () => {
 
           for(i=0; i<res.couponList.length; i++){
             couponList.innerHTML += `
-            <div class="container mt-5">
+            <div class="container mt-5" style="cursor: pointer;" onclick="saleByCoupon(${res.couponList[i].price})">
               <div class="d-flex justify-content-center row">
                 <div class="col-md-6">
                   <div class="coupon p-3 bg-white" style="width: 100%">
