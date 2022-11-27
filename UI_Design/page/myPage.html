@@ -35,6 +35,8 @@
         }
         addLoadEvents(fetchUser());
         addLoadEvents(fetchAddress());
+        addLoadEvents(fetchMyCoupon());
+        addLoadEvents(fetchDemand());
     </script>
     </script>
 </head>
@@ -77,44 +79,11 @@
 
 
 <div class="my-container">
-    <div class = 'pay-method-box'>
-        <div class="cardreg">결제 수단 등록</div>
-        <div class = 'pay-method'>
-            <div id = 'card-number'>카드 번호: </div>
-            <div id = 'bank'>은행: </div>
-        </div>
-        <button id = 'update-pay-method'>결제 수단 변경하기</button>
-    </div>
+    
     <div class = 'coupon-box'>
         <div class="cardreg">보유 쿠폰 확인</div>
         <div id = 'coupon-list'>
-            <div class="container mt-5">
-              <div class="d-flex justify-content-center row">
-                <div class="col-md-6">
-                  <div class="coupon p-3 bg-white">
-                    <div class="row no-gutters">
-                      <div class="col-md-4 border-right">
-                        <div class="d-flex flex-column align-items-center">
-                          <img src="../assets/img/logos/icons8-개구리.gif" width="100px">
-                          <span class="d-block"></span>
-                        </div>
-                      </div>
-                      <div class="col-md-8">
-                        <div>
-                          <div class="d-flex flex-row justify-content-end off">
-                            <h1 id = 'price'>5000</h1><h1>원</h1>
-                          </div>
-                          <div class="d-flex flex-row justify-content-between off px-3 p-2">
-                            <span id = name>오픈 기념 할인 쿠폰</span>
-                            <span class="border border-success px-3 rounded code" id = 'endTime'>2012-12-03</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
         </div>
     </div>
     <div class = 'order-box'>
@@ -123,60 +92,7 @@
         <div class = 'order-content'>
             <div class = 'order-delivery-img'><img src = '../assets/img/logos/delivery.gif' width="250px"></div>
             <div id = 'order-info-box'style="table-layout: fixed">
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
-                <div class = 'order-info'>
-                    <div id = 'No' style="margin-right: 1rem;">1</div>
-                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
-                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
-                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
-                    <div class = 'status-box'>
-                        <div id = 'status'>주문 대기</div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

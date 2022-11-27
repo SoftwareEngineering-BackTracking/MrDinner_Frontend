@@ -59,7 +59,7 @@ function fetchDemand() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      date = document.get
+    
       for (var i in resData.demandList) {
         const dateData = resData.demandList[i].createdDate.match(/\d{4}-\d{2}-\d{2}/);
        
