@@ -14,6 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel = "stylesheet"/>
+    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet"/>
     <link rel="stylesheet" href="../css/myPage.css" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../js/myPage.js"></script>
@@ -68,25 +72,85 @@
     <button class="chng-4" onclick="chngAddress()">변경</button>
     <hr class="line2-6" width="600px" color="#9C9A9A">
     </hr>
-    <span class="type" id="type">defaultType</span>
-    <hr class="line2-7" width="600px" color="#9C9A9A">
-    </hr>
 </div>
-<hr class="line2" width="87%" color="#9C9A9A">
-</hr>
-<div class="area3">
-    <span class="cardreg">결제 수단 등록</span>
-    <hr class="line3" width="87%" color="#B6B6B6">
-    </hr>
-    <span class="couponid">보유 쿠폰 확인</span>
-    <hr class="line4" width="87%" color="#B6B6B6">
-    </hr>
-    <span class="outreg">회원 탈퇴</span>
-    <hr class="line5" width="87%" color="#B6B6B6">
-    </hr>
-</div>
+<button class="allchangebtn" onclick="changeAll()">반영하기</button>
 
-<body>
-</body>
+
+<div class="my-container">
+    <div class = 'pay-method-box'>
+        <div class="cardreg">결제 수단 등록</div>
+        <div class = 'pay-method'>
+            <div id = 'card-number'>카드 번호: </div>
+            <div id = 'bank'>은행: </div>
+        </div>
+        <button id = 'update-pay-method'>결제 수단 변경하기</button>
+    </div>
+    <div class = 'coupon-box'>
+        <div class="cardreg">보유 쿠폰 확인</div>
+    </div>
+    <div class = 'order-box'>
+        <div class="cardreg">주문 현황</div>
+        <p style="padding-top: 1rem; font-size: 17px;">주문을 수정하려면 주문 상태 버튼을 누르세요!</p>
+        <div class = 'order-content'>
+            <div class = 'order-delivery-img'><img src = '../assets/img/logos/delivery.gif' width="250px"></div>
+            <div id = 'order-info-box'style="table-layout: fixed">
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+                <div class = 'order-info'>
+                    <div id = 'No' style="margin-right: 1rem;">1</div>
+                    <div id = 'title' style="font-weight: bold;">발렌타인</div>
+                    <div id = 'style' style="padding-right: 2rem;">(심플)</div>
+                    <div id = 'price' style="padding-right: 2rem;">10000원</div>
+                    <div class = 'status-box'>
+                        <div id = 'status'>주문 대기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>

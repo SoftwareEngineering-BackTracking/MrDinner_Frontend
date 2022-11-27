@@ -33,7 +33,7 @@ header.masthead {
     transform: translate(-40%,100%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
-    font-weight: semi bold;
+    font-weight: bold;
     font-size: 30px;
     opacity: 1;
     text-align: center;
@@ -41,15 +41,15 @@ header.masthead {
   }
 
   .subtitle {
-    width: 500px;
+    width: 900px;
     margin-left: -5%;
-    transform: translate(-45%,420%);
+    transform: translate(-25%,420%);
     color: rgba(0, 0, 0, 1);
     font-family: Inter;
     font-weight: 400;
     font-size: 15px;
     opacity: 1;
-    text-align: center;
+    text-align: left;
     display: inline-block;
   }
 
@@ -81,19 +81,6 @@ header.masthead {
     position: relative;
     top: 290px;
     height: 0.1px;
-  }
-
-  .cardreg {
-    width: 300px;
-    margin-left: 15%;
-    transform: translate(-53%,910%); 
-    color: #A1A1A1;
-    font-family: Inter;
-    font-weight: bold;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
-    display: inline-block;
   }
 
   .couponid {
@@ -347,3 +334,198 @@ header.masthead {
     font-size: 10px;
     text-align: center;
   }
+
+  .allchangebtn {
+    transform: translate(700%, 100%);
+    width: 120px;
+    height: 30px;
+    background-color: #bdbdbd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    border-color: transparent;
+    color: white;
+    font-family: Inter;
+    font-weight: semi Bold;
+    font-size: 15px;
+    text-align: center;
+  }
+
+.my-container{
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pay-method-box{
+  border-top: 2px solid #bdbdbd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  padding-left: 4%;
+}
+
+.cardreg {
+  padding-top: 1rem;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.pay-method{
+  padding-left: 3%;
+  padding-top: 3%;
+  font-size: 18px;
+  font-weight:500;
+}
+
+#card-number{
+  padding-bottom: 1rem;
+}
+
+#bank{
+  padding-bottom: 5rem;
+}
+#update-pay-method{
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 3%;
+  font-size: 18px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  margin-top: 2%;
+  background-color: #bdbdbd;
+  border-radius: 5px;
+  color: white;
+  border: #A1A1A1;
+}
+
+#update-pay-method:active{
+  opacity: 0.8;
+}
+
+
+
+.coupon{
+  border-radius: 12px;
+  border: 2px solid #A1A1A1;
+  box-shadow: 5px 8px 10px #d6d5d533
+}
+
+body{
+  background: rgb(251, 253, 255)
+}
+
+.code:hover{
+  background: green;
+  color: #fff;cursor: pointer
+}
+
+#coupon-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.coupon-box{
+  border-top: 2px solid #bdbdbd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  padding-left: 4%;
+  margin-bottom: 3rem;
+}
+
+.order-box{
+  border-top: 2px solid #bdbdbd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  padding-left: 4%;
+  margin-bottom: 3rem;
+}
+
+.order-content{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #A1A1A1;
+  border-radius: 10px;
+
+}
+
+#order-info-box{
+  width: 70%;
+  overflow: scroll;
+  height: 250px;
+}
+
+.order-delivery-img{
+  margin-left: 5%;
+  padding-right: 5%;
+  border-right: 2px dotted #A1A1A1;
+}
+
+.order-info{
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-box{
+  
+  border: 2px dashed  #A1A1A1;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
+  background: #ffe3e1 !important;
+
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: rainbowBorder;
+}
+
+.status-box:active{
+  opacity: 0.5;
+}
+
+ @keyframes rainbowBorder {   
+  0% { border-color: #ff2a2a; }
+  15% { border-color: #ff7a2a; }
+  30% { border-color: #ffc52a; }
+  45% { border-color: #43ff2a; }
+  60% { border-color: #2a89ff; }
+  75% { border-color: #202082; }
+  90% { border-color: #6b2aff; }
+  100% { border-color: #e82aff; }
+ }
+
+#modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  border: 2px solid #A1A1A1;
+  background-color: white;
+}
+
+#No{
+  border: 1px solid #A1A1A1;
+  border-radius: 50%;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
