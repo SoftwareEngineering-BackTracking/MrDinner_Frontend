@@ -43,11 +43,10 @@ function fetchDemand() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      var swiperWrapper = document.getElementById('swiper-wrapper');
+      var swiperWrapper = document.getElementById("swiper-wrapper");
 
       for (var i in response.demandList.length) {
-        swiperWrapper.innerHTML +=
-        `
+        swiperWrapper.innerHTML += `
         <div class="swiper-slide">
           <div class="container0">
             <div class=outercontainer0>
@@ -76,8 +75,10 @@ function fetchDemand() {
             <div class="orderstatus0" id="status0">주문대기중</div>
           </div>
         </div>
-        `
-        const dateData = JSON.stringify(resData.demandList[i].createdDate).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
+        `;
+        const dateData = JSON.stringify(
+          resData.demandList[i].createdDate
+        ).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
 
         document.getElementById("order" + String(i)).innerHTML =
           "주문번호 " + JSON.stringify(resData.demandList[i].demandno);
@@ -165,15 +166,10 @@ function fetchCartDetail() {
     .catch((error) => console.log("error", error));
 }*/
 
-function prevLook() {}
-
-function nextLook() {}
-
-
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper(".swiper-container", {
   //기본 셋팅
   //방향 셋팅 vertical 수직, horizontal 수평 설정이 없으면 수평
-  direction: 'horizontal',
+  direction: "horizontal",
   //한번에 보여지는 페이지 숫자
   slidesPerView: 3,
   //페이지와 페이지 사이의 간격
@@ -188,19 +184,18 @@ const swiper = new Swiper('.swiper-container', {
   centeredSlides: true,
   // 페이지 전환효과 slidesPerView효과와 같이 사용 불가
   // effect: 'fade',
-  
-  
+
   //자동 스크를링
   autoplay: {
     //시간 1000 이 1초
     delay: 2500,
     disableOnInteraction: false,
-   },
-  
+  },
+
   //페이징
   pagination: {
     //페이지 기능
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     //클릭 가능여부
     clickable: true,
   },
@@ -208,9 +203,8 @@ const swiper = new Swiper('.swiper-container', {
   //방향표
   navigation: {
     //다음페이지 설정
-    nextEl: '.swiper-button-next',
+    nextEl: ".swiper-button-next",
     //이전페이지 설정
-    prevEl: '.swiper-button-prev',
+    prevEl: ".swiper-button-prev",
   },
-  
 });
