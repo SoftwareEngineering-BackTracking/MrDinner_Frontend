@@ -10,6 +10,14 @@ function closePurchaseModal(){
     document.getElementById('modal').style.display = 'none';
 };
 
+function openCouponModal(){
+  document.getElementById('modal2').style.display = 'flex';
+};
+
+function closeCouponModal(){
+  document.getElementById('modal2').style.display = 'none';
+};
+
 const modal1 = document.getElementById('pay-modal');
 modal1.addEventListener("click", (e) => {
     if (e.target === modal1) document.getElementById('modal').style.display = 'none'
@@ -104,6 +112,8 @@ const createDemand = async () => {
     });
 };
 
+
+
 const payCart = async () => {
     if (getCookie('id') == null){
       return alert('다시 로그인하세요!')
@@ -120,7 +130,7 @@ const payCart = async () => {
       },
       body: JSON.stringify({
         'id': getCookie('id'),
-        'couponNo': 1,
+        'couponNo': getElementById('couponNo').value,
         'purchaseNo': getCookie('purchaseNo')
       })
     }).then((response) => {
@@ -170,6 +180,121 @@ const fetchCartItem = async () => {
       
               `
               
+          }
+      }).catch((error) => {
+          console.log(error);
+      })
+  
+}
+
+var address;
+
+const fetchMyAddress = async () => {
+  const postResponse = await fetch(url+"/api/address", {
+      mode: 'cors',
+      method: "GET",
+      headers: {
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      Connection: 'keep-alive',
+      Accept: '*/*',
+      id: getCookie('id'),
+      addressNo: null
+      }})
+  .then((res) => {
+      return res.json();
+      }).then((res) => {
+          console.log(res.addressList);
+          address = res.addressList[res.addressList.length - 1];
+      }).catch((error) => {
+          console.log(error);
+      })
+  
+}
+
+const fetchUser = async () => {
+  const postResponse = await fetch(url+"/api/user", {
+      mode: 'cors',
+      method: "GET",
+      headers: {
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      Connection: 'keep-alive',
+      Accept: '*/*',
+      id: getCookie('id'),
+      name: null,
+      department: null
+      }})
+  .then((res) => {
+      return res.json();
+      }).then((res) => {
+          console.log(res.cartItems);
+          var custInfoBox = document.getElementById('customer-info-box');
+          
+          custInfoBox.innerHTML += `
+            <div class = 'customer-info-top'>
+                <div class = 'customer-title'>주문자 정보</div>
+            </div>
+            <div class = 'customer-info'>
+                <div class = 'name'>${res.name}</div>
+                <div class = 'phone-number'>${res.phoneNumber.substr(0, 3)} - ${res.phoneNumber.substr(3, 4)} - ${res.phoneNumber.substr(7, 4)}</div>
+                <div class = 'address'>${address}</div>
+            </div>
+              `
+      }).catch((error) => {
+          console.log(error);
+      })
+  
+}
+
+const fetchMyCoupon = async () => {
+  const postResponse = await fetch(url+"/api/coupon", {
+      mode: 'cors',
+      method: "GET",
+      headers: {
+      'Content-Type':'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      Connection: 'keep-alive',
+      Accept: '*/*',
+      id: getCookie('id'),
+      couponNo: null
+      }})
+  .then((res) => {
+      return res.json();
+      }).then((res) => {
+          console.log(res.cartItems);
+          var couponList = document.getElementById('coupon-list');
+
+          for(i=0; i<res.couponList.length; i++){
+            couponList.innerHTML += `
+            <div class="container mt-5">
+              <div class="d-flex justify-content-center row">
+                <div class="col-md-6">
+                  <div class="coupon p-3 bg-white" style="width: 100%">
+                    <div class="row no-gutters">
+                      <div class="col-md-4 border-right">
+                        <div class="d-flex flex-column align-items-center">
+                          <img src="../assets/img/logos/icons8-개구리.gif" width="100px">
+                          <span class="d-block"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div>
+                          <div id = 'couponNo' style = 'color:transparent;'>${res.couponList[i].couponNo}</div>
+                          <div class="d-flex flex-row justify-content-end off">
+                            <h1 id = 'price' style = "font-size: 30px;">${res.couponList[i].price}</h1><h1 style = "font-size: 30px;">원</h1>
+                          </div>
+                          <div class="d-flex flex-row justify-content-between off px-3 p-2">
+                            <span id = 'endTime'>~${res.couponList[i].endTime.substr(0, 10)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `
           }
       }).catch((error) => {
           console.log(error);
