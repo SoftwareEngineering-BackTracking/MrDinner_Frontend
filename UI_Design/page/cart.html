@@ -126,28 +126,7 @@
             <div class = 'ad1'></div>
             <div class = 'cart-subcontainer'>
                 <div id = 'cart-test'>
-                    <div class = 'cart-box'>
-                        <div class = 'show-detail' onclick="openrenderDetail()">?</div>
-                        <div class = 'cart-img-box'>
-                            <div class = 'cart-img'></div>
-                        </div>
-                        <div class = 'cart-info-box'>
-                            <p id = 'cartItemNo'></p>
-                            <div class = 'title'>발렌타인</div>
-                            <div class = 'style'>심플</div>
-                            <div class = 'style' style = 'cursor: pointer;' onclick="renderDetail('${res.cartItems[i].dinner.dinner}', ${res.cartItems[i].cartItemNo})">추가메뉴</div>
-                            <div class = 'hash-tag'>ㅋㅋ</div>
-                        </div>
-                        <div class = 'cart-right-box'>
-                            <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
-                            <div class = 'cart-price'>1원</div>
-                        </div>
-                        <div class = 'render-detail'>
-                            <div id = 'close-detail-btn' onclick="closerenderDetail()">X</div>
-                            <div class = 'title'>추가된 목록</div>
-                            <p style="font-size: 20px; padding-left: 2rem;">1. 발렌타인_고기, 가격:</p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class = 'order-box'>
                     <button class = 'order' onclick="location.href = 'orderPay.html'">주문하기</button>

@@ -18,10 +18,11 @@ const fetchCartItem = async () => {
         return res.json();
         }).then((res) => {
             var cartTest = document.getElementById('cart-test');
+            console.log(res.cartItems);
             for(i=0; i<res.cartItems.length; i++){
                 cartTest.innerHTML += `
                     <div class = 'cart-box'>
-                        <div class = 'show-detail' onclick="openrenderDetail('${res.cartItems[i].cartItemNo}')">?</div>
+                        <div class = 'show-detail' onclick="openrenderDetail(${res.cartItems[i].cartItemNo})">?</div>
                         <div class = 'cart-img-box'>
                             <div class = 'cart-img'></div>
                         </div>
