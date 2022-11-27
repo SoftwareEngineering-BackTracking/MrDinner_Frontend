@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   font-size: 14px;
@@ -388,7 +386,6 @@ button:hover {
 
 table {
   position: relative;
-  top: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -397,9 +394,44 @@ table,
 td,
 th {
   border-collapse: collapse;
-  border: 1px solid black;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+table.type11 {
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 20px 10px;
+}
+table.type11 th {
+  width: 155px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: orange ;
+}
+table.type11 td {
+  width: 155px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #eee;
+}
+
+#input-form{
+  margin-top: 1rem;
+  align-items: center;
+}
+
+#input-form input{
+  width: 20%;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px black solid;
 }
