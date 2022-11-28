@@ -6,7 +6,8 @@ var url = "http://127.0.0.1:8080";
 var modifiedNickname;
 var modifiedPhone;
 var modifiedEmail;
-var modifiedAddress
+var modifiedAddress;
+
 
 function fetchUser() {
   fetch(url + "/api/user", {
@@ -92,6 +93,18 @@ function chngAddress() {
 }
 
 function changeAll() {
+  if (modifiedNickname == null){
+    modifiedNickname = document.getElementsByClassName('nickname')[0].value
+  }
+  if (modifiedPhone == null){
+    modifiedPhone = document.getElementsByClassName('phone')[0].value
+  }
+  if (modifiedEmail == null){
+    modifiedEmail = document.getElementsByClassName('email')[0].value
+  }
+  if (modifiedAddress == null){
+    modifiedAddress = document.getElementsByClassName('address')[0].value
+  }
     fetch(url + "/api/user", {
         method: "PUT",
         headers: {
@@ -101,15 +114,15 @@ function changeAll() {
           Accept: "*/*",
           id: getCookie("id"),
         },
-        body: {
+        body: JSON.stringify({
             "id": getCookie("id"),
-            "name": null,
-            "birth": null,
+            "name": document.getElementById('name').value,
+            "birth": document.getElementById('birth').value,
             "phoneNumber": modifiedPhone,
             "email": modifiedEmail,
             "nickname": modifiedNickname,
-            "address": modifiedAddress,
-        }
+            "address": modifiedAddress
+        })
       })
         .then((response) => {
           return response.json();
