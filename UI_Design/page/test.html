@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link href="../css/orderManagement.css" rel="stylesheet" />
+    <script src="../js/orderManagement.js"></script>
+</head>
+
+<body>
+    <div class="swiper-slide">
+        <div class="container0">
+            <div class=outercontainer0>
+                <div class="innercontainer">
+                    <div class="area1">
+                        <div class="dinnercontainer">
+                            <div class="dinnername" id="dinner" style="margin-top: 1rem;">
+                                발렌타인</div>
+                            <div class="dinnername" id="dinner" style="margin-top: 1rem;">
+                                7000원</div>
+                        </div>
+                    </div>
+                    <div class='line-box' style="display: flex; justify-content: center;">
+                        <div class='line' style="border: 1px solid black; width: 90%;"></div>
+                    </div>
+                    <div class="area2">
+                        <div class="dinnercontainer">
+                            <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보:
+                                임재석</div>
+                            <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름:
+                                임재석</div>
+                            <div id='tel' style="margin-top: 1rem; padding-left: 2rem;">Tel.
+                                010-1111-1111</div>
+                            <div id='address' style="margin-top: 1rem; padding-left: 2rem;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ordernumber0" id="order0">주문번호 3</div>
+            </div>
+            <div class="orderstatus0" id="status0">주문 대기중</div>
+            <div class="btncontainer" style="margin-top: 3rem;">
+                <button class="orderbtn" style="margin-right: 0.5rem;" id="orderstatus" onclick="acceptOrder()">주문
+                    수락</button>
+                <button class="orderbtn" style="margin-left: 0.5rem;" id="deliverystatus" onclick="deliveryStart()">배달
+                    시작</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
