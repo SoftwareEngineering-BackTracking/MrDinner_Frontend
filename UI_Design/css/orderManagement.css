@@ -27,13 +27,29 @@ header.masthead {
   opacity: 0.6;
 }
 
-.mySwiper{
+.orderbtn {
+  width: 100px;
+  height: 28px;
+  background: rgb(255, 0, 30);
+  opacity: 0.8;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  border-color: transparent;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mySwiper {
   margin-top: 5%;
 }
 
 .container0 {
   width: 25%;
-  height: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -90,7 +106,7 @@ header.masthead {
   box-shadow: 5px 5px 15px #6a6a6aec;
 }
 
-#swiper-wrapper{
+#swiper-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -159,7 +175,7 @@ header.masthead {
   height: 52px;
   background: #a9a9a9;
   margin: auto;
-  transform: translate(0, 100%);
+  transform: translate(0, 120%);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -226,12 +242,15 @@ header.masthead {
   height: 0.1px;
 }
 
-.dinnercontainer{
+.dinnercontainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.dinnername ,.specadd ,.add{
+
+.dinnername,
+.specadd,
+.add {
   color: rgba(0, 0, 0, 1);
   font-family: Inter;
   font-weight: Bold;
@@ -241,7 +260,7 @@ header.masthead {
   margin-bottom: 1rem;
 }
 
-#add-info{
+#add-info {
   padding-left: 2rem;
   margin-bottom: 1rem;
   font-size: 15px;
@@ -441,6 +460,7 @@ button:hover {
 }
 
 .swiper-slide {
+  height: 100%;
   text-align: center;
   font-size: 18px;
   display: flex;
