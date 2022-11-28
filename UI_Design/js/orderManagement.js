@@ -1,5 +1,50 @@
 //var url = "https://e308edc5-f1f5-4191-942d-9173192644d7.mock.pstmn.io";
 var url = "http://localhost:8080";
+
+function acceptOrder() {
+  document.getElementById("status0").innerHTML = "주문 진행중";
+}
+
+function deliveryStart() {
+  if (document.getElementById("status0").innerHTML != "주문 진행중") {
+    alert("먼저 주문을 수락하셔야합니다.");
+  } else {
+    document.getElementById("status0").innerHTML = "배달 진행중";
+    setTimeout(function () {
+      document.getElementById("status0").innerHTML = "배달 완료";
+    }, 600000);
+
+    fetch(url + "/api/demand", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Connection: "keep-alive",
+        Accept: "*/*",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        for (i = 0; i < response.demandList.length; i++) {
+          for (j = 0; j < response.demandItemList.length; j++) {
+            for (k = 0; j < response.demandDetailList.length; k++) {
+              if (
+                response.demandList[i].demandno ==
+                response.demandItemList[i][j].demandNo.demandno
+              ) {
+                const deletediv = document.getElementById("swiper");
+                deletediv.remove();
+              }
+            }
+          }
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
+}
+
 function fetchUser() {
   fetch(url + "/api/user", {
     method: "GET",
@@ -7,7 +52,7 @@ function fetchUser() {
       "Content-Type": "application/json;charset=utf-8",
       "Access-Control-Allow-Origin": "*",
       Connection: "keep-alive",
-      Accept: "*/*"
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -37,7 +82,7 @@ function fetchDemand() {
       "Content-Type": "application/json;charset=utf-8",
       "Access-Control-Allow-Origin": "*",
       Connection: "keep-alive",
-      Accept: "*/*"
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -49,52 +94,62 @@ function fetchDemand() {
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
 
-      var swiperWrapper = document.getElementsByClassName('swiper-wrapper')[0];
+      var swiperWrapper = document.getElementsByClassName("swiper-wrapper")[0];
 
-      for (i = 0 ; i < response.demandList.length ; i++) {
-        for(j=0 ; j < response.demandItemList.length ; j++){
-          for(k=0; j < response.demandDetailList.length ; k++){
-          if(response.demandList[i].demandno == response.demandItemList[i][j].demandNo.demandno){
+      for (i = 0; i < response.demandList.length; i++) {
+        for (j = 0; j < response.demandItemList[i].length; j++) {
+          //for(k=0; j < response.demandDetailList.length ; k++){
+          if (
+            response.demandList[i].demandno ==
+            response.demandItemList[i][j].demandNo.demandno
+          ) {
+            console.log(j);
             //if(response.demandItemList[i][j].demandNo.demandno == response.demandDetaiList[j][k].demandItemNo.demanditemno){
-        swiperWrapper.innerHTML +=
-        `
-        <div class="swiper-slide">
+            swiperWrapper.innerHTML += `
+        <div class="swiper-slide" id="swiper">
           <div class="container0">
             <div class=outercontainer0>
               <div class="innercontainer">
                 <div class="area1">
                   <div class="dinnercontainer">
-                    <div class="dinnername" id="dinner" style="margin-top: 1rem;">${response.demandItemList[i][j].dinner.dinner}</div>
-                    <div class="add">추가사항</div>
-                    <div id = 'add-info'>${response.demandDetailList[j][k].name} ${response.demandDetailList[j][k].status}</div>
-                  </div>
+                    <div class="dinnername" id="dinner" style="margin-top: 1rem;">${
+                      response.demandItemList[i][j].dinner.dinner
+                    } / ${response.demandItemList[i][j].style.style}</div>
+                    <div class="dinnername" id="dinner" style="margin-top: 1rem;">${
+                      response.demandItemList[i][j].price
+                    }원</div>
+                    </div>
                 </div>
                 <div class = 'line-box' style="display: flex; justify-content: center;">
                   <div class = 'line' style="border: 1px solid black; width: 90%;"></div>
                 </div>
                 <div class="area2">
                   <div class="dinnercontainer">
-                    <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보: ${response.demandList[i].userId.id}</div>
-                    <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름: ${response.demandList[i].userId.name}</div>
-                    <div id = 'tel'style="margin-top: 1rem; padding-left: 2rem;">Tel. ${response.demandList[i].userId.phoneNumber}</div>
+                    <div class="username" id="username" style="margin-top: 1rem; padding-left: 2rem;">주문인 정보: ${
+                      response.demandList[i].userId.id
+                    }</div>
+                    <div class="name" style="margin-top: 1rem; padding-left: 2rem;">이름: ${
+                      response.demandList[i].userId.name
+                    }</div>
+                    <div id = 'tel'style="margin-top: 1rem; padding-left: 2rem;">Tel. ${
+                      response.demandList[i].userId.phoneNumber
+                    }</div>
                     <div id = 'address'style="margin-top: 1rem; padding-left: 2rem;"></div>
                   </div>
                 </div>
               </div>
-              <div class="ordernumber0" id="order0">주문번호 n</div>
+              <div class="ordernumber0" id="order0">주문번호 ${j + 1}</div>
             </div>
-            <div class="orderstatus0" id="status0">주문대기중</div>
+            <div class="orderstatus0" id="status0">수락</div>
+            <div class="btncontainer" style="margin-top: 3rem;">
+                      <button class="orderbtn" style="margin-right: 0.5rem;" id="orderstatus" onclick="acceptOrder()">주문
+                          수락</button>
+                      <button class="orderbtn" style="margin-left: 0.5rem;" id="deliverystatus" onclick="deliveryStart()">배달
+                          시작</button>
+                  </div>
           </div>
         </div>
-        `
-        const dateData = JSON.stringify(resData.demandList[i].createdDate).match(/[0-2][0-4]:[0-5][0-9]:[0-5][0-9]/);
-
-        document.getElementById("order" + String(i)).innerHTML =
-          //"주문번호 " + JSON.stringify(resData.demandList[i].demandno);
-          "주문번호 " + (i+1);
-        document.getElementById("status" + String(i)).innerHTML =
-          JSON.stringify(resData.demandList[i].status);
-            }
+        `;
           }
         }
       }
@@ -109,7 +164,7 @@ function fetchCartItem() {
       "Content-Type": "application/json;charset=utf-8",
       "Access-Control-Allow-Origin": "*",
       Connection: "keep-alive",
-      Accept: "*/*"
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -139,7 +194,7 @@ function fetchCartDetail() {
       "Content-Type": "application/json;charset=utf-8",
       "Access-Control-Allow-Origin": "*",
       Connection: "keep-alive",
-      Accept: "*/*"
+      Accept: "*/*",
     },
   })
     .then((response) => {
@@ -173,10 +228,8 @@ function fetchCartDetail() {
     })
     .then((response) => {
       console.log(response);
-
       var tempRes = JSON.stringify(response);
       var resData = JSON.parse(tempRes);
-
       for (var i in response.addressList) {
         document.getElementById("addressinfo" + String(i)).innerHTML =
           "주소 : " + JSON.stringify(resData.addressList[i].detail);
@@ -184,53 +237,3 @@ function fetchCartDetail() {
     })
     .catch((error) => console.log("error", error));
 }*/
-
-function prevLook() {}
-
-function nextLook() {}
-
-
-const swiper = new Swiper('.swiper-container', {
-  //기본 셋팅
-  //방향 셋팅 vertical 수직, horizontal 수평 설정이 없으면 수평
-  direction: 'horizontal',
-  //한번에 보여지는 페이지 숫자
-  slidesPerView: 3,
-  //페이지와 페이지 사이의 간격
-  spaceBetween: 30,
-  //드레그 기능 true 사용가능 false 사용불가
-  debugger: true,
-  //마우스 휠기능 true 사용가능 false 사용불가
-  mousewheel: true,
-  //반복 기능 true 사용가능 false 사용불가
-  loop: true,
-  //선택된 슬라이드를 중심으로 true 사용가능 false 사용불가 djqt
-  centeredSlides: true,
-  // 페이지 전환효과 slidesPerView효과와 같이 사용 불가
-  // effect: 'fade',
-  
-  
-  //자동 스크를링
-  autoplay: {
-    //시간 1000 이 1초
-    delay: 2500,
-    disableOnInteraction: false,
-   },
-  
-  //페이징
-  pagination: {
-    //페이지 기능
-    el: '.swiper-pagination',
-    //클릭 가능여부
-    clickable: true,
-  },
-
-  //방향표
-  navigation: {
-    //다음페이지 설정
-    nextEl: '.swiper-button-next',
-    //이전페이지 설정
-    prevEl: '.swiper-button-prev',
-  },
-  
-});
