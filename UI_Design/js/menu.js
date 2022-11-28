@@ -50,6 +50,8 @@ function createAddress(){
       'id': getCookie('id'),
       'detail': document.getElementsByClassName('address-setting')[0].value
     })
+  }).then((response) => {
+    alert("주소가 저장되었습니다.");
   })
 }
 

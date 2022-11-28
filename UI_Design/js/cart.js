@@ -84,6 +84,7 @@ function renderDetail(dinner, cartNo){
     if (dinner == '발렌타인'){
         modalContent.innerHTML = 
         `
+        <div id = 'close-btn' onclick="closeDetail()">X</div>
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
                 <div class = 'detail-img'></div>
@@ -100,7 +101,7 @@ function renderDetail(dinner, cartNo){
     }
     else if (dinner == '잉글리시'){
         modalContent.innerHTML = 
-        `
+        `<div id = 'close-btn' onclick="closeDetail()">X</div>
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
                 <div class = 'detail-img'></div>
@@ -129,7 +130,7 @@ function renderDetail(dinner, cartNo){
     }
     else if (dinner == '프렌치'){
         modalContent.innerHTML = 
-        `
+        `<div id = 'close-btn' onclick="closeDetail()">X</div>
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
                 <div class = 'detail-img'></div>
@@ -146,7 +147,7 @@ function renderDetail(dinner, cartNo){
     }
     else if (dinner == '샴페인'){
         modalContent.innerHTML = 
-        `
+        `<div id = 'close-btn' onclick="closeDetail()">X</div>
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
                 <div class = 'detail-img'></div>
@@ -226,6 +227,10 @@ function renderDetail(dinner, cartNo){
     }
 }
 
+function closeDetail(){
+    document.getElementsByClassName('detail-modal')[0].style.display = 'none';
+}
+
 const createCartDetail = async (dinner, cartItemNo) => {
     data = {
         cartItemNo : cartItemNo,
@@ -275,19 +280,19 @@ const fetchCartDetail = async (cartNo) => {
         return res.json();
         }).then((res) => {
             console.log(res);
-            var renderDetailBox = document.getElementById('render-detail-box');
+            var renderDetailBox = document.getElementsByClassName('render-detail')[0];
             var temp_renderDetail = "";
+            temp_renderDetail += `<div id = 'close-detail-btn' onclick="closerenderDetail()">X</div>
+            <div class = 'title'>추가된 목록</div>`
             for(i = 0; i<res.cartDetails.length; i++){
                 temp_renderDetail += `
                 <p style="font-size: 20px; padding-left: 2rem;">${i + 1}. ${res.cartDetails[i].name}, 가격:${res.cartDetails[i].price}원</p>
                 `
             }
+            
             renderDetailBox.innerHTML = temp_renderDetail;
         }).catch((error) => {
             console.log(error);
         })
     
 }
-
-
-

@@ -200,24 +200,23 @@ const login = async () => {
         'password': document.getElementById('Password').value
         }
     })
+    .then((response) => {
+        return response.json();
+    })
     //const post = await postResponse.json()
     .then((response) => {
-        
         modalOn(); // 일단 대기창 띄워놓기
-        if (response.ok){
-            console.log("response:", response.json());
             setCookie('isLoggedin', true, 90); // 쿠키 저장
             setCookie('id', document.getElementById('ID').value);
+            setCookie('token', response.token);
             setTimeout(function() {
                 modalOff()}, 1000); // 성공시 1초 후 대기창 내리기
             //go_main();
             go_main_advenced();
-            console.log(response.headers);
-            console.log(response.headers.get('Set-Cookie'));
 
             return console.log(document.cookie);
-        }}).catch((error) => {
-            console.log('로그인 실패');
+        }).catch((error) => {
+            console.log(error);
         })
 };
 

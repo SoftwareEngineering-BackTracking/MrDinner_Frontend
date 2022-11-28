@@ -6,42 +6,34 @@ function acceptOrder() {
 }
 
 function deliveryStart() {
+  const deletediv = document.getElementsByClassName("swiper-slide")[0];
+
   if (document.getElementById("status0").innerHTML != "주문 진행중") {
     alert("먼저 주문을 수락하셔야합니다.");
   } else {
     document.getElementById("status0").innerHTML = "배달 진행중";
     setTimeout(function () {
       document.getElementById("status0").innerHTML = "배달 완료";
+      setTimeout(function () {
+        deletediv.remove();
+        fetch(url + "/api/demand", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+            Connection: "keep-alive",
+            Accept: "*/*",
+          },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => console.log("error", error));
+      }, 3000);
     }, 600000);
-
-    fetch(url + "/api/demand", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-        Connection: "keep-alive",
-        Accept: "*/*",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        for (i = 0; i < response.demandList.length; i++) {
-          for (j = 0; j < response.demandItemList.length; j++) {
-            for (k = 0; j < response.demandDetailList.length; k++) {
-              if (
-                response.demandList[i].demandno ==
-                response.demandItemList[i][j].demandNo.demandno
-              ) {
-                const deletediv = document.getElementById("swiper");
-                deletediv.remove();
-              }
-            }
-          }
-        }
-      })
-      .catch((error) => console.log("error", error));
   }
 }
 
@@ -140,7 +132,7 @@ function fetchDemand() {
               </div>
               <div class="ordernumber0" id="order0">주문번호 ${j + 1}</div>
             </div>
-            <div class="orderstatus0" id="status0">수락</div>
+            <div class="orderstatus0" id="status0">주문 대기중</div>
             <div class="btncontainer" style="margin-top: 3rem;">
                       <button class="orderbtn" style="margin-right: 0.5rem;" id="orderstatus" onclick="acceptOrder()">주문
                           수락</button>

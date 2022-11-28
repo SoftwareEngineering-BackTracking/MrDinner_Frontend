@@ -2,18 +2,20 @@
 var url = "http://localhost:8080";
 var totalPrice;
 function get_total_price(){
-  var priceContent = document.getElementsByClassName('cart-price');
+  setTimeout(5000);
+    var priceContent = document.getElementsByClassName('cart-price');
   var totalContent = document.getElementById('total-price');
   totalPrice = 0
-  for (i = 0; i < priceContent.length; i++){
-    totalPrice += Number(priceContent[i].innerText.replace(/[^0-9]/g, ""));
+  for (j= 0; j < priceContent.length; j++){
+    totalPrice += Number(priceContent[j].innerText.replace(/[^0-9]/g, ""));
   }
+  console.log(totalPrice);
   totalContent.innerHTML = `
   Total Price: ${totalPrice}원
   `
 
 }
-window.onchange = get_total_price();
+//window.onload = get_total_price();
 
 document.write('<script src="../js/cookie.js"></script>');
 
@@ -143,7 +145,13 @@ const payCart = async () => {
     if (getCookie('id') == null){
       return alert('다시 로그인하세요!')
     };
-    createDemand();
+    var couponNo;
+    if (document.getElementById('couponNo')== null){
+        couponNo == null;
+    }
+    else{
+      couponNo = document.getElementById('couponNo').value;
+    }
     const postResponse = await fetch(url + "/api/cart/payment", {
       method: "POST",
       mode: 'cors',
@@ -155,14 +163,16 @@ const payCart = async () => {
       },
       body: JSON.stringify({
         'id': getCookie('id'),
-        'couponNo': getElementById('couponNo').value,
+        'couponNo': couponNo,
         'purchaseNo': getCookie('purchaseNo')
       })
     }).then((response) => {
       if (response.ok){
         alert('결제 성공');
         }
+        createDemand();
         return response.json();
+        
       })
       .catch((error) => console.log("error", error));
 };
@@ -184,8 +194,9 @@ const fetchCartItem = async () => {
       }).then((res) => {
           console.log(res.cartItems);
           var orderContent = document.getElementById('order-content');
-
+          console.log(res.cartItems.length);
           for(i=0; i<res.cartItems.length; i++){
+            console.log(i);
             orderContent.innerHTML += `
             <div class = 'cart-box'>
               <div class = 'cart-img-box'>
@@ -204,7 +215,7 @@ const fetchCartItem = async () => {
             </div>
       
               `
-              
+              get_total_price();
           }
       }).catch((error) => {
           console.log(error);

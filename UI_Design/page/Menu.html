@@ -23,7 +23,8 @@
     </head>
 
     <body id="page-top">
-        <audio controls id = 'audio-controller'>녹음된 소리를 재생할 audio 엘리먼트</audio>
+        <audio controls id = 'audio-controller'>
+            녹음된 소리를 재생할 audio 엘리먼트</audio>
         <!-- Navigation-->
         <iframe src="navbar.html" onload="
         this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()">
@@ -162,7 +163,7 @@
         const $audioEl = document.querySelector("audio");
         const $btn = document.getElementsByClassName("voice-order")[0];
         const audioComntroller = document.getElementById('audio-controller');
-
+        
         // 녹음중 상태 변수
         let isRecording = false;
     
@@ -171,7 +172,27 @@
     
         // 녹음 데이터 저장 배열
         const audioArray = [];
-    
+        var url = "http://127.0.0.1:8080";
+        function createCartItemWithVoice(){
+            setTimeout(console.log(1), 1000000);
+            fetch(url + "/api/cartitem/voice", {
+                method: "POST",
+                mode: 'cors',
+                headers: {
+                'Content-Type':'application/json;charset=utf-8',
+                'Access-Control-Allow-Origin':'*',
+                Connection: 'keep-alive',
+                Accept: '*/*'
+                },
+                body: JSON.stringify({
+                'id': getCookie('id'),
+                'token': getCookie('token')
+                })
+            })
+            .then((response) => {
+                location.href = 'cart.html';
+            })
+        };
         $btn.onclick = async function (event) {
             if(!isRecording){
                 audioComntroller.style.display = 'flex';
@@ -211,6 +232,8 @@
                 // 녹음 종료
                 mediaRecorder.stop();
                 isRecording = false;
+                setTimeout(function() {
+                createCartItemWithVoice()}, 2000); // 성공시 1초 후 대기창 내리기
             }
         }
     

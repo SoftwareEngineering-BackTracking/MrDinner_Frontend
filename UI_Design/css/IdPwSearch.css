@@ -197,7 +197,7 @@ header.masthead {
 
 .modal-container2 {
   background: rgba(0,0,0,.5);
-  display: flex;
+  display: none;
   /* this is how we cover the entire page */
   position: fixed;
   top: 0;

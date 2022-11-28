@@ -53,21 +53,7 @@
     <div class = 'order-container'>
         <div class = 'title'>주문 정보</div>
         <div id = 'order-content'>
-            <div class = 'cart-box'>
-                <div class = 'cart-img-box'>
-                  <div class = 'cart-img'></div>
-                </div>
-                <div class = 'cart-info-box'>
-                  <div class = 'title'>발렌타인</div>
-                  <div class = 'style'>심플</div>
-                  <div class = 'hash-tag'>ㅋㅋ</div>
-                  <div class = 'hash-tag'>ㅋㅋ</div>
-                </div>
-                <div class = 'cart-right-box'>
-                  <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
-                  <div class = 'cart-price'>18000원</div>
-                </div>
-            </div>
+            
         </div>     
             <div id = 'cart-price-box'>
                 <div id = 'total-price'>Total Price: 100원</div>
@@ -143,7 +129,7 @@
     </div>
     <script src="../js/orderPay.js"></script>
     <div class = 'pay-container'>
-        <button id = 'pay-btn' onclick="payCart(); location.href = 'main.html'">결제하기</button>
+        <button id = 'pay-btn' onclick="payCart()">결제하기</button>
     </div>
     <script language = 'JavaScript'>
         var res;

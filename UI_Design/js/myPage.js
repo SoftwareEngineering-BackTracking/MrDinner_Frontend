@@ -26,20 +26,21 @@ function fetchUser() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/\"/gi, "");
       var resData = JSON.parse(tempRes);
 
       document.getElementById("name").innerHTML =
-        "이름 : " + JSON.stringify(response.name);
+        "이름 : " + response.name;
       document.getElementById("phone").innerHTML =
-        "Tel. : " + JSON.stringify(response.phoneNumber);
+        "Tel. : " + response.phoneNumber;
       document.getElementById("nickname").innerHTML =
-        "닉네임 : " + JSON.stringify(response.nickname);
+        "닉네임 : " + response.nickname;
       document.getElementById("birth").innerHTML =
-        "생일. : " + JSON.stringify(response.birth);
+        "생일. : " + response.birth;
       document.getElementById("email").innerHTML =
-        "이메일 : " + JSON.stringify(response.email);
+        "이메일 : " + response.email;
       document.getElementById("type").innerHTML =
-        "유형 : " + JSON.stringify(response.department);
+        "유형 : " + response.department;
     })
     .catch((error) => console.log("error", error));
 }
@@ -75,8 +76,8 @@ function chngNickname() {
   modifiedNickname = prompt("변경할 닉네임을 입력하세요.");
   modifiedPhone = prompt("변경할 전화번호를 입력하세요.");
   modifiedEmail = prompt("변경할 이메일 입력하세요.");
-  modifiedAddress = prompt("변경할 주소를 입력하세요.");
-  alert("개인정보가 변경되었습니다.");
+  changeAll();
+  location.href = 'myPage.html';
 }
 
 
@@ -93,12 +94,11 @@ function changeAll() {
         },
         body: JSON.stringify({
             "id": getCookie("id"),
-            "name": document.getElementById("name").innerHTML,
-            "birth": document.getElementById("birth").innerHTML,
+            "name": document.getElementById("name").innerText.slice(5, ),
+            "birth": document.getElementById("birth").innerText.slice(5, ),
             "phoneNumber": modifiedPhone,
             "email": modifiedEmail,
             "nickname": modifiedNickname,
-            "address": modifiedAddress,
         })
       })
         .then((response) => {
@@ -218,10 +218,11 @@ function fetchAddress() {
       console.log(response);
 
       var tempRes = JSON.stringify(response);
+      tempRes.replace(/\"/gi, "");
       var resData = JSON.parse(tempRes);
 
       document.getElementById("address").innerHTML =
-        "주소 : " + JSON.stringify(resData.addressList[0].detail);
+        "주소 : " + resData.addressList[0].detail;
     })
     .catch((error) => console.log("error", error));
 }
