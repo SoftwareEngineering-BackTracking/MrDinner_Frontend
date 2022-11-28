@@ -6,42 +6,18 @@ function acceptOrder() {
 }
 
 function deliveryStart() {
+  const deletediv = document.getElementsByClassName("swiper-slide")[0];
+
   if (document.getElementById("status0").innerHTML != "주문 진행중") {
     alert("먼저 주문을 수락하셔야합니다.");
   } else {
     document.getElementById("status0").innerHTML = "배달 진행중";
     setTimeout(function () {
       document.getElementById("status0").innerHTML = "배달 완료";
-    }, 600000);
-
-    fetch(url + "/api/demand", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-        "Access-Control-Allow-Origin": "*",
-        Connection: "keep-alive",
-        Accept: "*/*",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        for (i = 0; i < response.demandList.length; i++) {
-          for (j = 0; j < response.demandItemList.length; j++) {
-            for (k = 0; j < response.demandDetailList.length; k++) {
-              if (
-                response.demandList[i].demandno ==
-                response.demandItemList[i][j].demandNo.demandno
-              ) {
-                const deletediv = document.getElementById("swiper");
-                deletediv.remove();
-              }
-            }
-          }
-        }
-      })
-      .catch((error) => console.log("error", error));
+      setTimeout(function () {
+        deletediv.remove();
+      }, 3000);
+    }, 3000);
   }
 }
 
