@@ -6,8 +6,7 @@ var url = "http://127.0.0.1:8080";
 var modifiedNickname;
 var modifiedPhone;
 var modifiedEmail;
-var modifiedAddress;
-
+var modifiedAddress
 
 function fetchUser() {
   fetch(url + "/api/user", {
@@ -74,37 +73,15 @@ function fetchUser() {
 
 function chngNickname() {
   modifiedNickname = prompt("변경할 닉네임을 입력하세요.");
-  alert("닉네임이 변경되었습니다.");
-}
-
-function chngPhone() {
   modifiedPhone = prompt("변경할 전화번호를 입력하세요.");
-  alert("전화번호가 변경되었습니다.");
-}
-
-function chngEmail() {
   modifiedEmail = prompt("변경할 이메일 입력하세요.");
-  alert("이메일이 변경되었습니다.");
+  modifiedAddress = prompt("변경할 주소를 입력하세요.");
+  alert("개인정보가 변경되었습니다.");
 }
 
-function chngAddress() {
-  modifiedAddress = prompt("변경할 주소를 입력하세요.");
-  alert("주소가 변경되었습니다.");
-}
+
 
 function changeAll() {
-  if (modifiedNickname == null){
-    modifiedNickname = document.getElementsByClassName('nickname')[0].value
-  }
-  if (modifiedPhone == null){
-    modifiedPhone = document.getElementsByClassName('phone')[0].value
-  }
-  if (modifiedEmail == null){
-    modifiedEmail = document.getElementsByClassName('email')[0].value
-  }
-  if (modifiedAddress == null){
-    modifiedAddress = document.getElementsByClassName('address')[0].value
-  }
     fetch(url + "/api/user", {
         method: "PUT",
         headers: {
@@ -116,12 +93,12 @@ function changeAll() {
         },
         body: JSON.stringify({
             "id": getCookie("id"),
-            "name": document.getElementById('name').value,
-            "birth": document.getElementById('birth').value,
+            "name": document.getElementById("name").innerHTML,
+            "birth": document.getElementById("birth").innerHTML,
             "phoneNumber": modifiedPhone,
             "email": modifiedEmail,
             "nickname": modifiedNickname,
-            "address": modifiedAddress
+            "address": modifiedAddress,
         })
       })
         .then((response) => {
