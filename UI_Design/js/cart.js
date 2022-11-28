@@ -37,6 +37,11 @@ const fetchCartItem = async () => {
                             <button class = 'cart-delete' id = '${i}delete-button' onclick = "deleteCartItem(${res.cartItems[i].cartItemNo})">삭제하기</button>
                             <div class = 'cart-price'>${res.cartItems[i].price}원</div>
                         </div>
+                        <div class = 'render-detail'>
+                            <div id = 'close-detail-btn' onclick="closerenderDetail()">X</div>
+                            <div class = 'title'>추가된 목록</div>
+                            <p style="font-size: 20px; padding-left: 2rem;">1. 발렌타인_고기, 가격:</p>
+                        </div>
                     </div>
                 `
                 console.log("\'"+res.cartItems[i].dinner.dinner+"\'");
@@ -78,7 +83,7 @@ function renderDetail(dinner, cartNo){
     document.getElementsByClassName('detail-modal')[0].style.display = 'flex';
     var modalContent = document.getElementById('modal-content');
     if (dinner == '발렌타인'){
-        modalContent.innerHTML += 
+        modalContent.innerHTML = 
         `
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
@@ -95,7 +100,7 @@ function renderDetail(dinner, cartNo){
         `
     }
     else if (dinner == '잉글리시'){
-        modalContent.innerHTML += 
+        modalContent.innerHTML = 
         `
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
@@ -124,7 +129,7 @@ function renderDetail(dinner, cartNo){
         `
     }
     else if (dinner == '프렌치'){
-        modalContent.innerHTML += 
+        modalContent.innerHTML = 
         `
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
@@ -141,7 +146,7 @@ function renderDetail(dinner, cartNo){
         `
     }
     else if (dinner == '샴페인'){
-        modalContent.innerHTML += 
+        modalContent.innerHTML = 
         `
         <div class = 'detail-box'>       
             <div class = 'detail-img-box'>
@@ -256,6 +261,7 @@ const createCartDetail = async (dinner, cartItemNo) => {
 
 
 const fetchCartDetail = async (cartNo) => {
+    var cartNo1 = cartNo;
     const postResponse = await fetch(url+"/api/cartdetail", {
         mode: 'cors',
         method: "GET",
@@ -264,17 +270,20 @@ const fetchCartDetail = async (cartNo) => {
         'Access-Control-Allow-Origin': '*',
         Connection: 'keep-alive',
         Accept: '*/*',
-        cartItemNo: cartNo
+        "cartItemNo": cartNo1
         }})
     .then((res) => {
         return res.json();
         }).then((res) => {
-            var renderDetailBox = document.getElementsByClassName('render-detail')[0];
-            for(i = 0; i<temp.cartDetails.length; i++){
-                renderDetailBox.innerHTML += `
-                <p style="font-size: 20px; padding-left: 2rem;">${i + 1}. ${temp.cartDetails[i].name}, 가격:${temp.cartDetails[i].price}원</p>
+            console.log(res);
+            var renderDetailBox = document.getElementById('render-detail-box');
+            var temp_renderDetail = "";
+            for(i = 0; i<res.cartDetails.length; i++){
+                temp_renderDetail += `
+                <p style="font-size: 20px; padding-left: 2rem;">${i + 1}. ${res.cartDetails[i].name}, 가격:${res.cartDetails[i].price}원</p>
                 `
             }
+            renderDetailBox.innerHTML = temp_renderDetail;
         }).catch((error) => {
             console.log(error);
         })
