@@ -293,18 +293,21 @@ const fetchDemand = async () => {
 function cancelDemand(demandNo) {
   fetch(url + "/api/demand", {
       mode: "cors",
-      method: "GET",
+      method: "DELETE",
       headers: {
           "Access-Control-Allow-Origin": "*",
           Connection: "keep-alive",
           Accept: "*/*",
           "Content-Type": "application/json;charset=utf-8",
-          demandNo: demandNo
+          
       },
+      body: JSON.stringify({
+        demandNo: demandNo
+      })
   })
       .then((response) => {
         if (response.ok){
-          location.href = 'myPage.html';
+          //location.href = 'myPage.html';
           return response.json()
         }
           
